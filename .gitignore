@@ -61,7 +61,9 @@ typings/
 .next
 
 # cypress.io
-cypress/screenshots
-cypress/videos
+cypress/screenshots/
+cypress/videos/
+frontend/cypress/videos/
+frontedn/cypress/screenshots/
 
 .DS_Store
