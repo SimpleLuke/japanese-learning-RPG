@@ -14,7 +14,7 @@ const StartMenu = () => {
       </button>
       <button
         className="pixel-btn"
-        onClick={() => dispatch(setCurrentScene("SIGNIN"))}
+        onClick={() => dispatch(setCurrentScene("SIGNUP"))}
       >
         Sign up
       </button>
