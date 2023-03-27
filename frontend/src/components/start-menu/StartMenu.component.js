@@ -12,7 +12,12 @@ const StartMenu = () => {
       >
         Login
       </button>
-      <button className="pixel-btn">Sign up</button>
+      <button
+        className="pixel-btn"
+        onClick={() => dispatch(setCurrentScene("SIGNIN"))}
+      >
+        Sign up
+      </button>
     </div>
   );
 };
