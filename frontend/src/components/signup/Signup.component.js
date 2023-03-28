@@ -15,9 +15,42 @@
 import { LockClosedIcon } from "@heroicons/react/20/solid";
 import { useDispatch } from "react-redux";
 import { setCurrentScene } from "../../redux-store/scene/sceneSlice";
+import { useState } from "react";
 
 const Signup = () => {
   const dispatch = useDispatch();
+
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleSubmit = async (event) => {
+    console.log(email)
+    console.log(password)
+    event.preventDefault();
+    fetch('http://localhost:8000/users', {
+      method: 'post',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ email: email, password: password })
+    })
+      .then(response => {
+        if (response.status === 201) {
+          dispatch(setCurrentScene("LOGIN"))
+        } else {
+          console.log("response was: ", response)
+        }
+      })
+  }
+
+  const handleEmailChange = (event) => {
+    setEmail(event.target.value)
+  }
+
+  const handlePasswordChange = (event) => {
+    setPassword(event.target.value)
+  }
+
   return (
     <>
       {/*
@@ -41,7 +74,7 @@ const Signup = () => {
             </h2>
 
           </div>
-          <form className="mt-8 space-y-6" action="#" method="POST">
+          <form className="mt-8 space-y-6" action="#" method="POST" onSubmit={handleSubmit}>
             <input type="hidden" name="remember" defaultValue="true" />
             <div className="-space-y-px rounded-md shadow-sm">
               <div>
@@ -56,6 +89,7 @@ const Signup = () => {
                   required
                   className="relative block w-full rounded-t-md border-0 py-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                   placeholder="Email address"
+                  onChange={handleEmailChange}
                 />
               </div>
               <div>
@@ -70,11 +104,10 @@ const Signup = () => {
                   required
                   className="relative block w-full rounded-b-md border-0 py-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                   placeholder="Password"
+                  onChange={handlePasswordChange}
                 />
               </div>
             </div>
-
-
 
             <div>
               <button
