@@ -13,7 +13,10 @@ module.exports = {
       backgroundColor: {
         'beige-japanese-book': '#f5f3da',
       },
+      backgroundImage: {
+        startMenu: "url('../public/img/start-menu-bg.jpeg')",
+      },
     },
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/forms")],
 };

@@ -1,12 +1,15 @@
 import React, { useState } from 'react';
 import questions from './questions';
+import { useDispatch } from "react-redux";
 import QuizParticles from './particleParams';
+import { setCurrentScene } from '../redux-store/scene/sceneSlice';
 
 const MainGame = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [currentScore, setCurrentScore] = useState(0);
   const [userAnswer, setUserAnswer] = useState(null);
   const [showAnswer, setShowAnswer] = useState(false);
+  const dispatch = useDispatch();
 
   const handleAnswerOptionClick = (answer) => {
     const isCorrect = answer === questions[currentQuestion].answer;
@@ -22,7 +25,8 @@ const MainGame = () => {
       } else {
         setCurrentQuestion(0);
         setCurrentScore(0);
-        // Here we change 'scene' state to EndGame
+        // Change 'scene' state to EndGame
+        dispatch(setCurrentScene("END_GAME"))
         alert(`Quiz finished! You scored ${currentScore} out of ${questions.length}`);
       }
       setShowAnswer(false);
