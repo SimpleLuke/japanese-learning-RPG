@@ -1,11 +1,11 @@
-import { loadFull } from "tsparticles"
-import { useCallback } from 'react'
-import Particles from 'react-tsparticles';
+import { loadFull } from "tsparticles";
+import { useCallback } from "react";
+import Particles from "react-tsparticles";
 
 const particleParams = {
   fullScreen: {
     enable: true,
-    zIndex:-1,
+    zIndex: 0,
   },
   background: {
     color: {
@@ -118,11 +118,15 @@ const QuizParticles = () => {
     await loadFull(engine);
   }, []);
 
-  const particlesLoaded = useCallback(async (container) => {
-  }, []);
+  const particlesLoaded = useCallback(async (container) => {}, []);
   return (
-    <Particles params={particleParams} className="particle-js" loaded={particlesLoaded} init={particlesInit}/>
-  )
-}
+    <Particles
+      params={particleParams}
+      className="particle-js"
+      loaded={particlesLoaded}
+      init={particlesInit}
+    />
+  );
+};
 
 export default QuizParticles;
