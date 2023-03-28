@@ -1,9 +1,11 @@
 import ReduxComp from "./components/redux/ReduxComp";
+import MainGame from "./MainGame/MainGame";
 
 function App() {
   return (
-    <div className="flex w-screen h-screen bg-blue-400">
-      <ReduxComp />
+    <div>
+      {/* <ReduxComp /> */}
+      <MainGame />
     </div>
   );
 }
