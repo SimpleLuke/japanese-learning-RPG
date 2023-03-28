@@ -1,17 +1,23 @@
-import { Fragment, useRef, useState } from 'react'
-import { Dialog, Transition } from '@headlessui/react'
+import { Fragment, useRef, useState } from "react";
+import { Dialog, Transition } from "@headlessui/react";
 import { useSelector, useDispatch } from "react-redux";
-import { closeQuitMenu } from '../../redux-store/game-modal/gameModalSlice';
+import { closeQuitMenu } from "../../redux-store/game-modal/gameModalSlice";
 
 export default function QuitGameModal() {
-  const dispatch = useDispatch()
-  const { quitMenuOpen } = useSelector((state) => state.modalMenu)
+  const dispatch = useDispatch();
+  const { quitMenuOpen } = useSelector((state) => state.modalMenu);
 
-  const cancelButtonRef = useRef(null)
+  const cancelButtonRef = useRef(null);
 
   return (
-    <Transition.Root show={quitMenuOpen} as={Fragment} data-test="transitionRoot">
-      <Dialog as="div" className="relative z-10" data-test="dialog" initialFocus={cancelButtonRef} onClose={()=>dispatch(closeQuitMenu())}>
+    <Transition.Root show={quitMenuOpen} as={Fragment}>
+      <Dialog
+        as="div"
+        className="relative z-10"
+        data-test="dialog"
+        initialFocus={cancelButtonRef}
+        onClose={() => dispatch(closeQuitMenu())}
+      >
         <Transition.Child
           as={Fragment}
           enter="ease-out duration-300"
@@ -41,7 +47,11 @@ export default function QuitGameModal() {
                     <CheckIcon className="h-6 w-6 text-green-600" aria-hidden="true" />
                   </div> */}
                   <div className="mt-3 text-center sm:mt-5">
-                    <Dialog.Title as="h3" className="text-base font-semibold leading-6 text-gray-900">
+                    <Dialog.Title
+                      data-test="modal-title"
+                      as="h3"
+                      className="text-base font-semibold leading-6 text-gray-900"
+                    >
                       Are you sure you want to quit the game?
                     </Dialog.Title>
                     {/* <div className="mt-2">
@@ -54,6 +64,7 @@ export default function QuitGameModal() {
                 </div>
                 <div className="mt-5 sm:mt-6 sm:grid sm:grid-flow-row-dense sm:grid-cols-2 sm:gap-3">
                   <button
+                    data-test="modal-close-btn"
                     type="button"
                     className="inline-flex w-full justify-center rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 sm:col-start-2"
                     onClick={() => dispatch(closeQuitMenu())}
@@ -76,5 +87,5 @@ export default function QuitGameModal() {
         </div>
       </Dialog>
     </Transition.Root>
-  )
+  );
 }
