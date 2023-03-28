@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  currentScene: "START_MENU",
+  currentScene: "MAIN_GAME",
 };
 
 const sceneSlice = createSlice({
