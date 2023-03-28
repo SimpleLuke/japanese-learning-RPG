@@ -2,6 +2,7 @@ import { LockClosedIcon } from "@heroicons/react/20/solid";
 import { useDispatch } from "react-redux";
 import { setCurrentScene } from "../../redux-store/scene/sceneSlice";
 import { useState } from "react";
+import { setCurrentUser } from "../../redux-store/user/userSlice";
 
 const Login = () => {
   const dispatch = useDispatch();
@@ -26,6 +27,7 @@ const Login = () => {
       let data = await response.json();
       dispatch(setCurrentScene("BEDROOM"));
       window.localStorage.setItem("token", data.token);
+      dispatch(setCurrentUser(data.userData));
     } else {
       console.log("response was: ", response);
     }
@@ -108,7 +110,8 @@ const Login = () => {
           <div>
             <button
               type="button"
-              className="group relative flex w-full justify-center rounded-md bg-indigo-600 py-2 px-3 text-sm font-semibold text-white hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+              className="pixel-btn mb-12"
+              //className="group relative flex w-full justify-center rounded-md bg-indigo-600 py-2 px-3 text-sm font-semibold text-white hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
               onClick={() => dispatch(setCurrentScene("START_MENU"))}
             >
               <span className="absolute inset-y-0 left-0 flex items-center pl-3"></span>
