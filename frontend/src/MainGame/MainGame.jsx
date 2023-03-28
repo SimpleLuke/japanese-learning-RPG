@@ -41,9 +41,13 @@ const MainGame = () => {
   };
 
   return (
-      <div className='z-[-1] absolute inset-0 bg-black'>
+      <div className='z-[-1] absolute inset-0' style={{
+        backgroundImage: 'url(/img/japanese-room-background.gif)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center center',
+      }}>
         <QuizParticles />
-        <div className='quiz-container bg-yellow-100 w-11/12 mx-auto my-16 px-8 py-10 rounded-lg'>
+        <div className='quiz-container bg-beige-japanese-book w-11/12 mx-auto my-16 px-8 py-10 rounded-lg'>
           <div className='question-section relative'>
             <button className='back-btn absolute top-0 left-0 p-1 text-lg'>
               <img src='/img/back-button-icon.png' alt='Back Button' className='h-9 w-9'/>
