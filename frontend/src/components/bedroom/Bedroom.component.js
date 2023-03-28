@@ -1,19 +1,33 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { setCurrentScene } from "../../redux-store/scene/sceneSlice";
 
 const Bedroom = () => {
-  const { _id, email } = useSelector((state) => state.user);
+  const dispatch = useDispatch();
+  const { email, character } = useSelector((state) => state.user);
+  const { xp, level, wordsKnown } = character.attributes;
 
   return (
-    <div className="bg-bedroom bg-cover bg-center full-screen ">
-      <div className="overflow-hidden rounded-lg bg-white px-4 py-5 shadow sm:p-6">
-        <dt className="truncate text-sm font-medium text-gray-500">{_id}</dt>
+    <div className="bg-bedroom bg-cover bg-center h-screen w-screen grid grid-cols-4 grid-rows-4 gap-4 p-4 ">
+      <div className="w-80 h-40 overflow-hidden rounded-lg bg-white bg-opacity-80 px-4 py-5 shadow sm:p-6">
         <dd className="mt-1 text-3xl font-semibold tracking-tight text-gray-900">
           {email}
         </dd>
+        <dt className="truncate text-sm font-medium text-gray-500">
+          Level: {level}
+        </dt>
+        <dt className="truncate text-sm font-medium text-gray-500">
+          Exp: {xp}
+        </dt>
+        <dt className="truncate text-sm font-medium text-gray-500">
+          Words: {wordsKnown}
+        </dt>
       </div>
-      <h1>BEDROOM</h1>
-      <h1>{_id}</h1>
-      <h1>{email}</h1>
+      <div
+        onClick={() => dispatch(setCurrentScene("GAME_START"))}
+        className="w-40 h-40 col-start-4 row-start-2 cursor-pointer overflow-hidden rounded-lg bg-white bg-opacity-80 px-4 py-5 shadow sm:p-6"
+      >
+        Study desk
+      </div>
     </div>
   );
 };
