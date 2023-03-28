@@ -4,6 +4,7 @@ import ReduxComp from "./components/redux/ReduxComp";
 import StartMenu from "./components/start-menu/StartMenu.component";
 import Login from "./components/login/Login.component";
 import Signup from "./components/signup/Signup.component";
+import Bedroom from "./components/bedroom/Bedroom.component";
 
 function App() {
   const dispatch = useDispatch();
@@ -13,6 +14,7 @@ function App() {
       {currentScene === "START_MENU" && <StartMenu />}
       {currentScene === "LOGIN" && <Login />}
       {currentScene === "SIGNUP" && <Signup />}
+      {currentScene === "BEDROOM" && <Bedroom />}
     </div>
   );
 }
