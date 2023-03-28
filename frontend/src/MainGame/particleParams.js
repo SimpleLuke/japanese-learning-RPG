@@ -5,7 +5,7 @@ import Particles from 'react-tsparticles';
 const particleParams = {
   fullScreen: {
     enable: true,
-    zIndex: -1,
+    zIndex:-1,
   },
   background: {
     color: {
