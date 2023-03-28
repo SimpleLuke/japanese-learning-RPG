@@ -10,8 +10,8 @@ export default function QuitGameModal() {
   const cancelButtonRef = useRef(null)
 
   return (
-    <Transition.Root show={quitMenuOpen} as={Fragment} data-cy="transitionRoot">
-      <Dialog as="div" className="relative z-10" data-cy="dialog" initialFocus={cancelButtonRef} onClose={()=>dispatch(closeQuitMenu())}>
+    <Transition.Root show={quitMenuOpen} as={Fragment} data-test="transitionRoot">
+      <Dialog as="div" className="relative z-10" data-test="dialog" initialFocus={cancelButtonRef} onClose={()=>dispatch(closeQuitMenu())}>
         <Transition.Child
           as={Fragment}
           enter="ease-out duration-300"
