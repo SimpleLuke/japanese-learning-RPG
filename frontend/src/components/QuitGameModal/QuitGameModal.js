@@ -1,20 +1,17 @@
 import { Fragment, useRef, useState } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
-// import { CheckIcon } from '@heroicons/react/24/outline'
 import { useSelector, useDispatch } from "react-redux";
 import { closeQuitMenu } from '../../redux-store/game-modal/gameModalSlice';
 
-export default function Example() {
-  // const [open, setOpen] = useState(true)
+export default function QuitGameModal() {
   const dispatch = useDispatch()
-  // const [quitMenuOpen] = useSelector(state=>state.modal)
   const { quitMenuOpen } = useSelector((state) => state.modalMenu)
 
   const cancelButtonRef = useRef(null)
 
   return (
-    <Transition.Root show={quitMenuOpen} as={Fragment}>
-      <Dialog as="div" className="relative z-10" initialFocus={cancelButtonRef} onClose={()=>dispatch(closeQuitMenu())}>
+    <Transition.Root show={quitMenuOpen} as={Fragment} data-cy="transitionRoot">
+      <Dialog as="div" className="relative z-10" data-cy="dialog" initialFocus={cancelButtonRef} onClose={()=>dispatch(closeQuitMenu())}>
         <Transition.Child
           as={Fragment}
           enter="ease-out duration-300"

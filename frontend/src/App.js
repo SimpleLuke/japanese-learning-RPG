@@ -1,5 +1,5 @@
 // import ReduxComp from "./components/redux/ReduxComp";
-import Example from "./components/QuitGameModal/QuitGameModal";
+import QuitGameModal from "./components/QuitGameModal/QuitGameModal";
 import { useSelector, useDispatch } from "react-redux";
 import { openQuitMenu } from './redux-store/game-modal/gameModalSlice';
 
@@ -8,7 +8,7 @@ function App() {
 
   return (
     <div className="flex w-screen h-screen bg-blue-400">
-      <Example />
+      <QuitGameModal />
       <button onClick={() => dispatch(openQuitMenu())}>click me!</button>
       {/* <ReduxComp /> */}
     </div>
