@@ -10,6 +10,7 @@ module.exports = {
       },
       backgroundImage: {
         startMenu: "url('../public/img/start-menu-bg.jpeg')",
+        onigiri: "url('../public/img/onigiri.jpg)",
       },
     },
   },
