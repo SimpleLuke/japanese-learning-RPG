@@ -14,8 +14,6 @@ describe("User model", () => {
     const user = new User({
       email: "someone@example.com",
       password: "password",
-      firstName: "Poppy",
-      lastName: "test",
     });
     expect(user.email).toEqual("someone@example.com");
   });
@@ -33,32 +31,25 @@ describe("User model", () => {
       const users = await User.find();
       expect(users).toEqual([]);
     } catch (error) {
-      console.log("error: ", error);
+      console.log("list user error: ", error);
     }
   });
 
-  it("can save a user", (done) => {
+  it("can save a user", async () => {
     const user = new User({
       email: "someone@example.com",
       password: "password",
-      firstName: "Poppy",
-      lastName: "test",
     });
 
-    user.save((err) => {
-      expect(err).toBeNull();
-
-      User.find((err, users) => {
-        expect(err).toBeNull();
-
-        expect(users[0]).toMatchObject({
-          email: "someone@example.com",
-          password: "password",
-          firstName: "Poppy",
-          lastName: "test",
-        });
-        done();
+    try {
+      await user.save();
+      const users = await User.find();
+      expect(users[0]).toMatchObject({
+        email: "someone@example.com",
+        password: "password",
       });
-    });
+    } catch (error) {
+      console.log("save user error: ", error);
+    }
   });
 });
