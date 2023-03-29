@@ -16,6 +16,8 @@ module.exports = {
       backgroundImage: {
         startMenu: "url('../public/img/start-menu-bg.jpeg')",
         jpRoom: "url('../public/img/japanese-room-background.gif')",
+        onigiri: "url('../public/img/onigiri.jpg')",
+        bedroom: "url('../public/img/bedroom-temp.gif')",
       },
     },
   },
