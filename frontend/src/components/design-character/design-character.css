@@ -1,41 +1,133 @@
-.characterOneSprite {
+.char1Container {
+  border: 10px solid black;
+  position: relative;
+  width: 170px;
+  height: 192px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.char1Sprite {
   width: 32px;
   height: 32px;
   background-image: url('./character-sprites/char1.png');
-  /* background-position: -35px -35px; */
+  top: 25%;
   position: absolute;
-  top: 0;
-  left: 0;
   transform: scale(6);
   image-rendering: pixelated;
 }
 
-.characterOneTshirt {
+.char1Tshirt {
   width: 32px;
   height: 32px;
   background-image: url('./character-sprites/basic-clothes.png');
-  /* background-position: -35px -35px; */
   position: absolute;
-  top: 0;
-  left: 0;
 }
 
-.characterOnePants {
+.char1Pants {
   width: 32px;
   height: 32px;
   background-image: url('./character-sprites/pants.png');
   background-position:  -512px 0px ;
-  /* position: absolute; */
-  top: 0;
-  left: 0;
+  position: absolute;
 }
 
-.characterOneHair {
+.char1Hair {
   width: 32px;
   height: 32px;
   background-image: url('./character-sprites/gentleman-hair.png');
-  /* background-position:  -512px 0px ; */
-  /* position: absolute; */
-  top: 0;
-  left: 0;
+  position: absolute;
+}
+
+
+
+.char2Container {
+  border: 10px solid black;
+  position: relative;
+  width: 170px;
+  height: 192px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.char2Sprite {
+  width: 32px;
+  height: 32px;
+  background-image: url('./character-sprites/char1.png');
+  top: 25%;
+  position: absolute;
+  transform: scale(6);
+  image-rendering: pixelated;
+}
+
+.char2Tshirt {
+  width: 32px;
+  height: 32px;
+  background-image: url('./character-sprites/basic-clothes.png');
+  background-position:  -1024px 0px ;
+  position: absolute;
+}
+
+.char2Pants {
+  width: 32px;
+  height: 32px;
+  background-image: url('./character-sprites/pants.png');
+  background-position:  -1536px 0px ;
+  position: absolute;
+}
+
+.char2Hair {
+  width: 32px;
+  height: 32px;
+  background-image: url('./character-sprites/gentleman-hair.png');
+  position: absolute;
+}
+
+
+
+
+.char3Container {
+  border: 10px solid black;
+  position: relative;
+  width: 170px;
+  height: 192px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.char3Sprite {
+  width: 32px;
+  height: 32px;
+  background-image: url('./character-sprites/char1.png');
+  top: 25%;
+  position: absolute;
+  transform: scale(6);
+  image-rendering: pixelated;
+}
+
+.char3Tshirt {
+  width: 32px;
+  height: 32px;
+  background-image: url('./character-sprites/dress.png');
+  background-position:  -1792px 0px ;
+  position: absolute;
+}
+
+/* .char3Pants {
+  width: 32px;
+  height: 32px;
+  background-image: url('./character-sprites/pants.png');
+  background-position:  -1536px 0px ;
+  position: absolute;
+} */
+
+.char3Hair {
+  width: 32px;
+  height: 32px;
+  background-image: url('./character-sprites/wavy.png');
+  background-position:  -256px 0px ;
+  position: absolute;
 }
