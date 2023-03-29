@@ -1,10 +1,29 @@
-
-
 .characterOneSprite {
   width: 32px;
   height: 32px;
   background-image: url('./character-sprites/char1.png');
+  /* background-position: -35px -35px; */
   position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.characterOneTshirt {
+  width: 32px;
+  height: 32px;
+  background-image: url('./character-sprites/basic-clothes.png');
+  /* background-position: -35px -35px; */
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.characterOnePants {
+  width: 32px;
+  height: 32px;
+  background-image: url('./character-sprites/pants.png');
+  background-position:  -512px 0px ;
+  /* position: absolute; */
   top: 0;
   left: 0;
 }
