@@ -1,8 +1,9 @@
 import { useSelector, useDispatch } from "react-redux";
-import ReduxComp from "./components/redux/ReduxComp";
+import QuitGameModal from "./components/QuitGameModal/QuitGameModal";
 import MainGame from "./MainGame/MainGame";
 import StartMenu from "./components/start-menu/StartMenu.component";
 import Login from "./components/login/Login.component";
+import { openQuitMenu } from "./redux-store/game-modal/gameModalSlice";
 
 function App() {
   const dispatch = useDispatch();
