@@ -5,6 +5,21 @@ import { setCurrentScene } from "../../redux-store/scene/sceneSlice";
 const EndGame = ({ finalScore }) => {
   const { currentScore } = useSelector((state) => state.game);
 
+  const coinCalculator = (score) => {
+    switch(score) {
+      case 7:
+        return(70);
+      case 8:
+        return(80);
+      case 9:
+        return(100);
+      case 10:
+        return(200);
+      default:
+        return(10)
+    } 
+  }
+
   // const [currentScore, setCurrentScore] = useState(finalScore);
   const dispatch = useDispatch();
 
@@ -17,6 +32,12 @@ const EndGame = ({ finalScore }) => {
             className="question-text font-bold text-5xl text-center mt-8 mb-12 text-white"
           >
             Score: {currentScore}/10
+          </div>
+          <div
+            data-test="score"
+            className="question-text font-bold text-5xl text-center mt-8 mb-12 text-white"
+          >
+            Coins: {coinCalculator(currentScore)}
           </div>
         </div>
         <div className="answer-section grid grid-cols-2 gap-8">

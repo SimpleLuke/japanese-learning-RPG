@@ -58,6 +58,18 @@ const MainGame = () => {
     return "answer-btn bg-red-400 hover:bg-red-500 text-white font-bold py-4 px-8 rounded-lg flex justify-center items-center text-xl";
   };
 
+  // Game design
+  // new word = 100 XP
+  // old word = 10 XP
+  // 70% = 70
+  // 80% = 80
+  // 90% = 100
+  // 100% = 200
+
+  // Levels
+  // 1.5x scale
+  // level2 1000xp etc
+
   return (
     <div className="h-screen w-screen bg-jpRoom bg-cover bg-center">
       <QuizParticles />
