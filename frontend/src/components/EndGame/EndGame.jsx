@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setCurrentScene } from "../../redux-store/scene/sceneSlice";
-import coinCalculator from "../../utils/userStatsHelpers";
+import { coinCalculator, calculateLevel } from "../../utils/userStatsHelpers";
 
 const EndGame = ({ finalScore }) => {
   const { currentScore } = useSelector((state) => state.game);
 
   // const [currentScore, setCurrentScore] = useState(finalScore);
   const dispatch = useDispatch();
+ 
 
   return (
     <div className="absolute inset-0 bg-black flex justify-center items-center">
