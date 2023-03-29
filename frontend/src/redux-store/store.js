@@ -1,12 +1,16 @@
 import { configureStore } from "@reduxjs/toolkit";
-import cartRuducer from "./cart/cartSlice";
+import cartReducer from "./cart/cartSlice";
+import gameModalReducer from "./game-modal/gameModalSlice";
 import sceneReducer from "./scene/sceneSlice";
+import gameReducer from "./game/gameSlice";
 import userReducer from "./user/userSlice";
 
 export const store = configureStore({
   reducer: {
-    cart: cartRuducer,
+    cart: cartReducer,
+    modalMenu: gameModalReducer,
     scene: sceneReducer,
+    game: gameReducer,
     user: userReducer,
   },
 });

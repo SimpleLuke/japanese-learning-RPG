@@ -1,4 +1,7 @@
 import { useSelector, useDispatch } from "react-redux";
+import MainGame from "./components/MainGame/MainGame";
+import StartGame from "./components/StartGame/StartGame";
+import EndGame from "./components/EndGame/EndGame";
 import StartMenu from "./components/start-menu/StartMenu.component";
 import Login from "./components/login/Login.component";
 import Signup from "./components/signup/Signup.component";
@@ -21,6 +24,9 @@ function App() {
 
   return (
     <div className="flex flex-col justify-center items-center overflow-hidden h-screen">
+      {currentScene === "MAIN_GAME" && <MainGame />}
+      {currentScene === "START_GAME" && <StartGame />}
+      {currentScene === "END_GAME" && <EndGame />}
       {currentScene === "START_MENU" && <StartMenu />}
       {currentScene === "LOGIN" && <Login />}
       {currentScene === "SIGNUP" && <Signup />}
