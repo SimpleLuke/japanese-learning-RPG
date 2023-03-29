@@ -13,4 +13,55 @@ const coinCalculator = (score) => {
   }
 };
 
-export default coinCalculator;
+function calculateLevel(xp) {
+  let level;
+  switch (true) {
+    case xp < 500:
+      level = 1;
+      break;
+    case xp < 1500:
+      level = 2;
+      break;
+    case xp < 3000:
+      level = 3;
+      break;
+    case xp < 5000:
+      level = 4;
+      break;
+    case xp < 8000:
+      level = 5;
+      break;
+    case xp < 12000:
+      level = 6;
+      break;
+    case xp < 17000:
+      level = 7;
+      break;
+    case xp < 23000:
+      level = 8;
+      break;
+    case xp < 30000:
+      level = 9;
+      break;
+    case xp < 38000:
+      level = 10;
+      break;
+    case xp < 47000:
+      level = 11;
+      break;
+    case xp < 57000:
+      level = 12;
+      break;
+    case xp < 68000:
+      level = 13;
+      break;
+    case xp < 80000:
+      level = 14;
+      break;
+    default:
+      level = 15;
+  }
+  return level;
+}
+
+export { coinCalculator, calculateLevel };
