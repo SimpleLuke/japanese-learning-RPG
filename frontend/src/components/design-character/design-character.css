@@ -1,0 +1,10 @@
+
+
+.characterOneSprite {
+  width: 32px;
+  height: 32px;
+  background-image: url('./character-sprites/char1.png');
+  position: absolute;
+  top: 0;
+  left: 0;
+}
