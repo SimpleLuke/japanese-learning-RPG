@@ -25,4 +25,8 @@
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 Cypress.Commands.add("getTest", (selector, ...args) => {
   return cy.get(`[data-test=${selector}]`, ...args);
+<<<<<<< HEAD
 });
+=======
+});
+>>>>>>> origin/quit-game-modal
