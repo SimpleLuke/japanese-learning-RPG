@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import questions from "./questions";
 import { useDispatch } from "react-redux";
 import QuizParticles from "./particleParams";
-import { setCurrentScene } from "../redux-store/scene/sceneSlice";
-import QuitGameModal from "../components/QuitGameModal/QuitGameModal";
-import { openQuitMenu } from "../redux-store/game-modal/gameModalSlice";
+import { setCurrentScene } from "../../redux-store/scene/sceneSlice";
+import QuitGameModal from "../QuitGameModal/QuitGameModal";
+import { openQuitMenu } from "../../redux-store/game-modal/gameModalSlice";
 
 const MainGame = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -25,7 +25,7 @@ const MainGame = () => {
       if (nextQuestion < questions.length) {
         setCurrentQuestion(nextQuestion);
       } else {
-        dispatch(setCurrentScore(currentScore)) // HERE!!!!
+        dispatch(setCurrentScore(currentScore)); // HERE!!!!
         setCurrentQuestion(0);
         setCurrentScore(0);
         // Change 'scene' state to EndGame
@@ -56,10 +56,12 @@ const MainGame = () => {
       <QuizParticles />
       <div className="z-20 relative quiz-container bg-beige-japanese-book w-11/12 mx-auto my-16 px-8 py-10 rounded-lg">
         <div className="question-section relative">
+          <QuitGameModal />
 
-        <QuitGameModal />
-
-          <button onClick={() => dispatch(openQuitMenu())} className="back-btn absolute top-0 left-0 p-1 text-lg">
+          <button
+            onClick={() => dispatch(openQuitMenu())}
+            className="back-btn absolute top-0 left-0 p-1 text-lg"
+          >
             <img
               src="/img/back-button-icon.png"
               alt="Back Button"
