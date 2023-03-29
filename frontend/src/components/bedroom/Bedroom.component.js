@@ -36,7 +36,7 @@ const Bedroom = () => {
       </div>
       <div
         data-test="study-desk"
-        onClick={() => dispatch(setCurrentScene("GAME_START"))}
+        onClick={() => dispatch(setCurrentScene("START_GAME"))}
         className="w-40 h-40 col-start-4 row-start-2 cursor-pointer overflow-hidden rounded-lg bg-white bg-opacity-80 px-4 py-5 shadow sm:p-6"
       >
         Study desk
