@@ -6,6 +6,8 @@
   position: absolute;
   top: 0;
   left: 0;
+  transform: scale(6);
+  image-rendering: pixelated;
 }
 
 .characterOneTshirt {
@@ -23,6 +25,16 @@
   height: 32px;
   background-image: url('./character-sprites/pants.png');
   background-position:  -512px 0px ;
+  /* position: absolute; */
+  top: 0;
+  left: 0;
+}
+
+.characterOneHair {
+  width: 32px;
+  height: 32px;
+  background-image: url('./character-sprites/gentleman-hair.png');
+  /* background-position:  -512px 0px ; */
   /* position: absolute; */
   top: 0;
   left: 0;
