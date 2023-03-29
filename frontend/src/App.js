@@ -1,6 +1,4 @@
 import { useSelector, useDispatch } from "react-redux";
-import { setCurrentScene } from "./redux-store/scene/sceneSlice";
-import ReduxComp from "./components/redux/ReduxComp";
 import StartMenu from "./components/start-menu/StartMenu.component";
 import Login from "./components/login/Login.component";
 import Signup from "./components/signup/Signup.component";
@@ -8,7 +6,6 @@ import Bedroom from "./components/bedroom/Bedroom.component";
 import { useEffect } from "react";
 
 function App() {
-  const dispatch = useDispatch();
   const { currentScene } = useSelector((state) => state.scene);
 
   useEffect(() => {
