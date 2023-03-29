@@ -1,21 +1,21 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  quitMenuOpen: false
+  quitMenuOpen: false,
 };
 
 const gameModalSlice = createSlice({
-  name: 'modalMenu',
+  name: "modalMenu",
   initialState,
   reducers: {
     closeQuitMenu: (state) => {
-      state.quitMenuOpen = false
+      state.quitMenuOpen = false;
     },
     openQuitMenu: (state) => {
-      state.quitMenuOpen = true
-    }
-  }
-}) 
+      state.quitMenuOpen = true;
+    },
+  },
+});
 
 export const { closeQuitMenu, openQuitMenu } = gameModalSlice.actions;
-export default gameModalSlice.reducer
+export default gameModalSlice.reducer;
