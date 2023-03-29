@@ -7,12 +7,14 @@ const StartMenu = () => {
   return (
     <div className="bg-startMenu bg-cover bg-center full-screen ">
       <button
+        data-test="login-btn"
         className="pixel-btn mb-12"
         onClick={() => dispatch(setCurrentScene("LOGIN"))}
       >
         Login
       </button>
       <button
+        data-test="signup-btn"
         className="pixel-btn"
         onClick={() => dispatch(setCurrentScene("SIGNIN"))}
       >
