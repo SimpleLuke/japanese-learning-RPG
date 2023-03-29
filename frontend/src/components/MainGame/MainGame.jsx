@@ -1,39 +1,46 @@
-import React, { useState } from "react";
+import React, { useEffect } from "react";
 import questions from "./questions";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import QuizParticles from "./particleParams";
 import { setCurrentScene } from "../../redux-store/scene/sceneSlice";
 import QuitGameModal from "../QuitGameModal/QuitGameModal";
 import { openQuitMenu } from "../../redux-store/game-modal/gameModalSlice";
+import {
+  setCurrentScore,
+  setCurrentQuestion,
+  addCurrentScore,
+  setUserAnswer,
+  setShowAnswer,
+} from "../../redux-store/game/gameSlice";
 
 const MainGame = () => {
-  const [currentQuestion, setCurrentQuestion] = useState(0);
-  const [currentScore, setCurrentScore] = useState(0);
-  const [userAnswer, setUserAnswer] = useState(null);
-  const [showAnswer, setShowAnswer] = useState(false);
+  const { currentScore, currentQuestion, userAnswer, showAnswer } = useSelector(
+    (state) => state.game
+  );
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(setCurrentScore(0));
+    dispatch(setCurrentQuestion(0));
+  }, []);
 
   const handleAnswerOptionClick = (answer) => {
     const isCorrect = answer === questions[currentQuestion].answer;
-    setUserAnswer(answer);
-    setShowAnswer(true);
+    dispatch(setUserAnswer(answer));
+    dispatch(setShowAnswer(true));
     if (isCorrect) {
-      setCurrentScore(currentScore + 1);
+      dispatch(addCurrentScore());
     }
+
     setTimeout(() => {
       const nextQuestion = currentQuestion + 1;
       if (nextQuestion < questions.length) {
-        setCurrentQuestion(nextQuestion);
+        dispatch(setCurrentQuestion(nextQuestion));
       } else {
-        dispatch(setCurrentScore(currentScore)); // HERE!!!!
-        setCurrentQuestion(0);
-        setCurrentScore(0);
-        // Change 'scene' state to EndGame
         dispatch(setCurrentScene("END_GAME"));
-        // update slice states for user (words learnt)
       }
-      setShowAnswer(false);
-      setUserAnswer(null);
+      dispatch(setShowAnswer(false));
+      dispatch(setUserAnswer(null));
     }, 750);
   };
 
