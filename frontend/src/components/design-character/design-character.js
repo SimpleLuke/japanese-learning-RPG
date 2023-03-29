@@ -6,7 +6,11 @@ const CharacterDesign = () => {
   return (
     <div>
       <h1>Character Design page</h1>
-      <div className='characterOneSprite'></div>
+      <div className='characterOneSprite'>
+        <div className='characterOneTshirt'>
+          <div className='characterOnePants'></div>
+        </div>
+      </div>
     </div>
   )
 }
