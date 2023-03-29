@@ -4,8 +4,10 @@ import Login from "./components/login/Login.component";
 import Signup from "./components/signup/Signup.component";
 import Bedroom from "./components/bedroom/Bedroom.component";
 import { useEffect } from "react";
+import { setCurrentScene } from "./redux-store/scene/sceneSlice";
 
 function App() {
+  const dispatch = useDispatch();
   const { currentScene } = useSelector((state) => state.scene);
 
   useEffect(() => {
