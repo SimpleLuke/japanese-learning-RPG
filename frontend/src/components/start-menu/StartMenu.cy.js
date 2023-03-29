@@ -8,7 +8,14 @@ describe("StartMenu component", () => {
   let store;
 
   beforeEach(() => {
-    store = configureStore({ reducer: { scene: sceneReducer } });
+    store = configureStore({
+      reducer: { scene: sceneReducer },
+      preloadedState: {
+        scene: {
+          currentScene: "START_MENU",
+        },
+      },
+    });
   });
 
   it("currentScene is eual to START_MENU", () => {
