@@ -13,7 +13,7 @@ export default function QuitGameModal() {
     <Transition.Root show={quitMenuOpen} as={Fragment}>
       <Dialog
         as="div"
-        className="relative z-10"
+        className="relative z-[999]"
         data-test="dialog"
         initialFocus={cancelButtonRef}
         onClose={() => dispatch(closeQuitMenu())}
