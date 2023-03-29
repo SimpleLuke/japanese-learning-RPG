@@ -5,6 +5,6 @@ import sceneReducer from "./scene/sceneSlice";
 export const store = configureStore({
   reducer: {
     cart: cartReducer,
-    modalMenu: sceneReducer,
+    scene: sceneReducer,
   },
 });
