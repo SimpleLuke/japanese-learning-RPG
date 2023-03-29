@@ -25,13 +25,12 @@ const MainGame = () => {
       if (nextQuestion < questions.length) {
         setCurrentQuestion(nextQuestion);
       } else {
+        dispatch(setCurrentScore(currentScore)) // HERE!!!!
         setCurrentQuestion(0);
         setCurrentScore(0);
         // Change 'scene' state to EndGame
         dispatch(setCurrentScene("END_GAME"));
-        alert(
-          `Quiz finished! You scored ${currentScore} out of ${questions.length}`
-        );
+        // update slice states for user (words learnt)
       }
       setShowAnswer(false);
       setUserAnswer(null);
@@ -59,9 +58,6 @@ const MainGame = () => {
         <div className="question-section relative">
 
         <QuitGameModal />
-        {/* <button data-test="modal-btn" onClick={() => dispatch(openQuitMenu())}>
-          click me!
-        </button> */}
 
           <button onClick={() => dispatch(openQuitMenu())} className="back-btn absolute top-0 left-0 p-1 text-lg">
             <img
