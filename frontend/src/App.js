@@ -10,11 +10,11 @@ function App() {
   const { currentScene } = useSelector((state) => state.scene);
   return (
       <div className="flex flex-col justify-center items-center overflow-hidden">
-        {currentScene === "MAIN_GAME" && <MainGame />}
+        {<MainGame />}
         {/* {currentScene === "START_GAME" && <StartGame />}
         {/* {currentScene === "END_GAME" && <EndGame />} */}
-        {currentScene === "START_MENU" && <StartMenu />}
-        {currentScene === "LOGIN" && <Login />}
+        {/* {currentScene === "START_MENU" && <StartMenu />}
+        {currentScene === "LOGIN" && <Login />} */}
      </div>
   );
 }
