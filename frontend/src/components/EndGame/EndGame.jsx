@@ -1,14 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setCurrentScene } from "../../redux-store/scene/sceneSlice";
 import { coinCalculator, calculateLevel, calculateXP } from "../../utils/userStatsHelpers";
 
-const EndGame = ({ finalScore }) => {
+const EndGame = () => {
   const { currentScore } = useSelector((state) => state.game);
   const { wordsStudied } = useSelector((state) => state.game);
   console.log("words studied: ", wordsStudied)
 
-  // const [currentScore, setCurrentScore] = useState(finalScore);
   const dispatch = useDispatch();
  
 
