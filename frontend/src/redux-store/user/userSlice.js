@@ -41,7 +41,6 @@ const userSlice = createSlice({
       state.character.currentOutfit.hair = hair;
       state.character.currentOutfit.top = top;
       state.character.currentOutfit.bottoms = bottoms;
-      console.log(state.character.currentOutfit.body);
     },
   },
 });
