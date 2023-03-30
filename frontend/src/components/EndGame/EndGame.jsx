@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setCurrentScene } from "../../redux-store/scene/sceneSlice";
-import { coinCalculator, calculateLevel } from "../../utils/userStatsHelpers";
+import { coinCalculator, calculateLevel, calculateXP } from "../../utils/userStatsHelpers";
 
 const EndGame = ({ finalScore }) => {
   const { currentScore } = useSelector((state) => state.game);
@@ -33,6 +33,12 @@ const EndGame = ({ finalScore }) => {
             className="question-text font-bold text-5xl text-center mt-8 mb-12 text-white"
           >
             words studied: {wordsStudied}
+          </div>
+          <div
+            data-test="XP"
+            className="question-text font-bold text-3xl text-center mt-8 mb-12 text-white"
+          >
+            XP earned: {calculateXP(wordsStudied)}
           </div>
         </div>
         <div className="answer-section grid grid-cols-2 gap-8">

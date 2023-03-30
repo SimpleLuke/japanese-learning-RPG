@@ -12,6 +12,7 @@ import {
   setUserAnswer,
   setShowAnswer,
   addWordsStudied,
+  setWordsStudied,
 } from "../../redux-store/game/gameSlice";
 
 const MainGame = () => {
@@ -23,6 +24,7 @@ const MainGame = () => {
   useEffect(() => {
     dispatch(setCurrentScore(0));
     dispatch(setCurrentQuestion(0));
+    dispatch(setWordsStudied([]));
   }, []);
 
   const handleAnswerOptionClick = (answer) => {

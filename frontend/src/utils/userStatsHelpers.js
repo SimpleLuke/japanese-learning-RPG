@@ -1,3 +1,6 @@
+//temporary words learnt (can be replaced with real wordslearnt once implemented)
+let wordsLearnt = ["ごめんなさい"];
+
 const coinCalculator = (score) => {
   switch (score) {
     case 7:
@@ -64,4 +67,17 @@ function calculateLevel(xp) {
   return level;
 }
 
-export { coinCalculator, calculateLevel };
+const calculateXP = (wordsStudied) => {
+  let xp = 0;
+  wordsStudied.forEach((element) => {
+    if (wordsLearnt.includes(element)) {
+      xp += 1;
+    } else {
+      xp += 10;
+    }
+  });
+
+  return xp;
+};
+
+export { coinCalculator, calculateLevel, calculateXP };
