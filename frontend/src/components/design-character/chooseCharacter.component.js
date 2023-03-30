@@ -1,4 +1,3 @@
-// import './design-character.css';
 import CharacterComponent from './character.component';
 import { useDispatch } from "react-redux";
 import { setStartOutfit } from "../../redux-store/user/userSlice";
@@ -12,7 +11,7 @@ const CharacterDesign = () => {
     hair: "gentlemanHair-blond",
     top: "tshirt-gray",
     bottoms: "pants-blue",
-    shoes: "shoes"
+    shoes: "shoes-navy"
   }
 
   const char2data = { 
@@ -20,7 +19,7 @@ const CharacterDesign = () => {
     hair: "hair-emo",
     top: "tshirt-green-flower",
     bottoms: "pants-pink",
-    shoes: "shoes"
+    shoes: "shoes-green"
   }
 
   const char3data = { 
@@ -28,7 +27,7 @@ const CharacterDesign = () => {
     hair: "hair-long-blonde",
     top: "vest",
     bottoms: "skirt",
-    shoes: "shoes"
+    shoes: "shoes-purple"
   }
 
 
