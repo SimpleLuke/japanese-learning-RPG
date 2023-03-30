@@ -20,7 +20,7 @@ function App() {
     ) {
       dispatch(setCurrentScene("BEDROOM"));
     }
-  }, []);
+  }, [dispatch]);
 
   return (
     <div className="flex flex-col justify-center items-center overflow-hidden h-screen">
