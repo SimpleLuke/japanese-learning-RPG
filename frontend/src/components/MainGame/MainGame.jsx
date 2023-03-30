@@ -22,7 +22,7 @@ const MainGame = () => {
   useEffect(() => {
     dispatch(setCurrentScore(0));
     dispatch(setCurrentQuestion(0));
-  }, []);
+  }, [dispatch]);
 
   const handleAnswerOptionClick = (answer) => {
     const isCorrect = answer === questions[currentQuestion].answer;

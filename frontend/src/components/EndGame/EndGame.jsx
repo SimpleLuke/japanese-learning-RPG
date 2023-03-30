@@ -1,11 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setCurrentScene } from "../../redux-store/scene/sceneSlice";
 
-const EndGame = ({ finalScore }) => {
+const EndGame = () => {
   const { currentScore } = useSelector((state) => state.game);
 
-  // const [currentScore, setCurrentScore] = useState(finalScore);
   const dispatch = useDispatch();
 
   return (
