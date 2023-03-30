@@ -8,6 +8,7 @@ import { useEffect } from "react";
 
 const EndGame = () => {
   const { currentScore, wordsStudied } = useSelector((state) => state.game);
+  const { xp } = useSelector((state) => state.user.character.attributes)
   console.log("words studied: ", wordsStudied)
 
   const dispatch = useDispatch();
@@ -16,6 +17,7 @@ const EndGame = () => {
   useEffect(() => {
     console.log("use effect ran")
     dispatch(addXP(calculateXP(wordsStudied)));
+    dispatch(setLevel(calculateLevel(xp)));
   }, [])
   
 
