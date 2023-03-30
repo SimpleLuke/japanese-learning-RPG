@@ -38,7 +38,7 @@ describe("Bedroom component", () => {
     cy.getTest("options").should("exist");
   });
 
-  it("clicks on burger menu and logout button exists", () => {
+  it("clicks on burger menu and logout button appears", () => {
     cy.mount(
       <Provider store={store}>
         <BurgerMenu />
@@ -46,6 +46,5 @@ describe("Bedroom component", () => {
     );
     cy.get('[data-test="options"]').click();
     cy.getTest("logout").should("exist");
-    });
-  
+  });
 });
