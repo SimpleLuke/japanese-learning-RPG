@@ -1,42 +1,27 @@
-import './design-character.css';
+// import './design-character.css';
 import CharacterComponent from './character.component';
-// import character1Data from'./char1-data';
+import { useDispatch } from "react-redux";
+import { setStartOutfit } from "../../redux-store/user/userSlice";
 
 const CharacterDesign = () => {
-  // console.log(character1Data)
+  const dispatch = useDispatch();
+
+  const char1data = { 
+    body: "whiteBody",
+    hair: "gentlemanHair",
+    top: "tshirt",
+    bottoms: "pants"
+  }
+
   return (
     <div>
       <h1>Select your character</h1>
-        <CharacterComponent />
-      
-      {/* <div className='char1Container'>
-        <div className='char1Sprite'>
-          <div className='char1Tshirt'>
-            <div className='char1Pants'>
-              <div className='char1Hair'></div>
-            </div>
-          </div>
-        </div>
+      <div className='characterContainer'>
+        <CharacterComponent data={char1data}/>
       </div>
-      <div className='char2Container'>
-        <div className='char2Sprite'>
-          <div className='char2Tshirt'>
-            <div className='char2Pants'>
-              <div className='char2Hair'></div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className='char3Container'>
-        <div className='char3Sprite'>
-          <div className='char3Tshirt'>
-            <div className='char3Pants'>
-              <div className='char3Hair'></div>
-            </div>
-          </div>
-        </div>
-      </div> */}
+      <button type="submit" onClick={() => dispatch(setStartOutfit(char1data))}>choose me</button>
     </div>
+    // body: char1data.body, hair: char1data.hair, top: char1data.top, bottoms: char1data.bottoms
   )
 }
 

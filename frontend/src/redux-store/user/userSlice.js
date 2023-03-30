@@ -16,6 +16,13 @@ const initialState = {
       outfit: "",
       trousers: "",
     },
+
+    currentOutfit: {
+      body: "",
+      hair: "",
+      top: "",
+      bottoms: "",
+    },
   },
 };
 
@@ -28,8 +35,17 @@ const userSlice = createSlice({
       state._id = _id;
       state.email = email;
     },
+    setStartOutfit: (state, action) => {
+      const { body, hair, top, bottoms } = action.payload;
+      state.character.currentOutfit.body = body;
+      state.character.currentOutfit.hair = hair;
+      state.character.currentOutfit.top = top;
+      state.character.currentOutfit.bottoms = bottoms;
+      console.log(state.character.currentOutfit.body);
+    },
   },
 });
 
 export const { setCurrentUser } = userSlice.actions;
+export const { setStartOutfit } = userSlice.actions;
 export default userSlice.reducer;
