@@ -11,21 +11,24 @@ const CharacterDesign = () => {
     body: "body",
     hair: "gentlemanHair-blond",
     top: "tshirt-gray",
-    bottoms: "pants-blue"
+    bottoms: "pants-blue",
+    shoes: "shoes"
   }
 
   const char2data = { 
     body: "body",
     hair: "hair-emo",
     top: "tshirt-green-flower",
-    bottoms: "pants-pink"
+    bottoms: "pants-pink",
+    shoes: "shoes"
   }
 
   const char3data = { 
     body: "body",
     hair: "hair-long-blonde",
     top: "vest",
-    bottoms: "skirt"
+    bottoms: "skirt",
+    shoes: "shoes"
   }
 
 
