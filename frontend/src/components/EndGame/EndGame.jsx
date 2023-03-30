@@ -4,13 +4,14 @@ import { setCurrentScene } from "../../redux-store/scene/sceneSlice";
 import { coinCalculator, calculateLevel, calculateXP } from "../../utils/userStatsHelpers";
 import { newWords } from "../../utils/wordsLearntHelpers";
 import { addXP, setLevel, addWordsLearnt, addCoins, setWordsKnown } from "../../redux-store/user/userSlice";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+
 
 const EndGame = () => {
   const { currentScore, wordsStudied } = useSelector((state) => state.game);
   const { xp } = useSelector((state) => state.user.character.attributes);
   const { wordsLearnt } = useSelector((state) => state.user);
-  // const { wordsLearnt = [] } = useSelector((state) => state.user.wordsLearnt);
+  const [newVarWords, setnewVarWords] = useState(newWords(wordsLearnt, wordsStudied))
 
   const dispatch = useDispatch();
 
@@ -18,7 +19,7 @@ const EndGame = () => {
   useEffect(() => {
     dispatch(addXP(calculateXP(wordsStudied)));
     dispatch(setLevel(calculateLevel(xp)));
-    dispatch(addCoins(coinCalculator(currentScore)))
+    dispatch(addCoins(coinCalculator(currentScore)));
     dispatch(addWordsLearnt(newWords(wordsLearnt, wordsStudied)));
     dispatch(setWordsKnown())
   }, [])
@@ -43,7 +44,9 @@ const EndGame = () => {
             data-test="words-studied"
             className="question-text font-bold text-5xl text-center mt-8 mb-12 text-white"
           >
-            New words learnt: {newWords(wordsLearnt, wordsStudied)}
+            New Words: {newVarWords.map((word) => {
+              return <><br/><span> {word} </span></>
+            })}
           </div>
           <div
             data-test="XP"
