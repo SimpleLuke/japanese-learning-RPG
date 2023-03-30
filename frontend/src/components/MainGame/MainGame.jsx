@@ -1,10 +1,11 @@
 import React, { useEffect } from "react";
-import questions from "./questions";
+import  {random_ten_questions,all_questions} from "./questions";
 import { useDispatch, useSelector } from "react-redux";
 import QuizParticles from "./particleParams";
 import { setCurrentScene } from "../../redux-store/scene/sceneSlice";
 import QuitGameModal from "../QuitGameModal/QuitGameModal";
 import { openQuitMenu } from "../../redux-store/game-modal/gameModalSlice";
+import { useState } from "react";
 import {
   setCurrentScore,
   setCurrentQuestion,
@@ -16,10 +17,15 @@ import {
 } from "../../redux-store/game/gameSlice";
 
 const MainGame = () => {
+  const [questions,setQuestions] = useState(random_ten_questions(all_questions))
   const { currentScore, currentQuestion, userAnswer, showAnswer } = useSelector(
     (state) => state.game
   );
   const dispatch = useDispatch();
+
+  // useEffect(() => {
+  //   setQuestions(random_ten_questions(all_questions))
+  // },[])
 
   useEffect(() => {
     dispatch(setCurrentScore(0));
