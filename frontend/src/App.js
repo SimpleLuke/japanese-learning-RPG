@@ -22,6 +22,7 @@ function App() {
     }
   }, [dispatch]);
 
+
   return (
     <div className="flex flex-col justify-center items-center overflow-hidden h-screen">
       {currentScene === "MAIN_GAME" && <MainGame />}

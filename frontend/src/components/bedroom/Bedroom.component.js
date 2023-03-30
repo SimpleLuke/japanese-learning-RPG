@@ -1,4 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from 'react';
 import { setCurrentScene } from "../../redux-store/scene/sceneSlice";
 import BurgerMenu from "../BurgerMenu/BurgerMenu.component"
 
@@ -6,6 +7,26 @@ const Bedroom = () => {
   const dispatch = useDispatch();
   const { email, character } = useSelector((state) => state.user);
   const { xp, level, wordsKnown } = character.attributes;
+
+  const verifyToken = async () => {
+    try {
+      const token = window.localStorage.getItem("token");
+      const response = await fetch("http://localhost:8000/bedroom", {
+        method: "GET",
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      const data = await response.json();
+      console.log(data);
+    } catch (error) {
+      console.log("Error");
+    }
+  };
+
+  useEffect(() => {
+    verifyToken();
+  }, []);
 
   return (
     <div className="bg-bedroom bg-cover bg-center h-screen w-screen grid grid-cols-4 grid-rows-4 gap-4 p-4 ">
