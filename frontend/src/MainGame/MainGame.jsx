@@ -25,7 +25,7 @@ const MainGame = () => {
       if (nextQuestion < questions.length) {
         setCurrentQuestion(nextQuestion);
       } else {
-        dispatch(setCurrentScore(currentScore)) // HERE!!!!
+        dispatch(setCurrentScore(currentScore))
         setCurrentQuestion(0);
         setCurrentScore(0);
         // Change 'scene' state to EndGame
