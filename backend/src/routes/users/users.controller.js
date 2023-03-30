@@ -19,7 +19,6 @@ const UsersController = {
   },
   GetUserData: async (req, res) => {
     try {
-      console.log(req.query);
       const { email } = req.query;
       const user = await User.findOne({ email: email });
       if (!user) {
