@@ -6,10 +6,6 @@ import { useDispatch } from "react-redux";
 import { setCurrentScene } from "../../redux-store/scene/sceneSlice";
 import { resetStore } from "../../redux-store/utils/reset";
 
-// function classNames(...classes) {
-//   return classes.filter(Boolean).join(' ')
-// }
-
 const BurgerMenu = () => {
   const dispatch = useDispatch();
 
