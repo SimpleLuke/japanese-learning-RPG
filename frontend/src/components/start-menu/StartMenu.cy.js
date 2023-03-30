@@ -18,7 +18,7 @@ describe("StartMenu component", () => {
     });
   });
 
-  it("currentScene is eual to START_MENU", () => {
+  it("currentScene is equal to START_MENU", () => {
     cy.mount(
       <Provider store={store}>
         <StartMenu />
