@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-
+import { PURGE } from "reduxjs-toolkit-persist";
 const initialState = {
   email: "",
   wordsLearnt: [],
@@ -24,6 +24,7 @@ const userSlice = createSlice({
   name: "user",
   initialState,
   reducers: {
+    resetUser: () => initialState,
     setCurrentUser: (state, action) => {
       const email = action.payload;
       state.email = email;
@@ -33,8 +34,13 @@ const userSlice = createSlice({
       state.wordsLearnt = wordsLearnt;
       state.character = character;
     },
+    extraReducers: (builder) => {
+      builder.addCase(PURGE, (state) => {
+        return { ...initialState };
+      });
+    },
   },
 });
 
-export const { setCurrentUser, updateUserInfo } = userSlice.actions;
+export const { setCurrentUser, updateUserInfo, resetUser } = userSlice.actions;
 export default userSlice.reducer;
