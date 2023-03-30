@@ -2,6 +2,9 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   currentScore: 0,
+  currentQuestion: 0,
+  userAnswer: null,
+  showAnswer: false,
 };
 
 const gameSlice = createSlice({
@@ -12,8 +15,26 @@ const gameSlice = createSlice({
       const newScore = action.payload;
       state.currentScore = newScore;
     },
+    addCurrentScore: (state) => {
+      state.currentScore = state.currentScore + 1;
+    },
+    setCurrentQuestion: (state, action) => {
+      state.currentQuestion = action.payload;
+    },
+    setUserAnswer: (state, action) => {
+      state.userAnswer = action.payload;
+    },
+    setShowAnswer: (state, action) => {
+      state.showAnswer = action.payload;
+    },
   },
 });
 
-export const { setCurrentScore } = gameSlice.actions;
+export const {
+  setCurrentScore,
+  setCurrentQuestion,
+  addCurrentScore,
+  setUserAnswer,
+  setShowAnswer,
+} = gameSlice.actions;
 export default gameSlice.reducer;
