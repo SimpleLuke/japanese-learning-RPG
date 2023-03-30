@@ -28,8 +28,18 @@ const userSlice = createSlice({
       state._id = _id;
       state.email = email;
     },
+    addXP: (state, action) => {
+      state.character.attributes.xp += action.payload;
+    },
+    setLevel: (state, action) => {
+      state.character.attributes.level = action.payload;
+    },
+    addWordsKnown: (state, action) => {
+      state.character.attributes.wordsKnown += action.payload;
+    },
   },
 });
 
-export const { setCurrentUser } = userSlice.actions;
+export const { setCurrentUser, addXP, setLevel, addWordsKnown } =
+  userSlice.actions;
 export default userSlice.reducer;
