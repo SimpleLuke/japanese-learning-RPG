@@ -1,12 +1,12 @@
-const CharacterComponent = () => {
+const CharacterComponent = ({data}) => {
+  const { body, hair, top, bottoms } = data;
+
   return (
     <>
-    <div className="characterContainer">
-      <div className="whiteBody">
-        <div className="gentlemanHair">
-          <div className="tshirt">
-            <div className="pants" />
-          </div>
+    <div className={`${body}`}>
+      <div className={`${hair}`}>
+        <div className={`${top}`}>
+          <div className={`${bottoms}`}></div>
         </div>
       </div>
     </div>    
