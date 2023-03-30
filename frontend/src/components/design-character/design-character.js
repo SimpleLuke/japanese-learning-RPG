@@ -7,9 +7,7 @@ const CharacterDesign = () => {
   return (
     <div>
       <h1>Select your character</h1>
-      <div className='char1Container'>
         <CharacterComponent />
-      </div>
       
       {/* <div className='char1Container'>
         <div className='char1Sprite'>

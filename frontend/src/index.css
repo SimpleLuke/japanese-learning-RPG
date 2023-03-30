@@ -74,14 +74,30 @@ code {
 }
 
 /* character style templates */
+:root {
+  --pixel-size: 10;
+}
+
+
+.characterContainer {
+  background-color: beige;
+  position: relative;
+  width: calc(32px * 6);
+  height: calc(32px * 6);
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 .whiteBody {
   width: 32px;
   height: 32px;
+  transform: scale(6);
   background-image: url('./components/design-character/character-sprites/char1.png');
   position: absolute;
-  transform: scale(6);
   image-rendering: pixelated;
+
 }
 
 .gentlemanHair {

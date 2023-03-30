@@ -1,7 +1,7 @@
 const CharacterComponent = () => {
   return (
     <>
-    <div>
+    <div className="characterContainer">
       <div className="whiteBody">
         <div className="gentlemanHair">
           <div className="tshirt">
