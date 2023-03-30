@@ -8,21 +8,21 @@ const CharacterDesign = () => {
   const dispatch = useDispatch();
 
   const char1data = { 
-    body: "whiteBody",
-    hair: "gentlemanHair",
-    top: "tshirt",
-    bottoms: "pants"
+    body: "body",
+    hair: "gentlemanHair-blond",
+    top: "tshirt-gray",
+    bottoms: "pants-blue"
   }
 
   const char2data = { 
-    body: "whiteBody",
-    hair: "hair-2",
-    top: "tshirt-2",
-    bottoms: "pants-2"
+    body: "body",
+    hair: "hair-emo",
+    top: "tshirt-green-flower",
+    bottoms: "pants-pink"
   }
 
   const char3data = { 
-    body: "whiteBody",
+    body: "body",
     hair: "hair-long-blonde",
     top: "vest",
     bottoms: "skirt"
@@ -31,7 +31,9 @@ const CharacterDesign = () => {
 
   return (
     <div>
-      <h1>Select your character</h1>
+      <div className='mb-10'>
+        <h1>Select your character</h1>
+      </div>
       <button type="submit" onClick={() => {
         dispatch(setStartOutfit(char1data));
         dispatch(setCurrentScene("BEDROOM"));
