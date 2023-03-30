@@ -24,12 +24,16 @@ const userSlice = createSlice({
   initialState,
   reducers: {
     setCurrentUser: (state, action) => {
-      const { _id, email } = action.payload;
-      state._id = _id;
+      const email = action.payload;
       state.email = email;
+    },
+    updateUserInfo: (state, action) => {
+      const { wordsLearnt, character } = action.payload;
+      state.wordsLearnt = wordsLearnt;
+      state.character = character;
     },
   },
 });
 
-export const { setCurrentUser } = userSlice.actions;
+export const { setCurrentUser, updateUserInfo } = userSlice.actions;
 export default userSlice.reducer;

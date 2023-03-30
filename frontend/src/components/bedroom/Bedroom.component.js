@@ -1,10 +1,23 @@
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setCurrentScene } from "../../redux-store/scene/sceneSlice";
+import { updateUserInfo } from "../../redux-store/user/userSlice";
 
 const Bedroom = () => {
   const dispatch = useDispatch();
   const { email, character } = useSelector((state) => state.user);
   const { xp, level, wordsKnown } = character.attributes;
+
+  const fetchUserData = async () => {
+    const response = await fetch(`http://localhost:8000/users?email=${email}`);
+    const data = await response.json();
+    console.log(data);
+    dispatch(updateUserInfo(data));
+  };
+
+  useEffect(() => {
+    fetchUserData();
+  }, []);
 
   return (
     <div className="bg-bedroom bg-cover bg-center h-screen w-screen grid grid-cols-4 grid-rows-4 gap-4 p-4 ">
