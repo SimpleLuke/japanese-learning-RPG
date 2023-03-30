@@ -1,12 +1,17 @@
-// import { setCurrentScene } from "../../redux-store/scene/sceneSlice";
 import './design-character.css';
-// import character1 from './character-sprites/char1.png';
+import CharacterComponent from './character.component';
+// import character1Data from'./char1-data';
 
 const CharacterDesign = () => {
+  // console.log(character1Data)
   return (
     <div>
       <h1>Select your character</h1>
       <div className='char1Container'>
+        <CharacterComponent />
+      </div>
+      
+      {/* <div className='char1Container'>
         <div className='char1Sprite'>
           <div className='char1Tshirt'>
             <div className='char1Pants'>
@@ -32,7 +37,7 @@ const CharacterDesign = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   )
 }

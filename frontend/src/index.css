@@ -72,3 +72,36 @@ code {
   height: 113%;
   z-index: -1;
 }
+
+/* character style templates */
+
+.whiteBody {
+  width: 32px;
+  height: 32px;
+  background-image: url('./components/design-character/character-sprites/char1.png');
+  position: absolute;
+  transform: scale(6);
+  image-rendering: pixelated;
+}
+
+.gentlemanHair {
+  width: 32px;
+  height: 32px;
+  background-image: url('./components/design-character/character-sprites/gentleman-hair.png');
+  position: absolute;
+}
+
+.tshirt {
+  width: 32px;
+  height: 32px;
+  background-image: url('./components/design-character/character-sprites/basic-clothes.png');
+  position: absolute;
+}
+
+.pants {
+  width: 32px;
+  height: 32px;
+  background-image: url('./components/design-character/character-sprites/pants.png');
+  background-position:  -512px 0px ;
+  position: absolute;
+}
