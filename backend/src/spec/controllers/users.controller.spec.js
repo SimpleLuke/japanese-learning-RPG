@@ -17,13 +17,40 @@ describe("/users", () => {
     });
 
     test("a user is created", async () => {
-      await request(app).post("/users").send({
-        email: "tester@email.com",
-        password: "1234",
-      });
+      await request(app)
+        .post("/users")
+        .send({
+          email: "tester@email.com",
+          password: "1234",
+          wordsLearnt: [],
+          character: {
+            attributes: {
+              xp: 0,
+              level: 0,
+              wordsKnown: 0,
+            },
+
+            inventory: [],
+            equipped: {
+              head: "",
+              outfit: "",
+              trousers: "",
+            },
+          },
+        });
       let users = await User.find();
       let newUser = users[users.length - 1];
       expect(newUser.email).toEqual("tester@email.com");
+      expect(newUser.wordsLearnt).toEqual([]);
+      expect(newUser.character.attributes.xp).toEqual(0);
+      expect(newUser.character.attributes.level).toEqual(0);
+      expect(newUser.character.attributes.wordsKnown).toEqual(0);
+      expect(newUser.character.inventory).toEqual([]);
+      expect(newUser.character.equipped).toEqual({
+        head: "",
+        outfit: "",
+        trousers: "",
+      });
     });
   });
 
