@@ -1,11 +1,10 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import  {random_ten_questions,all_questions} from "./questions";
 import { useDispatch, useSelector } from "react-redux";
 import QuizParticles from "./particleParams";
 import { setCurrentScene } from "../../redux-store/scene/sceneSlice";
 import QuitGameModal from "../QuitGameModal/QuitGameModal";
 import { openQuitMenu } from "../../redux-store/game-modal/gameModalSlice";
-import { useState } from "react";
 import {
   setCurrentScore,
   setCurrentQuestion,
@@ -22,10 +21,6 @@ const MainGame = () => {
     (state) => state.game
   );
   const dispatch = useDispatch();
-
-  // useEffect(() => {
-  //   setQuestions(random_ten_questions(all_questions))
-  // },[])
 
   useEffect(() => {
     dispatch(setCurrentScore(0));
@@ -67,18 +62,6 @@ const MainGame = () => {
     }
     return "answer-btn bg-red-400 hover:bg-red-500 text-white font-bold py-4 px-8 rounded-lg flex justify-center items-center text-xl";
   };
-
-  // Game design
-  // new word = 100 XP
-  // old word = 10 XP
-  // 70% = 70
-  // 80% = 80
-  // 90% = 100
-  // 100% = 200
-
-  // Levels
-  // 1.5x scale
-  // level2 1000xp etc
 
   return (
     <div className="h-screen w-screen bg-jpRoom bg-cover bg-center">
