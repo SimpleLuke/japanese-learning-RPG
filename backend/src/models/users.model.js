@@ -8,6 +8,7 @@ const UserSchema = new mongoose.Schema({
       xp: Number,
       level: Number,
       wordsKnown: Number,
+      coins: Number,
     },
     inventory: [String],
     equipped: {

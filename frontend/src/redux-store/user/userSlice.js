@@ -6,8 +6,9 @@ const initialState = {
   character: {
     attributes: {
       xp: 0,
-      level: 0,
+      level: 1,
       wordsKnown: 0,
+      coins: 0,
     },
 
     inventory: [],
