@@ -1,7 +1,7 @@
 import { useSelector, useDispatch } from "react-redux";
 import MainGame from "./components/MainGame/MainGame";
-import StartGame from "./components/StartGame/StartGame";
-import EndGame from "./components/EndGame/EndGame";
+import StartGame from "./components/StartGame/StartGame.component";
+import EndGame from "./components/EndGame/EndGame.component";
 import StartMenu from "./components/start-menu/StartMenu.component";
 import Login from "./components/login/Login.component";
 import Signup from "./components/signup/Signup.component";
