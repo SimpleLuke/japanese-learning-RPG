@@ -124,6 +124,14 @@ code {
   position: absolute;
 }
 
+.shoes {
+  width: 32px;
+  height: 32px;
+  background-image: url('./components/design-character/character-sprites/shoes.png');
+  /* background-position:  -512px 0px ; */
+  position: absolute;
+}
+
 .tshirt-green-flower {
   width: 32px;
   height: 32px;
