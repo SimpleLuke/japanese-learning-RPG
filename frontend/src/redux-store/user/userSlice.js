@@ -8,6 +8,7 @@ const initialState = {
       xp: 0,
       level: 0,
       wordsKnown: 0,
+      coins: 0,
     },
 
     inventory: [],
@@ -37,9 +38,12 @@ const userSlice = createSlice({
     addWordsKnown: (state, action) => {
       state.character.attributes.wordsKnown += action.payload;
     },
+    addCoins: (state, action) => {
+      state.character.attributes.coins += action.payload;
+    },
   },
 });
 
-export const { setCurrentUser, addXP, setLevel, addWordsKnown } =
+export const { setCurrentUser, addXP, setLevel, addWordsKnown, addCoins } =
   userSlice.actions;
 export default userSlice.reducer;

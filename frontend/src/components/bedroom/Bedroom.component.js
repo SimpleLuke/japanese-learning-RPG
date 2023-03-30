@@ -4,7 +4,8 @@ import { setCurrentScene } from "../../redux-store/scene/sceneSlice";
 const Bedroom = () => {
   const dispatch = useDispatch();
   const { email, character } = useSelector((state) => state.user);
-  const { xp, level, wordsKnown } = character.attributes;
+  const { xp, level, wordsKnown, coins } = character.attributes;
+  console.log("coins: ", coins);
 
   return (
     <div className="bg-bedroom bg-cover bg-center h-screen w-screen grid grid-cols-4 grid-rows-4 gap-4 p-4 ">
@@ -32,6 +33,12 @@ const Bedroom = () => {
           className="truncate text-sm font-medium text-gray-500"
         >
           Words: {wordsKnown}
+        </dt>
+        <dt
+          data-test="coins"
+          className="truncate text-sm font-medium text-gray-500"
+        >
+          Coins: {coins}
         </dt>
       </div>
       <div
