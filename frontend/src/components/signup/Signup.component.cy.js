@@ -9,7 +9,7 @@ describe("Signup component", () => {
   let store;
   beforeEach(() => {
     store = configureStore({
-      reducer: { scene: sceneReducer },
+      reducer: { scene: sceneReducer, user: userReducer },
       preloadedState: {
         scene: {
           currentScene: "SIGNUP",
