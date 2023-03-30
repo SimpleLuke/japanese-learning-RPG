@@ -3,22 +3,25 @@ import { useDispatch, useSelector } from "react-redux";
 import { setCurrentScene } from "../../redux-store/scene/sceneSlice";
 import { coinCalculator, calculateLevel, calculateXP } from "../../utils/userStatsHelpers";
 import { newWords } from "../../utils/wordsLearntHelpers";
-import { addXP, setLevel, addWordsKnown, addCoins } from "../../redux-store/user/userSlice";
+import { addXP, setLevel, addWordsLearnt, addCoins, setWordsKnown } from "../../redux-store/user/userSlice";
 import { useEffect } from "react";
 
 const EndGame = () => {
   const { currentScore, wordsStudied } = useSelector((state) => state.game);
-  const { xp } = useSelector((state) => state.user.character.attributes)
-  console.log("words studied: ", wordsStudied)
+  const { xp } = useSelector((state) => state.user.character.attributes);
+  const { wordsLearnt } = useSelector((state) => state.user);
+  // const { wordsLearnt = [] } = useSelector((state) => state.user.wordsLearnt);
+  console.log("words learnt ", wordsLearnt)
 
   const dispatch = useDispatch();
 
 
   useEffect(() => {
-    console.log("use effect ran")
     dispatch(addXP(calculateXP(wordsStudied)));
     dispatch(setLevel(calculateLevel(xp)));
     dispatch(addCoins(coinCalculator(currentScore)))
+    dispatch(addWordsLearnt(newWords(wordsLearnt, wordsStudied)));
+    dispatch(setWordsKnown())
   }, [])
   
 

@@ -3,6 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   _id: "",
   email: "",
+  wordsLearnt: [],
   character: {
     attributes: {
       xp: 0,
@@ -35,15 +36,25 @@ const userSlice = createSlice({
     setLevel: (state, action) => {
       state.character.attributes.level = action.payload;
     },
-    addWordsKnown: (state, action) => {
-      state.character.attributes.wordsKnown += action.payload;
+    addWordsLearnt: (state, action) => {
+      const wordList = action.payload;
+      state.wordsLearnt = state.wordsLearnt.concat(wordList);
     },
     addCoins: (state, action) => {
       state.character.attributes.coins += action.payload;
     },
+    setWordsKnown: (state) => {
+      state.character.attributes.wordsKnown = state.wordsLearnt.length;
+    },
   },
 });
 
-export const { setCurrentUser, addXP, setLevel, addWordsKnown, addCoins } =
-  userSlice.actions;
+export const {
+  setCurrentUser,
+  addWordsLearnt,
+  setWordsKnown,
+  addXP,
+  setLevel,
+  addCoins,
+} = userSlice.actions;
 export default userSlice.reducer;
