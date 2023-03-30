@@ -5,6 +5,8 @@ import { coinCalculator, calculateLevel } from "../../utils/userStatsHelpers";
 
 const EndGame = ({ finalScore }) => {
   const { currentScore } = useSelector((state) => state.game);
+  const { wordsStudied } = useSelector((state) => state.game);
+  console.log("words studied: ", wordsStudied)
 
   // const [currentScore, setCurrentScore] = useState(finalScore);
   const dispatch = useDispatch();
@@ -21,10 +23,16 @@ const EndGame = ({ finalScore }) => {
             Score: {currentScore}/10
           </div>
           <div
-            data-test="score"
+            data-test="coins"
             className="question-text font-bold text-5xl text-center mt-8 mb-12 text-white"
           >
             Coins: {coinCalculator(currentScore)}
+          </div>
+          <div
+            data-test="words-studied"
+            className="question-text font-bold text-5xl text-center mt-8 mb-12 text-white"
+          >
+            words studied: {wordsStudied}
           </div>
         </div>
         <div className="answer-section grid grid-cols-2 gap-8">

@@ -11,6 +11,7 @@ import {
   addCurrentScore,
   setUserAnswer,
   setShowAnswer,
+  addWordsStudied,
 } from "../../redux-store/game/gameSlice";
 
 const MainGame = () => {
@@ -30,6 +31,7 @@ const MainGame = () => {
     dispatch(setShowAnswer(true));
     if (isCorrect) {
       dispatch(addCurrentScore());
+      dispatch(addWordsStudied(questions[currentQuestion].japanese));
     }
 
     setTimeout(() => {
