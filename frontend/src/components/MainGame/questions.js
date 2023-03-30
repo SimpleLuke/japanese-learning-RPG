@@ -611,4 +611,5 @@ const random_ten_questions = (all_questions) => {
   return chosen_questions
 }
 
+export { random_ten_questions };
 export default random_ten_questions(all_questions)
