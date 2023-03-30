@@ -25,7 +25,6 @@ const MainGame = () => {
     dispatch(setCurrentScore(0));
     dispatch(setCurrentQuestion(0));
     dispatch(setWordsStudied([]));
-  }, []);
   }, [dispatch]);
 
   const handleAnswerOptionClick = (answer) => {

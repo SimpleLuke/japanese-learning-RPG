@@ -2,6 +2,7 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setCurrentScene } from "../../redux-store/scene/sceneSlice";
 import { coinCalculator, calculateLevel, calculateXP } from "../../utils/userStatsHelpers";
+import { newWords } from "../../utils/wordsLearntHelpers";
 
 const EndGame = () => {
   const { currentScore } = useSelector((state) => state.game);
@@ -31,7 +32,7 @@ const EndGame = () => {
             data-test="words-studied"
             className="question-text font-bold text-5xl text-center mt-8 mb-12 text-white"
           >
-            words studied: {wordsStudied}
+            New words learnt: {newWords(wordsStudied)}
           </div>
           <div
             data-test="XP"
