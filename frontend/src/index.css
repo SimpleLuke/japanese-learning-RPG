@@ -95,6 +95,7 @@ code {
   height: 32px;
   transform: scale(6);
   background-image: url('./components/design-character/character-sprites/char1.png');
+  background-position:  -256px 0px ;
   position: absolute;
   image-rendering: pixelated;
 
@@ -104,6 +105,7 @@ code {
   width: 32px;
   height: 32px;
   background-image: url('./components/design-character/character-sprites/gentleman-hair.png');
+  background-position:  -256px 0px ;
   position: absolute;
 }
 
@@ -121,3 +123,49 @@ code {
   background-position:  -512px 0px ;
   position: absolute;
 }
+
+.tshirt-2 {
+  width: 32px;
+  height: 32px;
+  background-image: url('./components/design-character/character-sprites/floral.png');
+  background-position:  -1024px 0px ;
+  position: absolute;
+}
+
+.pants-2 {
+  width: 32px;
+  height: 32px;
+  background-image: url('./components/design-character/character-sprites/pants.png');
+  background-position:  -1536px 0px ;
+  position: absolute;
+}
+.hair-2 {
+  width: 32px;
+  height: 32px;
+  background-image: url('./components/design-character/character-sprites/emo.png');
+  position: absolute;
+}
+
+.vest {
+  width: 32px;
+  height: 32px;
+  background-image: url('./components/design-character/character-sprites/spaghetti.png');
+  background-position:  -1536px 0px ;
+  position: absolute;
+}
+
+.skirt {
+  width: 32px;
+  height: 32px;
+  background-image: url('./components/design-character/character-sprites/skirt.png');
+  background-position:  -1536px 0px ;
+  position: absolute;
+} 
+
+.hair-long-blonde {
+  width: 32px;
+  height: 32px;
+  background-image: url('./components/design-character/character-sprites/wavy.png');
+  background-position:  -768px 0px ;
+  position: absolute;
+} 
