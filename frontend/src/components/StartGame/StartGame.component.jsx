@@ -18,6 +18,7 @@ const StartGame = () => {
         </div>
         <div className="option-section grid grid-cols-1 gap-8">
           <button
+            data-test = "start-game"
             onClick={() => dispatch(setCurrentScene("MAIN_GAME"))}
             // onClick={() => handleStartGameClick()}
             className="bg-yellow-400 text-white font-bold py-4 px-8 rounded-full shadow-lg hover:bg-yellow-500 transition-colors duration-200"
@@ -25,6 +26,7 @@ const StartGame = () => {
             スタート - Start Game
           </button>
           <button
+            data-test = "back-to-bedroom"
             onClick={() => dispatch(setCurrentScene("BEDROOM"))}
             // onClick={() => handleBackToBedroomClick()}
             className="bg-yellow-400 text-white font-bold py-4 px-8 rounded-full shadow-lg hover:bg-yellow-500 transition-colors duration-200"
