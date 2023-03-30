@@ -6,7 +6,7 @@ import { updateUserInfo } from "../../redux-store/user/userSlice";
 const Bedroom = () => {
   const dispatch = useDispatch();
   const { email, character } = useSelector((state) => state.user);
-  const { xp, level, wordsKnown } = character.attributes;
+  const { xp, level, wordsKnown, coins } = character.attributes;
 
   const fetchUserData = async () => {
     const response = await fetch(`http://localhost:8000/users?email=${email}`);
@@ -45,6 +45,12 @@ const Bedroom = () => {
           className="truncate text-sm font-medium text-gray-500"
         >
           Words: {wordsKnown}
+        </dt>
+        <dt
+          data-test="coin"
+          className="truncate text-sm font-medium text-gray-500"
+        >
+          Coins: {coins}
         </dt>
       </div>
       <div
