@@ -5,12 +5,6 @@ import { setCurrentScene } from "../../redux-store/scene/sceneSlice";
 const StartGame = () => {
   const dispatch = useDispatch();
 
-  const handleStartGameClick = () => {
-    setTimeout(() => {}, 750);
-  };
-
-  const handleBackToBedroomClick = () => {};
-
   return (
     <div className="absolute inset-0 bg-black flex justify-center items-center">
       <div className="menu-container bg-red-600 w-2/3 mx-auto my-16 px-8 py-10 rounded-lg shadow-lg">
