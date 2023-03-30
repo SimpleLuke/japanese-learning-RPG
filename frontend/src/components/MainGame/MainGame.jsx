@@ -26,6 +26,7 @@ const MainGame = () => {
     dispatch(setCurrentQuestion(0));
     dispatch(setWordsStudied([]));
   }, []);
+  }, [dispatch]);
 
   const handleAnswerOptionClick = (answer) => {
     const isCorrect = answer === questions[currentQuestion].answer;
