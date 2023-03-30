@@ -2,18 +2,22 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 
 import { Provider } from "react-redux";
+import { PersistGate } from "reduxjs-toolkit-persist/integration/react";
 
-import { store } from "./redux-store/store.js";
+import { store, persistor } from "./redux-store/store.js";
 
 import "./index.css";
 
 import App from "./App";
+import LoadingWalk from "./components/loading/Loading.component.js";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <App />
+      <PersistGate loading={<LoadingWalk />} persistor={persistor}>
+        <App />
+      </PersistGate>
     </Provider>
   </React.StrictMode>
 );
