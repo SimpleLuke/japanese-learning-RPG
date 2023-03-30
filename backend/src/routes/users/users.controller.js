@@ -5,7 +5,7 @@ const UsersController = {
     const user = new User(req.body);
     try {
       await user.save();
-      return res.status(201).json({ message: "OK" });
+      return res.status(201).json({ message: "OK", user: user });
     } catch (err) {
       return res.status(400).json({ message: "Bad request" });
     }

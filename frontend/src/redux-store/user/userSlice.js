@@ -1,8 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  _id: "",
   email: "",
+  wordsLearnt: [],
   character: {
     attributes: {
       xp: 0,
