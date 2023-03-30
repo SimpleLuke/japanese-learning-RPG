@@ -31,6 +31,9 @@ const gameSlice = createSlice({
     addWordsStudied: (state, action) => {
       state.wordsStudied.push(action.payload);
     },
+    setWordsStudied: (state, action) => {
+      state.wordsStudied = action.payload;
+    },
   },
 });
 
@@ -41,5 +44,6 @@ export const {
   setUserAnswer,
   setShowAnswer,
   addWordsStudied,
+  setWordsStudied,
 } = gameSlice.actions;
 export default gameSlice.reducer;
