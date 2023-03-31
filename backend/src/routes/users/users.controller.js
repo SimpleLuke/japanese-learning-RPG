@@ -30,6 +30,22 @@ const UsersController = {
       res.status(500).json({ error: "Server error" });
     }
   },
+  UpdateOutfit: async (req, res) => {
+    const { outfit,email } = req.body;
+    const { body,hair,top,bottoms,shoes } = outfit;
+    try {
+      const user = await User.findOne({ email: email });
+      user.character.currentOutfit.body = body;
+      user.character.currentOutfit.hair = hair;
+      user.character.currentOutfit.top = top;
+      user.character.currentOutfit.bottoms = bottoms;
+      user.character.currentOutfit.shoes = shoes;
+      await user.save();
+      return res.status(201).json({ message: "OK" });
+    } catch (err) {
+      return res.status(400).json({ message: "Bad request" });
+    }
+  },
 };
 
 module.exports = UsersController;

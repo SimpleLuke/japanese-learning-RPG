@@ -12,10 +12,13 @@ const initialState = {
     },
 
     inventory: [],
-    equipped: {
-      head: "",
-      outfit: "",
-      trousers: "",
+
+    currentOutfit: {
+      body: "",
+      hair: "",
+      top: "",
+      bottoms: "",
+      shoes: "",
     },
   },
 };
@@ -28,6 +31,15 @@ const userSlice = createSlice({
     setCurrentUser: (state, action) => {
       const email = action.payload;
       state.email = email;
+    },
+
+    setStartOutfit: (state, action) => {
+      const { body, hair, top, bottoms, shoes } = action.payload;
+      state.character.currentOutfit.body = body;
+      state.character.currentOutfit.hair = hair;
+      state.character.currentOutfit.top = top;
+      state.character.currentOutfit.bottoms = bottoms;
+      state.character.currentOutfit.shoes = shoes;
     },
     updateUserInfo: (state, action) => {
       const { wordsLearnt, character } = action.payload;
@@ -42,5 +54,6 @@ const userSlice = createSlice({
   },
 });
 
-export const { setCurrentUser, updateUserInfo, resetUser } = userSlice.actions;
+
+export const { setCurrentUser, updateUserInfo, resetUser, setStartOutfit } = userSlice.actions;
 export default userSlice.reducer;

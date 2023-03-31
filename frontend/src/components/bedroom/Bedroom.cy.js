@@ -23,6 +23,13 @@ describe("Bedroom component", () => {
               level: 10,
               wordsKnown: 20,
             },
+            currentOutfit: {
+              body: "body",
+              hair: "gentlemanHair-blond",
+              top: "tshirt-gray",
+              bottoms: "pants-blue",
+              shoes: "shoes-navy"
+            },
           },
         },
       },
