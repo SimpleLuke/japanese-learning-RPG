@@ -2,12 +2,18 @@ import { Fragment, useRef } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import { useSelector, useDispatch } from "react-redux";
 import { closeQuitMenu } from "../../redux-store/game-modal/gameModalSlice";
+import { setCurrentScene } from "../../redux-store/scene/sceneSlice";
 
 export default function QuitGameModal() {
   const dispatch = useDispatch();
   const { quitMenuOpen } = useSelector((state) => state.modalMenu);
 
   const cancelButtonRef = useRef(null);
+
+  const closeMenuAndQuit = () => {
+    dispatch(closeQuitMenu());
+    dispatch(setCurrentScene("BEDROOM"));
+  };
 
   return (
     <Transition.Root show={quitMenuOpen} as={Fragment}>
@@ -58,7 +64,7 @@ export default function QuitGameModal() {
                     data-test="modal-close-btn"
                     type="button"
                     className="inline-flex w-full justify-center rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 sm:col-start-2"
-                    onClick={() => dispatch(closeQuitMenu())}
+                    onClick={closeMenuAndQuit}
                   >
                     Quit
                   </button>
