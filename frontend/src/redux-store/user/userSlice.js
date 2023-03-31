@@ -32,6 +32,22 @@ const userSlice = createSlice({
       const email = action.payload;
       state.email = email;
     },
+    addXP: (state, action) => {
+      state.character.attributes.xp += action.payload;
+    },
+    setLevel: (state, action) => {
+      state.character.attributes.level = action.payload;
+    },
+    addWordsLearnt: (state, action) => {
+      const wordList = action.payload;
+      state.wordsLearnt = state.wordsLearnt.concat(wordList);
+    },
+    addCoins: (state, action) => {
+      state.character.attributes.coins += action.payload;
+    },
+    setWordsKnown: (state) => {
+      state.character.attributes.wordsKnown = state.wordsLearnt.length;
+    },
 
     setStartOutfit: (state, action) => {
       const { body, hair, top, bottoms, shoes } = action.payload;
@@ -54,6 +70,15 @@ const userSlice = createSlice({
   },
 });
 
-
-export const { setCurrentUser, updateUserInfo, resetUser, setStartOutfit } = userSlice.actions;
+export const {
+  setCurrentUser,
+  updateUserInfo,
+  resetUser,
+  addWordsLearnt,
+  setWordsKnown,
+  addXP,
+  setLevel,
+  addCoins,
+  setStartOutfit,
+} = userSlice.actions;
 export default userSlice.reducer;

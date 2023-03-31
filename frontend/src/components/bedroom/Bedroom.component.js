@@ -2,11 +2,10 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setCurrentScene } from "../../redux-store/scene/sceneSlice";
 
-import CharacterComponent from '../design-character/character.component';
-import BurgerMenu from "../BurgerMenu/BurgerMenu.component"
+import CharacterComponent from "../design-character/character.component";
+import BurgerMenu from "../BurgerMenu/BurgerMenu.component";
 
 import { updateUserInfo } from "../../redux-store/user/userSlice";
-
 
 const Bedroom = () => {
   const dispatch = useDispatch();
@@ -16,7 +15,7 @@ const Bedroom = () => {
   const fetchUserData = async () => {
     const response = await fetch(`http://localhost:8000/users?email=${email}`);
     const data = await response.json();
-    console.log("LOOOOK",data);
+    console.log("LOOOOK", data);
     dispatch(updateUserInfo(data));
   };
 
@@ -55,7 +54,7 @@ const Bedroom = () => {
           Words: {wordsKnown}
         </dt>
         <dt
-          data-test="coin"
+          data-test="coins"
           className="truncate text-sm font-medium text-gray-500"
         >
           Coins: {coins}
@@ -68,8 +67,18 @@ const Bedroom = () => {
       >
         Study desk
       </div>
+
+      <div
+        data-test="bookshelf"
+        onClick={() => dispatch(setCurrentScene("BOOKSHELF"))}
+        className="w-40 h-40 col-start-3 row-start-2 cursor-pointer overflow-hidden rounded-lg bg-white bg-opacity-80 px-4 py-5 shadow sm:p-6"
+      >
+        Bookshelf
+      </div>
       <div className="ml-50 mt-100">
-        {character.currentOutfit && <CharacterComponent data={character.currentOutfit}/>}
+        {character.currentOutfit && (
+          <CharacterComponent data={character.currentOutfit} />
+        )}
       </div>
     </div>
   );
