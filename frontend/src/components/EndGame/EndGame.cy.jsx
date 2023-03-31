@@ -5,7 +5,7 @@ import sceneReducer from "../../redux-store/scene/sceneSlice";
 import gameReducer from "../../redux-store/game/gameSlice"
 import userReducer from "../../redux-store/user/userSlice";
 
-import EndGame from "./EndGame";
+import EndGame from "./EndGame.component";
 
 describe("EndGame component", () => {
   let store;

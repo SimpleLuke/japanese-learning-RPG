@@ -30,6 +30,8 @@ const EndGame = () => {
         <div className="question-section relative">
           <div
             className="question-text font-bold text-5xl text-center mt-8 mb-12 text-white"
+            data-test="score"
+
           >
             Score: {currentScore}/10
           </div>
