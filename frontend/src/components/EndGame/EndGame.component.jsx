@@ -1,36 +1,63 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setCurrentScene } from "../../redux-store/scene/sceneSlice";
-import { coinCalculator, calculateLevel, calculateXP } from "../../utils/userStatsHelpers";
+import {
+  coinCalculator,
+  calculateLevel,
+  calculateXP,
+} from "../../utils/userStatsHelpers";
 import { newWords } from "../../utils/wordsLearntHelpers";
-import { addXP, setLevel, addWordsLearnt, addCoins, setWordsKnown } from "../../redux-store/user/userSlice";
+import {
+  addXP,
+  setLevel,
+  addWordsLearnt,
+  addCoins,
+  setWordsKnown,
+} from "../../redux-store/user/userSlice";
 import { useEffect, useState } from "react";
-
 
 const EndGame = () => {
   const { currentScore, wordsStudied } = useSelector((state) => state.game);
   const { xp } = useSelector((state) => state.user.character.attributes);
-  const { wordsLearnt } = useSelector((state) => state.user);
-  const [newVarWords, setnewVarWords] = useState(newWords(wordsLearnt, wordsStudied))
+  const { wordsLearnt, email, character } = useSelector((state) => state.user);
+  const [newVarWords, setnewVarWords] = useState(
+    newWords(wordsLearnt, wordsStudied)
+  );
 
   const dispatch = useDispatch();
 
-
-  useEffect(() => {
+  const setResult = () => {
     dispatch(addXP(calculateXP(wordsStudied)));
     dispatch(setLevel(calculateLevel(xp)));
     dispatch(addCoins(coinCalculator(currentScore)));
     dispatch(addWordsLearnt(newWords(wordsLearnt, wordsStudied)));
-    dispatch(setWordsKnown())
-  }, [])
-  
+    dispatch(setWordsKnown());
+  };
+
+  const storeResult = async () => {
+    const response = await fetch("http://localhost:8000/game/update", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        email: email,
+        wordsLearnt: wordsLearnt,
+        character: character,
+      }),
+    });
+  };
+
+  useEffect(() => {
+    setResult();
+    storeResult();
+  }, []);
+
   return (
     <div className="absolute inset-0 bg-black flex justify-center items-center">
       <div className="quiz-container bg-gray-900 w-4/5 mx-auto my-16 px-8 py-10 rounded-lg shadow-lg">
         <div className="question-section relative">
-          <div
-            className="question-text font-bold text-5xl text-center mt-8 mb-12 text-white"
-          >
+          <div className="question-text font-bold text-5xl text-center mt-8 mb-12 text-white">
             Score: {currentScore}/10
           </div>
           <div
@@ -43,8 +70,14 @@ const EndGame = () => {
             data-test="words-studied"
             className="question-text font-bold text-5xl text-center mt-8 mb-12 text-white"
           >
-            New Words: {newVarWords.map((word) => {
-              return <><br/><span> {word} </span></>
+            New Words:{" "}
+            {newVarWords.map((word) => {
+              return (
+                <>
+                  <br />
+                  <span> {word} </span>
+                </>
+              );
             })}
           </div>
           <div
