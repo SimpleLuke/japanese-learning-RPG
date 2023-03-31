@@ -12,6 +12,7 @@ const gameSlice = createSlice({
   name: "game",
   initialState,
   reducers: {
+    resetGame: () => initialState,
     setCurrentScore: (state, action) => {
       const newScore = action.payload;
       state.currentScore = newScore;
@@ -45,5 +46,6 @@ export const {
   setShowAnswer,
   addWordsStudied,
   setWordsStudied,
+  resetGame,
 } = gameSlice.actions;
 export default gameSlice.reducer;

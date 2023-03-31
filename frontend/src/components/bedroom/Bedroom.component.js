@@ -1,5 +1,7 @@
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setCurrentScene } from "../../redux-store/scene/sceneSlice";
+import { updateUserInfo } from "../../redux-store/user/userSlice";
 import BurgerMenu from "../BurgerMenu/BurgerMenu.component";
 
 const Bedroom = () => {
@@ -7,10 +9,23 @@ const Bedroom = () => {
   const { email, character } = useSelector((state) => state.user);
   const { xp, level, wordsKnown, coins } = character.attributes;
 
+  const fetchUserData = async () => {
+    const response = await fetch(`http://localhost:8000/users?email=${email}`);
+    const data = await response.json();
+    console.log(data);
+    dispatch(updateUserInfo(data));
+  };
+
+  useEffect(() => {
+    fetchUserData();
+  }, []);
+
   return (
     <div className="bg-bedroom bg-cover bg-center h-screen w-screen grid grid-cols-4 grid-rows-4 gap-4 p-4 ">
-      <BurgerMenu />
-      <div className="w-80 h-40 overflow-hidden rounded-lg bg-white bg-opacity-80 px-4 py-5 shadow sm:p-6">
+      <div className="col-start-8 row-start-1 row-end-1">
+        <BurgerMenu />
+      </div>
+      <div className="col-start-1 row-start-1 w-80 h-40 overflow-hidden rounded-lg bg-white bg-opacity-80 px-4 py-5 shadow sm:p-6">
         <dd
           data-test="email"
           className="mt-1 text-3xl font-semibold tracking-tight text-gray-900"

@@ -13,12 +13,15 @@
   ```
 */
 import { LockClosedIcon } from "@heroicons/react/20/solid";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { setCurrentScene } from "../../redux-store/scene/sceneSlice";
 import { useState } from "react";
 
 const Signup = () => {
   const dispatch = useDispatch();
+  const { character, inventory, equipped, wordsLearnt } = useSelector(
+    (state) => state.user
+  );
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -32,7 +35,14 @@ const Signup = () => {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ email: email, password: password }),
+      body: JSON.stringify({
+        email: email,
+        password: password,
+        wordsLearnt: wordsLearnt,
+        character: character,
+        inventory: inventory,
+        equipped: equipped,
+      }),
     }).then((response) => {
       if (response.status === 201) {
         dispatch(setCurrentScene("LOGIN"));
