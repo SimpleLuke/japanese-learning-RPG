@@ -15,11 +15,12 @@
 import { LockClosedIcon } from "@heroicons/react/20/solid";
 import { useDispatch, useSelector } from "react-redux";
 import { setCurrentScene } from "../../redux-store/scene/sceneSlice";
+import { setCurrentUser } from "../../redux-store/user/userSlice";
 import { useState } from "react";
 
 const Signup = () => {
   const dispatch = useDispatch();
-  const { character, inventory, equipped, wordsLearnt } = useSelector(
+  const { character, wordsLearnt } = useSelector(
     (state) => state.user
   );
 
@@ -40,12 +41,11 @@ const Signup = () => {
         password: password,
         wordsLearnt: wordsLearnt,
         character: character,
-        inventory: inventory,
-        equipped: equipped,
       }),
     }).then((response) => {
       if (response.status === 201) {
-        dispatch(setCurrentScene("LOGIN"));
+      dispatch(setCurrentUser(email));
+        dispatch(setCurrentScene("CHARACTER"));
       } else {
         console.log("response was: ", response);
       }
@@ -72,8 +72,6 @@ const Signup = () => {
           </div>
           <form
             className="mt-8 space-y-6"
-            action="#"
-            method="POST"
             onSubmit={handleSubmit}
             data-test="SignupForm"
           >
@@ -117,7 +115,6 @@ const Signup = () => {
               <button
                 type="submit"
                 className="group relative flex w-full justify-center rounded-md bg-indigo-600 py-2 px-3 text-sm font-semibold text-white hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-                onClick={() => dispatch(setCurrentScene("CHARACTER"))}
               >
                 <span className="absolute inset-y-0 left-0 flex items-center pl-3">
                   <LockClosedIcon

@@ -11,10 +11,12 @@ const UserSchema = new mongoose.Schema({
       coins: Number,
     },
     inventory: [String],
-    equipped: {
-      head: String,
-      outfit: String,
-      trousers: String,
+    currentOutfit: {
+      body: String,
+      hair: String,
+      top: String,
+      bottoms:String,
+      shoes:String
     },
   },
 });
