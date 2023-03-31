@@ -82,7 +82,7 @@ const EndGame = () => {
             Back To Bedroom
           </button>
         </div>
-        <div className="score-section font-semibold text-2xl text-white text-center mt-12" data-test="endGameinstructions"
+        <div className="score-section font-semibold text-2xl text-white text-center mt-12" data-test="endGameInstructions"
 >
           Press 'Try Again' to restart the game or 'Quit Game' to go back to
           your bedroom.
