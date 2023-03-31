@@ -1,13 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
-
+import { PURGE } from "reduxjs-toolkit-persist";
 const initialState = {
-  _id: "",
   email: "",
   wordsLearnt: [],
   character: {
     attributes: {
       xp: 0,
-      level: 0,
+      level: 1,
       wordsKnown: 0,
       coins: 0,
     },
@@ -25,9 +24,9 @@ const userSlice = createSlice({
   name: "user",
   initialState,
   reducers: {
+    resetUser: () => initialState,
     setCurrentUser: (state, action) => {
-      const { _id, email } = action.payload;
-      state._id = _id;
+      const email = action.payload;
       state.email = email;
     },
     addXP: (state, action) => {
@@ -46,6 +45,16 @@ const userSlice = createSlice({
     setWordsKnown: (state) => {
       state.character.attributes.wordsKnown = state.wordsLearnt.length;
     },
+    updateUserInfo: (state, action) => {
+      const { wordsLearnt, character } = action.payload;
+      state.wordsLearnt = wordsLearnt;
+      state.character = character;
+    },
+    extraReducers: (builder) => {
+      builder.addCase(PURGE, (state) => {
+        return { ...initialState };
+      });
+    },
   },
 });
 
@@ -56,5 +65,7 @@ export const {
   addXP,
   setLevel,
   addCoins,
+  updateUserInfo,
+  resetUser,
 } = userSlice.actions;
 export default userSlice.reducer;
