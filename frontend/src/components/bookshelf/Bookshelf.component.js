@@ -23,10 +23,17 @@ const Bookshelf = () => {
 
       <div
         className="grid grid-cols-6 gap-4"
-        style={{ maxHeight: "50vh", overflowY: "auto" }}
+        style={{
+          maxHeight: "61vh",
+          overflowY: "auto",
+          gridTemplateRows: "repeat(3, 1fr)",
+        }}
       >
         {wordsLearnt.map((word) => (
-          <div key={word} className="bg-gray-100 rounded-md p-12 text-center">
+          <div
+            key={word}
+            className="bg-gray-100 rounded-md p-12 text-center text-3xl"
+          >
             {word}
           </div>
         ))}
