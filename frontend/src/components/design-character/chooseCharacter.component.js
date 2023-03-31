@@ -34,18 +34,18 @@ const CharacterDesign = () => {
   return (
     <div>
       <div className='mb-10'>
-        <h1>Select your character</h1>
+        <h1 data-test="page-title">Select your character</h1>
       </div>
-      <button type="submit" onClick={() => {
+      <button type="submit" data-test="char-button" onClick={() => {
         dispatch(setStartOutfit(char1data));
         dispatch(setCurrentScene("BEDROOM"));
         }}>
-        <div className='characterContainer'>
-          <CharacterComponent data={char1data}/>
+        <div className='characterContainer' data-test="char-1">
+          <CharacterComponent data={char1data} />
         </div>
       </button>
 
-      <button type="submit" onClick={() => {
+      <button type="submit" data-test="char-button" onClick={() => {
         dispatch(setStartOutfit(char2data));
         dispatch(setCurrentScene("BEDROOM"));
         }}>
@@ -54,7 +54,7 @@ const CharacterDesign = () => {
         </div>
       </button>
 
-      <button type="submit" onClick={() => {
+      <button type="submit" data-test="char-button" onClick={() => {
         dispatch(setStartOutfit(char3data));
         dispatch(setCurrentScene("BEDROOM"));
         }}>
