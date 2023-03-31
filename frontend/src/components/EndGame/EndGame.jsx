@@ -44,9 +44,22 @@ const EndGame = () => {
             data-test="words-studied"
             className="question-text font-bold text-5xl text-center mt-8 mb-12 text-white"
           >
-            New Words: {newVarWords.map((word) => {
-              return <><br/><span> {word} </span></>
+           {newVarWords.length === 0 ? (
+          <div>No new words learnt</div>
+          ) : (
+          <div>
+            New Words:
+            {newVarWords.map((word) => {
+              return (
+                <>
+                  <br />
+                  <span>{word}</span>
+                </>
+              );
             })}
+          </div>
+            )}
+
           </div>
           <div
             data-test="XP"
@@ -69,7 +82,8 @@ const EndGame = () => {
             Back To Bedroom
           </button>
         </div>
-        <div className="score-section font-semibold text-2xl text-white text-center mt-12">
+        <div className="score-section font-semibold text-2xl text-white text-center mt-12" data-test="endGameinstructions"
+>
           Press 'Try Again' to restart the game or 'Quit Game' to go back to
           your bedroom.
         </div>
