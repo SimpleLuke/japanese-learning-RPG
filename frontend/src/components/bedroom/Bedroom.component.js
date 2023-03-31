@@ -52,6 +52,14 @@ const Bedroom = () => {
       >
         Study desk
       </div>
+
+      <div
+        data-test="bookshelf"
+        onClick={() => dispatch(setCurrentScene("BOOKSHELF"))}
+        className="w-40 h-40 col-start-3 row-start-2 cursor-pointer overflow-hidden rounded-lg bg-white bg-opacity-80 px-4 py-5 shadow sm:p-6"
+      >
+        Bookshelf
+      </div>
     </div>
   );
 };
