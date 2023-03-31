@@ -65,7 +65,7 @@ const CharacterDesign = () => {
       </button>
 
       <button type="submit" data-test="char-button" onClick={() => {
-              storeOutfit(char1data)
+              storeOutfit(char2data)
         }}>
         <div className='characterContainer'>
           <CharacterComponent data={char2data}/>
@@ -73,7 +73,7 @@ const CharacterDesign = () => {
       </button>
 
       <button type="submit" data-test="char-button" onClick={() => {
-              storeOutfit(char1data)
+              storeOutfit(char3data)
         }}>
         <div className='characterContainer'>
           <CharacterComponent data={char3data}/>
