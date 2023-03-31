@@ -12,10 +12,13 @@ const initialState = {
     },
 
     inventory: [],
-    equipped: {
-      head: "",
-      outfit: "",
-      trousers: "",
+
+    currentOutfit: {
+      body: "",
+      hair: "",
+      top: "",
+      bottoms: "",
+      shoes: "",
     },
   },
 };
@@ -45,6 +48,15 @@ const userSlice = createSlice({
     setWordsKnown: (state) => {
       state.character.attributes.wordsKnown = state.wordsLearnt.length;
     },
+
+    setStartOutfit: (state, action) => {
+      const { body, hair, top, bottoms, shoes } = action.payload;
+      state.character.currentOutfit.body = body;
+      state.character.currentOutfit.hair = hair;
+      state.character.currentOutfit.top = top;
+      state.character.currentOutfit.bottoms = bottoms;
+      state.character.currentOutfit.shoes = shoes;
+    },
     updateUserInfo: (state, action) => {
       const { wordsLearnt, character } = action.payload;
       state.wordsLearnt = wordsLearnt;
@@ -67,5 +79,6 @@ export const {
   addXP,
   setLevel,
   addCoins,
+  setStartOutfit,
 } = userSlice.actions;
 export default userSlice.reducer;

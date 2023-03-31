@@ -6,6 +6,7 @@ import StartMenu from "./components/start-menu/StartMenu.component";
 import Login from "./components/login/Login.component";
 import Signup from "./components/signup/Signup.component";
 import Bedroom from "./components/bedroom/Bedroom.component";
+import CharacterDesign from "./components/design-character/chooseCharacter.component";
 import { useEffect } from "react";
 import { setCurrentScene } from "./redux-store/scene/sceneSlice";
 import Bookshelf from "./components/bookshelf/Bookshelf.component";
@@ -33,6 +34,7 @@ function App() {
       {currentScene === "SIGNUP" && <Signup />}
       {currentScene === "BEDROOM" && <Bedroom />}
       {currentScene === "BOOKSHELF" && <Bookshelf />}
+      {currentScene === "CHARACTER" && <CharacterDesign />}
     </div>
   );
 }
