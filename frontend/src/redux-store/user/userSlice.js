@@ -58,9 +58,10 @@ const userSlice = createSlice({
   },
 });
 
-export const { setCurrentUser, updateUserInfo, resetUser } = userSlice.actions;
 export const {
   setCurrentUser,
+  updateUserInfo,
+  resetUser,
   addWordsLearnt,
   setWordsKnown,
   addXP,
