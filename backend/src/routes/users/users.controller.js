@@ -17,14 +17,14 @@ const UsersController = {
     //   }
     // });
   },
-  GetUser: async (req, res) => {
+  GetUserData: async (req, res) => {
     try {
-      const email = req.query.email;
+      const { email } = req.query;
       const user = await User.findOne({ email: email });
       if (!user) {
         return res.status(404).json({ error: "User not found" });
       }
-      res.json(user.firstName);
+      res.json(user);
     } catch (error) {
       console.error(error);
       res.status(500).json({ error: "Server error" });
