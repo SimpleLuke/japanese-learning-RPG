@@ -12,11 +12,6 @@ const initialState = {
     },
 
     inventory: [],
-    equipped: {
-      head: "",
-      outfit: "",
-      trousers: "",
-    },
 
     currentOutfit: {
       body: "",
