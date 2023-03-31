@@ -70,7 +70,8 @@ const EndGame = () => {
     <div className="absolute inset-0 bg-black flex justify-center items-center">
       <div className="quiz-container bg-gray-900 w-4/5 mx-auto my-16 px-8 py-10 rounded-lg shadow-lg">
         <div className="question-section relative">
-          <div className="question-text font-bold text-5xl text-center mt-8 mb-12 text-white">
+          <div className="question-text font-bold text-5xl text-center mt-8 mb-12 text-white" data-test="score"
+>
             Score: {currentScore}/10
           </div>
           <div
