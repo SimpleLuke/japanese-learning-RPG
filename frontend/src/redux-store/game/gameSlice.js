@@ -5,6 +5,7 @@ const initialState = {
   currentQuestion: 0,
   userAnswer: null,
   showAnswer: false,
+  wordsStudied: [],
 };
 
 const gameSlice = createSlice({
@@ -28,6 +29,12 @@ const gameSlice = createSlice({
     setShowAnswer: (state, action) => {
       state.showAnswer = action.payload;
     },
+    addWordsStudied: (state, action) => {
+      state.wordsStudied.push(action.payload);
+    },
+    setWordsStudied: (state, action) => {
+      state.wordsStudied = action.payload;
+    },
   },
 });
 
@@ -38,5 +45,7 @@ export const {
   setUserAnswer,
   setShowAnswer,
   resetGame,
+  addWordsStudied,
+  setWordsStudied,
 } = gameSlice.actions;
 export default gameSlice.reducer;

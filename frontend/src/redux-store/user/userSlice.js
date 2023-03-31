@@ -39,8 +39,32 @@ const userSlice = createSlice({
         return { ...initialState };
       });
     },
+    addXP: (state, action) => {
+      state.character.attributes.xp += action.payload;
+    },
+    setLevel: (state, action) => {
+      state.character.attributes.level = action.payload;
+    },
+    addWordsLearnt: (state, action) => {
+      const wordList = action.payload;
+      state.wordsLearnt = state.wordsLearnt.concat(wordList);
+    },
+    addCoins: (state, action) => {
+      state.character.attributes.coins += action.payload;
+    },
+    setWordsKnown: (state) => {
+      state.character.attributes.wordsKnown = state.wordsLearnt.length;
+    },
   },
 });
 
 export const { setCurrentUser, updateUserInfo, resetUser } = userSlice.actions;
+export const {
+  setCurrentUser,
+  addWordsLearnt,
+  setWordsKnown,
+  addXP,
+  setLevel,
+  addCoins,
+} = userSlice.actions;
 export default userSlice.reducer;

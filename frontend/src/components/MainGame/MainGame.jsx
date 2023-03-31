@@ -1,5 +1,5 @@
-import React, { useEffect } from "react";
-import questions from "./questions";
+import React, { useEffect, useState } from "react";
+import  {random_ten_questions,all_questions} from "./questions";
 import { useDispatch, useSelector } from "react-redux";
 import QuizParticles from "./particleParams";
 import { setCurrentScene } from "../../redux-store/scene/sceneSlice";
@@ -11,9 +11,12 @@ import {
   addCurrentScore,
   setUserAnswer,
   setShowAnswer,
+  addWordsStudied,
+  setWordsStudied,
 } from "../../redux-store/game/gameSlice";
 
 const MainGame = () => {
+  const [questions,setQuestions] = useState(random_ten_questions(all_questions))
   const { currentScore, currentQuestion, userAnswer, showAnswer } = useSelector(
     (state) => state.game
   );
@@ -22,6 +25,7 @@ const MainGame = () => {
   useEffect(() => {
     dispatch(setCurrentScore(0));
     dispatch(setCurrentQuestion(0));
+    dispatch(setWordsStudied([]));
   }, [dispatch]);
 
   const handleAnswerOptionClick = (answer) => {
@@ -30,6 +34,7 @@ const MainGame = () => {
     dispatch(setShowAnswer(true));
     if (isCorrect) {
       dispatch(addCurrentScore());
+      dispatch(addWordsStudied(questions[currentQuestion].japanese));
     }
 
     setTimeout(() => {
