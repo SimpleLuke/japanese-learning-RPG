@@ -46,12 +46,21 @@ const EndGame = () => {
         character: character,
       }),
     });
+    if (response.status === 201) {
+      const data = await response.json();
+      console.log("Game update", data.message);
+    } else {
+      console.log("OPPS");
+    }
   };
 
   useEffect(() => {
     setResult();
-    storeResult();
   }, []);
+
+  useEffect(() => {
+    storeResult();
+  }, [wordsLearnt, character]);
 
   return (
     <div className="absolute inset-0 bg-black flex justify-center items-center">
@@ -73,10 +82,9 @@ const EndGame = () => {
             New Words:{" "}
             {newVarWords.map((word) => {
               return (
-                <>
-                  <br />
+                <div key={word}>
                   <span> {word} </span>
-                </>
+                </div>
               );
             })}
           </div>
