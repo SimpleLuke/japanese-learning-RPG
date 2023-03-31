@@ -16,7 +16,7 @@ const Bedroom = () => {
   const fetchUserData = async () => {
     const response = await fetch(`http://localhost:8000/users?email=${email}`);
     const data = await response.json();
-    console.log(data);
+    console.log("LOOOOK",data);
     dispatch(updateUserInfo(data));
   };
 
@@ -69,7 +69,7 @@ const Bedroom = () => {
         Study desk
       </div>
       <div className="ml-50 mt-100">
-        <CharacterComponent data={character.currentOutfit}/>
+        {character.currentOutfit && <CharacterComponent data={character.currentOutfit}/>}
       </div>
     </div>
   );

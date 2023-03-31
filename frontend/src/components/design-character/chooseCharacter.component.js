@@ -1,35 +1,55 @@
 import CharacterComponent from './character.component';
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { setStartOutfit } from "../../redux-store/user/userSlice";
 import { setCurrentScene } from "../../redux-store/scene/sceneSlice";
 
+const char1data = { 
+  body: "body",
+  hair: "gentlemanHair-blond",
+  top: "tshirt-gray",
+  bottoms: "pants-blue",
+  shoes: "shoes-navy"
+}
+
+const char2data = { 
+  body: "body",
+  hair: "hair-emo",
+  top: "tshirt-green-flower",
+  bottoms: "pants-pink",
+  shoes: "shoes-green"
+}
+
+const char3data = { 
+  body: "body",
+  hair: "hair-long-blonde",
+  top: "vest",
+  bottoms: "skirt",
+  shoes: "shoes-purple"
+}
+
 const CharacterDesign = () => {
   const dispatch = useDispatch();
+  const {email} = useSelector(state=>state.user)
 
-  const char1data = { 
-    body: "body",
-    hair: "gentlemanHair-blond",
-    top: "tshirt-gray",
-    bottoms: "pants-blue",
-    shoes: "shoes-navy"
-  }
-
-  const char2data = { 
-    body: "body",
-    hair: "hair-emo",
-    top: "tshirt-green-flower",
-    bottoms: "pants-pink",
-    shoes: "shoes-green"
-  }
-
-  const char3data = { 
-    body: "body",
-    hair: "hair-long-blonde",
-    top: "vest",
-    bottoms: "skirt",
-    shoes: "shoes-purple"
-  }
-
+  const storeOutfit = async (outfit) => {
+    const response = await fetch("http://localhost:8000/users/outfit", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        email: email,
+        outfit: outfit
+      }),
+    });
+    if (response.status === 201) {
+      const data = await response.json();
+      console.log("outfit update", data.message);
+      dispatch(setCurrentScene("BEDROOM"));
+    } else {
+      console.log("OPPS");
+    }
+  };
 
   return (
     <div>
@@ -37,8 +57,7 @@ const CharacterDesign = () => {
         <h1 data-test="page-title">Select your character</h1>
       </div>
       <button type="submit" data-test="char-button" onClick={() => {
-        dispatch(setStartOutfit(char1data));
-        dispatch(setCurrentScene("BEDROOM"));
+        storeOutfit(char1data)
         }}>
         <div className='characterContainer' data-test="char-1">
           <CharacterComponent data={char1data} />
@@ -46,8 +65,7 @@ const CharacterDesign = () => {
       </button>
 
       <button type="submit" data-test="char-button" onClick={() => {
-        dispatch(setStartOutfit(char2data));
-        dispatch(setCurrentScene("BEDROOM"));
+              storeOutfit(char1data)
         }}>
         <div className='characterContainer'>
           <CharacterComponent data={char2data}/>
@@ -55,8 +73,7 @@ const CharacterDesign = () => {
       </button>
 
       <button type="submit" data-test="char-button" onClick={() => {
-        dispatch(setStartOutfit(char3data));
-        dispatch(setCurrentScene("BEDROOM"));
+              storeOutfit(char1data)
         }}>
         <div className='characterContainer'>
           <CharacterComponent data={char3data}/>
