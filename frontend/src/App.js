@@ -8,6 +8,7 @@ import Signup from "./components/signup/Signup.component";
 import Bedroom from "./components/bedroom/Bedroom.component";
 import { useEffect } from "react";
 import { setCurrentScene } from "./redux-store/scene/sceneSlice";
+import Bookshelf from "./components/bookshelf/Bookshelf.component";
 
 function App() {
   const dispatch = useDispatch();
@@ -31,6 +32,7 @@ function App() {
       {currentScene === "LOGIN" && <Login />}
       {currentScene === "SIGNUP" && <Signup />}
       {currentScene === "BEDROOM" && <Bedroom />}
+      {currentScene === "BOOKSHELF" && <Bookshelf />}
     </div>
   );
 }
