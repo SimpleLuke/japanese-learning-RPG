@@ -39,6 +39,21 @@ describe("User model", () => {
     const user = new User({
       email: "someone@example.com",
       password: "password",
+      wordsLearnt: [],
+      character: {
+        attributes: {
+          xp: 0,
+          level: 0,
+          wordsKnown: 0,
+        },
+
+        inventory: [],
+        equipped: {
+          head: "",
+          outfit: "",
+          trousers: "",
+        },
+      },
     });
 
     try {
@@ -47,6 +62,21 @@ describe("User model", () => {
       expect(users[0]).toMatchObject({
         email: "someone@example.com",
         password: "password",
+        wordsLearnt: [],
+        character: {
+          attributes: {
+            xp: 0,
+            level: 0,
+            wordsKnown: 0,
+          },
+
+          inventory: [],
+          equipped: {
+            head: "",
+            outfit: "",
+            trousers: "",
+          },
+        },
       });
     } catch (error) {
       console.log("save user error: ", error);
