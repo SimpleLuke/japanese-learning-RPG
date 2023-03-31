@@ -23,6 +23,7 @@ const EndGame = () => {
   const [newVarWords, setnewVarWords] = useState(
     newWords(wordsLearnt, wordsStudied)
   );
+  const [resultDone, setResultDone] = useState(false);
 
   const dispatch = useDispatch();
 
@@ -32,6 +33,7 @@ const EndGame = () => {
     dispatch(addCoins(coinCalculator(currentScore)));
     dispatch(addWordsLearnt(newWords(wordsLearnt, wordsStudied)));
     dispatch(setWordsKnown());
+    setResultDone(true);
   };
 
   const storeResult = async () => {
@@ -59,8 +61,10 @@ const EndGame = () => {
   }, []);
 
   useEffect(() => {
-    storeResult();
-  }, [wordsLearnt, character]);
+    if (resultDone === true) {
+      storeResult();
+    }
+  }, [resultDone]);
 
   return (
     <div className="absolute inset-0 bg-black flex justify-center items-center">
