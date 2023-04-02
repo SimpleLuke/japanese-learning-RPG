@@ -1,3 +1,9 @@
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { setCurrentScene } from "../../redux-store/scene/sceneSlice";
+import { setPreviewOutfit } from "../../redux-store/shop/shopSlice";
+import CharacterComponent from "../design-character/character.component";
+
 const products = [
   {
     id: 1,
@@ -14,12 +20,32 @@ const products = [
 ];
 
 const Shop = () => {
+  const dispatch = useDispatch();
+  const { character } = useSelector((state) => state.user);
+  const { previewOutfit } = useSelector((state) => state.shop);
+
+  useEffect(() => {
+    dispatch(setPreviewOutfit(character.currentOutfit));
+  });
+
   return (
     <div className="bg-white">
+      <div className="flex justify-between">
+        <div className=" flex justify-center items-baseline w-40 ">
+          {previewOutfit && <CharacterComponent data={previewOutfit} />}
+        </div>
+
+        <button
+          data-test="back-to-bedroom"
+          onClick={() => dispatch(setCurrentScene("BEDROOM"))}
+          className="block bg-yellow-400 text-white font-bold py-4 px-8 rounded-full shadow-lg hover:bg-yellow-500 transition-colors duration-200"
+        >
+          ベッドルームに戻る - Back To Bedroom
+        </button>
+      </div>
+
       <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
-        <h2 className="text-xl font-bold text-gray-900">
-          Customers also bought
-        </h2>
+        <h2 className="text-xl font-bold text-gray-900">Welcome to the shop</h2>
 
         <div className="mt-8 grid grid-cols-1 gap-y-12 sm:grid-cols-2 sm:gap-x-6 lg:grid-cols-4 xl:gap-x-8">
           {products.map((product) => (
@@ -36,7 +62,6 @@ const Shop = () => {
                   <h3 className="text-sm font-medium text-gray-900">
                     {product.name}
                   </h3>
-                  <p className="mt-1 text-sm text-gray-500">{product.color}</p>
                 </div>
                 <div className="absolute inset-x-0 top-0 flex h-72 items-end justify-end overflow-hidden rounded-lg p-4">
                   <div
@@ -49,12 +74,14 @@ const Shop = () => {
                 </div>
               </div>
               <div className="mt-6">
-                <a
-                  href={product.href}
-                  className="relative flex items-center justify-center rounded-md border border-transparent bg-gray-100 px-8 py-2 text-sm font-medium text-gray-900 hover:bg-gray-200"
-                >
-                  Add to bag<span className="sr-only">, {product.name}</span>
-                </a>
+                <button className="relative w-full flex items-center justify-center rounded-md border border-transparent bg-gray-100 px-8 py-2 text-sm font-medium text-gray-900 hover:bg-gray-200">
+                  Preview
+                </button>
+              </div>
+              <div className="mt-6">
+                <button className="relative w-full flex items-center justify-center rounded-md border border-transparent bg-gray-100 px-8 py-2 text-sm font-medium text-gray-900 hover:bg-gray-200">
+                  Buy
+                </button>
               </div>
             </div>
           ))}
