@@ -25,7 +25,7 @@ const Bedroom = () => {
   }, []);
 
   return (
-    <div className="bg-bedroom bg-cover bg-center h-screen w-screen grid grid-cols-4 grid-rows-4 gap-4 p-4 ">
+    <div className="bg-bedroom2 bg-cover bg-center h-screen w-screen grid grid-cols-4 grid-rows-4 gap-4 p-4 ">
       <div className="col-start-8 row-start-1 row-end-1">
         <BurgerMenu />
       </div>

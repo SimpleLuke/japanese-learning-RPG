@@ -18,6 +18,7 @@ module.exports = {
         jpRoom: "url('../public/img/japanese-room-background.gif')",
         onigiri: "url('../public/img/onigiri.jpg')",
         bedroom: "url('../public/img/bedroom-temp.gif')",
+        bedroom2: "url('../public/img/bedroom3.jpg')",
         loadingWalk: "url('../public/img/loading-walk.gif')",
       },
     },
