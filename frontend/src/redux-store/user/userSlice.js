@@ -62,6 +62,10 @@ const userSlice = createSlice({
       state.wordsLearnt = wordsLearnt;
       state.character = character;
     },
+    addItem: (state, action) => {
+      const item = action.payload;
+      state.character.inventory.push(item);
+    },
     extraReducers: (builder) => {
       builder.addCase(PURGE, (state) => {
         return { ...initialState };
@@ -80,5 +84,6 @@ export const {
   setLevel,
   addCoins,
   setStartOutfit,
+  addItem,
 } = userSlice.actions;
 export default userSlice.reducer;
