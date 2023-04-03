@@ -46,9 +46,15 @@ const UsersController = {
       return res.status(400).json({ message: "Bad request" });
     }
   },
-  GetAchievements: async (req,res) => {
-    
-  }
+  PostAchievements: async (req,res) => {
+    const { acheivements,email } = req.body;
+    try {
+      const user = await User.findOne({ email: email });
+      user.character.achievements = acheivements
+    } catch (err) {
+      return res.status(400).json({ message: "Bad request" });
+    }
+  },
 };
 
 module.exports = UsersController;
