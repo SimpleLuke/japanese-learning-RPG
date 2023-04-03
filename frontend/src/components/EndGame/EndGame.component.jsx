@@ -37,10 +37,12 @@ const EndGame = () => {
   };
 
   const storeResult = async () => {
+    const token = window.localStorage.getItem('token')
     const response = await fetch("http://localhost:8000/game/update", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
       },
       body: JSON.stringify({
         email: email,
@@ -67,11 +69,13 @@ const EndGame = () => {
   }, [resultDone]);
 
   return (
-    <div className="absolute inset-0 bg-black flex justify-center items-center">
-      <div className="quiz-container bg-gray-900 w-4/5 mx-auto my-16 px-8 py-10 rounded-lg shadow-lg">
+    <div className="absolute inset-0 bg-black flex justify-center items-center full-screen">
+      <div className="quiz-container h-screen bg-gray-900 w-4/5 mx-auto my-16 px-8 py-10 rounded-lg shadow-lg">
         <div className="question-section relative">
-          <div className="question-text font-bold text-5xl text-center mt-8 mb-12 text-white" data-test="score"
->
+          <div
+            className="question-text font-bold text-5xl text-center mt-8 mb-12 text-white"
+            data-test="score"
+          >
             Score: {currentScore}/10
           </div>
           <div
@@ -84,21 +88,22 @@ const EndGame = () => {
             data-test="words-studied"
             className="question-text font-bold text-5xl text-center mt-8 mb-12 text-white"
           >
-           {newVarWords.length === 0 ? (
-          <div>No new words learnt</div>
-          ) : (
-          <div>
-            New Words:
-            {newVarWords.map((word) => {
-              return (
-                <div key={word}>
-                  <span>{word}</span>
+            {newVarWords.length === 0 ? (
+              <div>No new words learnt</div>
+            ) : (
+              <div className="flex flex-col">
+                <div className="mb-5">New Words:</div>
+                <div className="flex gap-8 flex-wrap">
+                  {newVarWords.map((word) => {
+                    return (
+                      <div key={word} className="p-1">
+                        <span>{word}</span>
+                      </div>
+                    );
+                  })}
                 </div>
-              );
-            })}
-          </div>
+              </div>
             )}
-
           </div>
           <div
             data-test="XP"
@@ -121,8 +126,10 @@ const EndGame = () => {
             Back To Bedroom
           </button>
         </div>
-        <div className="score-section font-semibold text-2xl text-white text-center mt-12" data-test="endGameInstructions"
->
+        <div
+          className="score-section font-semibold text-2xl text-white text-center mt-12"
+          data-test="endGameInstructions"
+        >
           Press 'Try Again' to restart the game or 'Quit Game' to go back to
           your bedroom.
         </div>
