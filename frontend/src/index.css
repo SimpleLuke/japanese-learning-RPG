@@ -200,10 +200,16 @@ code {
 
 /* bedroom components */
 
+.bedroom-bg {
+  background-image: url('../public/img/bedroom4.jpg');
+}
+
 .wardrobe {
   background-image: url('../public/img/wardrobe.jpg');
   width: 189px;
   height: 109px;
+  overflow: hidden;
+  position: sticky;
 }
 
 .study-desk {
@@ -216,4 +222,19 @@ code {
   background-image: url('../public/img/bookshelf.jpg');
   width: 90px;
   height: 98px;
+}
+
+/* bedroom grid */
+.bedroom-grid{
+  display: grid;
+  grid-template-areas:
+  'one one two three four five'
+  'five'
+  'five'
+  'five'
+  ;
+}
+
+.stat-grid{
+  grid-area:one;
 }
