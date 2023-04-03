@@ -29,12 +29,10 @@ const Bookshelf = () => {
           gridTemplateRows: "repeat(3, 1fr)",
         }}
       >
-        {wordsLearnt.map((word) => (
-          <div
-            key={word}
-            className="bg-gray-100 rounded-md p-12 text-center text-3xl"
-          >
-            {word}
+        {wordsLearnt.map((wordPair) => (
+          <div key={`${wordPair[0]}-${wordPair[1]}`} className="bg-gray-100 rounded-md p-12 text-center text-3xl">
+            <div>{wordPair[0]}</div>
+            <div>{wordPair[1]}</div>
           </div>
         ))}
       </div>
