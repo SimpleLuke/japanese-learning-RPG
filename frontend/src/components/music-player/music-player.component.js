@@ -1,10 +1,15 @@
-import Mononoke from "../../music/Mononoke.mp4";
+import mononoke from "../../music/mononoke.mp3";
+import kiki from "../../music/kiki.mp3";
+import pokemon from "../../music/pokemon.mp3";
+import porco from "../../music/porco.mp3";
+import spirited from "../../music/spirited.mp3";
+import wind from "../../music/wind.mp3";
 
 import React from "react";
 import { useSelector } from "react-redux";
 
 const playSongs = () => {
-  new Audio(Mononoke);
+  new Audio(mononoke);
 };
 
 export default function MusicPlayer() {
@@ -13,7 +18,7 @@ export default function MusicPlayer() {
   return (
     <>
       {toggle ? (
-        <audio src={Mononoke} controls style={{ display: "none" }} />
+        <audio src={mononoke} controls style={{ display: "none" }} />
       ) : (
         console.log("music off")
       )}
