@@ -7,17 +7,14 @@ import {
 } from "../../redux-store/shop/shopSlice";
 import CharacterComponent from "../design-character/character.component";
 import basicClothes from "../design-character/character-sprites/basic-clothes.png";
+import { addItem } from "../../redux-store/user/userSlice";
 
 const products = [
   {
     id: 1,
     name: "Dark blue t-shirt",
-    color: "White and black",
-    href: "#",
     imageSrc:
       "https://tailwindui.com/img/ecommerce-images/product-page-03-related-product-01.jpg",
-    imageAlt:
-      "Front of zip tote bag with white canvas, black canvas straps and handle, and black zipper pulls.",
     price: "$140",
     position: 8,
     styleName: "tshirt-dark-blue",
@@ -25,12 +22,8 @@ const products = [
   {
     id: 2,
     name: "Light blue t-shirt",
-    color: "White and black",
-    href: "#",
     imageSrc:
       "https://tailwindui.com/img/ecommerce-images/product-page-03-related-product-01.jpg",
-    imageAlt:
-      "Front of zip tote bag with white canvas, black canvas straps and handle, and black zipper pulls.",
     price: "$140",
     position: 20,
     styleName: "tshirt-light-blue",
@@ -38,12 +31,8 @@ const products = [
   {
     id: 3,
     name: "brown t-shirt",
-    color: "White and black",
-    href: "#",
     imageSrc:
       "https://tailwindui.com/img/ecommerce-images/product-page-03-related-product-01.jpg",
-    imageAlt:
-      "Front of zip tote bag with white canvas, black canvas straps and handle, and black zipper pulls.",
     price: "$140",
     position: 24,
     styleName: "tshirt-brown",
@@ -51,18 +40,12 @@ const products = [
   {
     id: 4,
     name: "Green t-shirt",
-    color: "White and black",
-    href: "#",
     imageSrc:
       "https://tailwindui.com/img/ecommerce-images/product-page-03-related-product-01.jpg",
-    imageAlt:
-      "Front of zip tote bag with white canvas, black canvas straps and handle, and black zipper pulls.",
     price: "$140",
     position: 32,
     styleName: "tshirt-green",
   },
-
-  // More products...
 ];
 
 const Shop = () => {
@@ -138,7 +121,10 @@ const Shop = () => {
                 </button>
               </div>
               <div className="mt-6">
-                <button className="relative w-full flex items-center justify-center rounded-md border border-transparent bg-gray-100 px-8 py-2 text-sm font-medium text-gray-900 hover:bg-gray-200">
+                <button
+                  onClick={() => dispatch(addItem(product.styleName))}
+                  className="relative w-full flex items-center justify-center rounded-md border border-transparent bg-gray-100 px-8 py-2 text-sm font-medium text-gray-900 hover:bg-gray-200"
+                >
                   Buy
                 </button>
               </div>
