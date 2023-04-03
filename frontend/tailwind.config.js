@@ -12,6 +12,8 @@ module.exports = {
       },
       backgroundColor: {
         "beige-japanese-book": "#f5f3da",
+        "japanese-brown": "#391D23",
+        "lighter-japanese-brown": "#7D4B54",
       },
       backgroundImage: {
         startMenu: "url('../public/img/start-menu-bg.jpeg')",
@@ -19,6 +21,7 @@ module.exports = {
         onigiri: "url('../public/img/onigiri.jpg')",
         bedroom: "url('../public/img/bedroom-temp.gif')",
         loadingWalk: "url('../public/img/loading-walk.gif')",
+        loginPage: "url('../public/img/pixel-background.gif')",
       },
     },
   },
