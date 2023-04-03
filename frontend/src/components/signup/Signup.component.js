@@ -144,21 +144,27 @@ const Signup = () => {
 
 
       <div className="min-h-full min-w-full bg-gray-200 pixel-font">
-        <div className="h-screen flex justify-center items-center">
-          <div className="m-7 flex flex-col relative w-2/5">
-            <div className="bg-red-500 mt-7 shadow-2xl sm:rounded-sm">
-              <div className="p-5 text-white">
-                <h1 className="text-8xl md:text-5xl lg:text-7xl">.</h1>
-                <p className="text-base md:text-lg lg:text-8xl">.</p>
-                <p className="sm:mt-32 text-base md:text-lg lg:text-7xl">.</p>
+        <form
+          className=""
+          onSubmit={handleSubmit}
+          data-test="SignupForm"
+        >
+          <div className="h-screen flex justify-center items-center">
+            <div className="m-7 flex flex-col relative w-2/5">
+              <div className="bg-red-500 mt-7 shadow-2xl sm:rounded-sm">
+                <div className="p-5 text-white">
+                  <h1 className="text-8xl md:text-5xl lg:text-7xl">.</h1>
+                  <p className="text-base md:text-lg lg:text-8xl">.</p>
+                  <p className="sm:mt-32 text-base md:text-lg lg:text-7xl">.</p>
+                </div>
               </div>
-            </div>
-            <div className="flex justify-center items-center flex-col shadow-xl bg-white sm:rounded-sm p-6 sm:absolute sm:right-16 md:right-20 lg:right-32 sm:w-85">
-              <h2 className="text-red-500 mt-5 mb-4 text-base md:text-lg lg:text-xl font-bold">Sign Up</h2>
-              <div className="avatar rounded-full w-16 h-16 bg-white mb-6">
-                <img src="/img/pixel-onigiri.png" />
-              </div>
-              <input
+              <input type="hidden" name="remember" defaultValue="true" />
+              <div className="flex justify-center items-center flex-col shadow-xl bg-white sm:rounded-sm p-6 sm:absolute sm:right-16 md:right-20 lg:right-32 sm:w-85">
+                <h2 className="text-red-500 mt-5 mb-4 text-base md:text-lg lg:text-xl font-bold">Sign Up</h2>
+                <div className="avatar rounded-full w-16 h-16 bg-white mb-6">
+                  <img src="/img/pixel-onigiri.png" />
+                </div>
+                <input
                   id="email-address"
                   name="email"
                   type="email"
@@ -169,7 +175,7 @@ const Signup = () => {
                   onChange={handleEmailChange}
                   data-test="emailSignupInput"
                 />
-              <input
+                <input
                   id="password"
                   name="password"
                   type="password"
@@ -180,25 +186,25 @@ const Signup = () => {
                   onChange={handlePasswordChange}
                   data-test="passwordSignupInput"
                 />
-              <button 
-                className="pixel-font bg-red-500 hover:bg-red-600 text-white w-full mt-6 mb-8 focus:outline-none text-base md:text-s lg:text-s p-3"
-              >
+                <button 
+                  className="pixel-font bg-red-500 hover:bg-red-600 text-white w-full mt-6 mb-8 focus:outline-none text-base md:text-s lg:text-s p-3"
+                  type="submit"
+                >
                   SIGNUP
-              </button>
-              <button
-              type="button"
-              className="text-red-500 mb-5 text-base md:text-s lg:text-s"
-              onClick={() => dispatch(setCurrentScene("START_MENU"))}
-              data-test="backToMenuButton"
-              >
-                Return to Homepage
-              </button>
+                </button>
+                <button
+                  type="button"
+                  className="text-red-500 mb-5 text-base md:text-s lg:text-s"
+                  onClick={() => dispatch(setCurrentScene("START_MENU"))}
+                  data-test="backToMenuButton"
+                >
+                  Return to Homepage
+                </button>
+              </div>
             </div>
           </div>
-        </div>
+        </form>
       </div>
-
-
     </>
   );
 };
