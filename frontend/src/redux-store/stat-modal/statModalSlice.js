@@ -5,7 +5,7 @@ const initialState = {
 };
 
 const statModalSlice = createSlice({
-  name: "modalMenu",
+  name: "statModal",
   initialState,
   reducers: {
     closeStatModal: (state) => {
