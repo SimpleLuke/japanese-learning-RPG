@@ -22,7 +22,6 @@ export default function StatModal() {
 
   return (
     <Transition.Root show={statModalOpen}>
-      {console.log("stat modal open")}
       <Dialog
         as="div"
         className="relative z-10"

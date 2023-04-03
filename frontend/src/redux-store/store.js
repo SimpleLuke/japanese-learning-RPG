@@ -17,6 +17,7 @@ import sceneReducer from "./scene/sceneSlice";
 import gameReducer from "./game/gameSlice";
 import userReducer from "./user/userSlice";
 import statModalReducer from "./stat-modal/statModalSlice";
+import musicPlayerReducer from "./music/musicSlice";
 
 const persistConfig = {
   key: "root",
@@ -30,6 +31,7 @@ const reducers = combineReducers({
   game: gameReducer,
   user: userReducer,
   statModal: statModalReducer,
+  musicPlayer: musicPlayerReducer,
 });
 
 const persistedReducer = persistReducer(persistConfig, reducers);

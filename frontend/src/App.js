@@ -7,7 +7,7 @@ import Login from "./components/login/Login.component";
 import Signup from "./components/signup/Signup.component";
 import Bedroom from "./components/bedroom/Bedroom.component";
 import CharacterDesign from "./components/design-character/chooseCharacter.component";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { setCurrentScene } from "./redux-store/scene/sceneSlice";
 import Bookshelf from "./components/bookshelf/Bookshelf.component";
 import MusicPlayer from "./components/music-player/music-player.component";
@@ -15,6 +15,7 @@ import MusicPlayer from "./components/music-player/music-player.component";
 function App() {
   const dispatch = useDispatch();
   const { currentScene } = useSelector((state) => state.scene);
+  const [audio, setAudio] = useState(true);
 
   useEffect(() => {
     if (
@@ -27,7 +28,7 @@ function App() {
 
   return (
     <div className="flex flex-col justify-center items-center overflow-hidden h-screen">
-      <MusicPlayer />
+      <MusicPlayer audio={audio} />
 
       {currentScene === "MAIN_GAME" && <MainGame />}
       {currentScene === "START_GAME" && <StartGame />}
@@ -35,7 +36,7 @@ function App() {
       {currentScene === "START_MENU" && <StartMenu />}
       {currentScene === "LOGIN" && <Login />}
       {currentScene === "SIGNUP" && <Signup />}
-      {currentScene === "BEDROOM" && <Bedroom />}
+      {currentScene === "BEDROOM" && <Bedroom setAudioHandle={setAudio} />}
       {currentScene === "BOOKSHELF" && <Bookshelf />}
       {currentScene === "CHARACTER" && <CharacterDesign />}
     </div>
