@@ -73,6 +73,9 @@ code {
   z-index: -1;
 }
 
+.pixel-font {
+  font-family: "Press Start 2P", cursive;
+}
 
 /* character style templates */
 
