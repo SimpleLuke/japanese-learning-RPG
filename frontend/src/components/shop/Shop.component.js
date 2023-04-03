@@ -3,11 +3,12 @@ import { useDispatch, useSelector } from "react-redux";
 import { setCurrentScene } from "../../redux-store/scene/sceneSlice";
 import { setPreviewOutfit } from "../../redux-store/shop/shopSlice";
 import CharacterComponent from "../design-character/character.component";
+import basicClothes from "../design-character/character-sprites/basic-clothes.png";
 
 const products = [
   {
     id: 1,
-    name: "Zip Tote Basket",
+    name: "Dark blue t-shirt",
     color: "White and black",
     href: "#",
     imageSrc:
@@ -15,7 +16,45 @@ const products = [
     imageAlt:
       "Front of zip tote bag with white canvas, black canvas straps and handle, and black zipper pulls.",
     price: "$140",
+    position: 8,
   },
+  {
+    id: 2,
+    name: "Light blue t-shirt",
+    color: "White and black",
+    href: "#",
+    imageSrc:
+      "https://tailwindui.com/img/ecommerce-images/product-page-03-related-product-01.jpg",
+    imageAlt:
+      "Front of zip tote bag with white canvas, black canvas straps and handle, and black zipper pulls.",
+    price: "$140",
+    position: 20,
+  },
+  {
+    id: 3,
+    name: "brown t-shirt",
+    color: "White and black",
+    href: "#",
+    imageSrc:
+      "https://tailwindui.com/img/ecommerce-images/product-page-03-related-product-01.jpg",
+    imageAlt:
+      "Front of zip tote bag with white canvas, black canvas straps and handle, and black zipper pulls.",
+    price: "$140",
+    position: 24,
+  },
+  {
+    id: 4,
+    name: "Green t-shirt",
+    color: "White and black",
+    href: "#",
+    imageSrc:
+      "https://tailwindui.com/img/ecommerce-images/product-page-03-related-product-01.jpg",
+    imageAlt:
+      "Front of zip tote bag with white canvas, black canvas straps and handle, and black zipper pulls.",
+    price: "$140",
+    position: 32,
+  },
+
   // More products...
 ];
 
@@ -29,12 +68,13 @@ const Shop = () => {
   });
 
   return (
-    <div className="bg-white">
+    <div className="bg-white h-screen py-5">
       <div className="flex justify-between">
-        <div className=" flex justify-center items-baseline w-40 ">
-          {previewOutfit && <CharacterComponent data={previewOutfit} />}
+        <div className="flex flex-col items-center">
+          <div className=" flex justify-center items-baseline w-40">
+            {previewOutfit && <CharacterComponent data={previewOutfit} />}
+          </div>
         </div>
-
         <button
           data-test="back-to-bedroom"
           onClick={() => dispatch(setCurrentScene("BEDROOM"))}
@@ -46,17 +86,24 @@ const Shop = () => {
 
       <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
         <h2 className="text-xl font-bold text-gray-900">Welcome to the shop</h2>
-
+        <div className="py-3">Coin: {character.attributes.coins}</div>
         <div className="mt-8 grid grid-cols-1 gap-y-12 sm:grid-cols-2 sm:gap-x-6 lg:grid-cols-4 xl:gap-x-8">
           {products.map((product) => (
             <div key={product.id}>
               <div className="relative">
-                <div className="relative h-72 w-full overflow-hidden rounded-lg">
-                  <img
-                    src={product.imageSrc}
-                    alt={product.imageAlt}
-                    className="h-full w-full object-cover object-center"
-                  />
+                <div className="relative h-72 w-full overflow-hidden rounded-lg border-black border-2">
+                  <div className="w-[calc(32px*6)] h-[calc(32px*6)]  overflow-hidden relative">
+                    <img
+                      className="max-w-none w-[calc(32px*80*6)] absolute"
+                      style={{
+                        transform: `translate3d(${
+                          -32 * 6 * product.position
+                        }px,0,0)`,
+                        "image-rendering": "pixelated",
+                      }}
+                      src={basicClothes}
+                    />
+                  </div>
                 </div>
                 <div className="relative mt-4">
                   <h3 className="text-sm font-medium text-gray-900">
