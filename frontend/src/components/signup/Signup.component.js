@@ -139,7 +139,7 @@ const Signup = () => {
         </div>
       </div> */}
 
-      <div className="min-h-full min-w-full bg-gray-200 pixel-font">
+      <div className="min-h-full min-w-full bg-pixelSepia bg-cover pixel-font">
         <form
           className=""
           onSubmit={handleSubmit}
@@ -147,7 +147,7 @@ const Signup = () => {
         >
           <div className="h-screen flex justify-center items-center">
             <div className="m-7 flex flex-col relative w-2/5">
-              <div className="bg-red-500 mt-7 shadow-2xl sm:rounded-sm">
+              <div className="bg-japanese-brown-2 mt-7 shadow-2xl sm:rounded-xl">
                 <div className="p-5 text-white">
                   <h1 className="text-8xl md:text-5xl lg:text-7xl">.</h1>
                   <p className="text-base md:text-lg lg:text-8xl">.</p>
@@ -155,8 +155,8 @@ const Signup = () => {
                 </div>
               </div>
               <input type="hidden" name="remember" defaultValue="true" />
-              <div className="flex justify-center items-center flex-col shadow-xl bg-white sm:rounded-sm p-6 sm:absolute sm:right-16 md:right-20 lg:right-32 sm:w-85">
-                <h2 className="text-red-500 mt-5 mb-4 text-base md:text-lg lg:text-xl font-bold">Sign Up</h2>
+              <div className="flex justify-center items-center flex-col shadow-xl bg-white sm:rounded-xl p-6 sm:absolute sm:right-16 md:right-20 lg:right-32 sm:w-85">
+                <h2 className="text-japanese-brown-2 mt-5 mb-4 text-base md:text-lg lg:text-xl font-bold">Sign Up</h2>
                 <div className="avatar rounded-full w-16 h-16 bg-white mb-6">
                   <img src="/img/pixel-onigiri.png" />
                 </div>
@@ -166,7 +166,7 @@ const Signup = () => {
                   type="email"
                   autoComplete="email"
                   required
-                  className="w-full border-b-2 border-grey-600 text-base md:text-s lg:text-s p-2 focus:outline-none focus:border-red-500 mb-4"
+                  className="w-full border-b-2 border-grey-600 text-base md:text-s lg:text-s p-2 focus:outline-none focus:border-japanese-brown-2 mb-4 sm:rounded-lg"
                   placeholder="Enter Email"
                   onChange={handleEmailChange}
                   data-test="emailSignupInput"
@@ -177,20 +177,20 @@ const Signup = () => {
                   type="password"
                   autoComplete="current-password"
                   required
-                  className="w-full border-b-2 border-grey-600 text-base md:text-s lg:text-s p-2 focus:outline-none focus:border-red-500 mb-4"
+                  className="w-full border-b-2 border-grey-600 text-base md:text-s lg:text-s p-2 focus:outline-none focus:border-japanese-brown-2 mb-4 sm:rounded-lg"
                   placeholder="Enter Password"
                   onChange={handlePasswordChange}
                   data-test="passwordSignupInput"
                 />
                 <button 
-                  className="pixel-font bg-red-500 hover:bg-red-600 text-white w-full mt-6 mb-8 focus:outline-none text-base md:text-s lg:text-s p-3"
+                  className="pixel-font bg-lighter-japanese-brown-2 hover:bg-japanese-brown-2 text-white w-full mt-6 mb-8 focus:outline-none text-base md:text-s lg:text-s p-3 sm:rounded-xl"
                   type="submit"
                 >
                   SIGNUP
                 </button>
                 <button
                   type="button"
-                  className="text-red-500 mb-5 text-base md:text-s lg:text-s"
+                  className="text-japanese-brown-2 mb-5 text-base md:text-s lg:text-s"
                   onClick={() => dispatch(setCurrentScene("START_MENU"))}
                   data-test="backToMenuButton"
                 >

@@ -128,7 +128,7 @@ const Login = () => {
       </div> */}
 
 
-      <div className="min-h-full min-w-full bg-loginPage bg-cover pixel-font">
+      <div className="min-h-full min-w-full bg-pixelTrain bg-cover pixel-font">
         <form
           className=""
           onSubmit={handleSubmit}
@@ -155,7 +155,7 @@ const Login = () => {
                   type="email"
                   autoComplete="email"
                   required
-                  className="w-full border-b-2 border-grey-600 text-base md:text-s lg:text-s p-2 focus:outline-none focus:border-lighter-japanese-brown mb-4 sm:rounded-lg"
+                  className="w-full border-b-2 border-grey-600 text-base md:text-s lg:text-s p-2 focus:outline-none focus:border-japanese-brown mb-4 sm:rounded-lg"
                   placeholder="Email address"
                   onChange={handleEmailChange}
                   data-test="emailInput"
@@ -166,20 +166,20 @@ const Login = () => {
                   type="password"
                   autoComplete="current-password"
                   required
-                  className="w-full border-b-2 border-grey-600 text-base md:text-s lg:text-s p-2 focus:outline-none focus:border-lighter-japanese-brown mb-4 sm:rounded-lg"
+                  className="w-full border-b-2 border-grey-600 text-base md:text-s lg:text-s p-2 focus:outline-none focus:border-japanese-brown mb-4 sm:rounded-lg"
                   placeholder="Password"
                   onChange={handlePasswordChange}
                   data-test="passwordInput"
                 />
                 <button 
-                  className="pixel-font bg-japanese-brown hover:bg-lighter-japanese-brown text-white w-full mt-6 mb-8 focus:outline-none text-base md:text-s lg:text-s p-3 sm:rounded-xl"
+                  className="pixel-font bg-japanese-brown hover:bg-darker-japanese-brown text-white w-full mt-6 mb-8 focus:outline-none text-base md:text-s lg:text-s p-3 sm:rounded-xl"
                   type="submit"
                 >
                   LOGIN
                 </button>
                 <button
                   type="button"
-                  className="text-lighter-japanese-brown mb-5 text-base md:text-s lg:text-s"
+                  className="text-japanese-brown mb-5 text-base md:text-s lg:text-s"
                   onClick={() => dispatch(setCurrentScene("START_MENU"))}
                   data-test="backToMenuButton"
                 >

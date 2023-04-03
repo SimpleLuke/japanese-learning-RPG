@@ -13,7 +13,9 @@ module.exports = {
       backgroundColor: {
         "beige-japanese-book": "#f5f3da",
         "japanese-brown": "#391D23",
-        "lighter-japanese-brown": "#7D4B54",
+        "darker-japanese-brown": "#1f0c10",
+        "japanese-brown-2": "#2e1700",
+        "lighter-japanese-brown-2": "#3c2200",
       },
       backgroundImage: {
         startMenu: "url('../public/img/start-menu-bg.jpeg')",
@@ -21,7 +23,10 @@ module.exports = {
         onigiri: "url('../public/img/onigiri.jpg')",
         bedroom: "url('../public/img/bedroom-temp.gif')",
         loadingWalk: "url('../public/img/loading-walk.gif')",
-        loginPage: "url('../public/img/pixel-background.gif')",
+        pixelFishes: "url('../public/img/pixel-fishes.gif')",
+        pixelSepia: "url('../public/img/pixel-sepia.gif')",
+        pixelNoodles: "url('../public/img/pixel-noodles.gif')",
+        pixelTrain: "url('../public/img/pixel-train.gif')",
       },
     },
   },
