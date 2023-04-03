@@ -1,7 +1,10 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setCurrentScene } from "../../redux-store/scene/sceneSlice";
-import { setPreviewOutfit } from "../../redux-store/shop/shopSlice";
+import {
+  setPreviewOutfit,
+  updatePreviewOutfit,
+} from "../../redux-store/shop/shopSlice";
 import CharacterComponent from "../design-character/character.component";
 import basicClothes from "../design-character/character-sprites/basic-clothes.png";
 
@@ -17,6 +20,7 @@ const products = [
       "Front of zip tote bag with white canvas, black canvas straps and handle, and black zipper pulls.",
     price: "$140",
     position: 8,
+    styleName: "tshirt-dark-blue",
   },
   {
     id: 2,
@@ -29,6 +33,7 @@ const products = [
       "Front of zip tote bag with white canvas, black canvas straps and handle, and black zipper pulls.",
     price: "$140",
     position: 20,
+    styleName: "tshirt-light-blue",
   },
   {
     id: 3,
@@ -41,6 +46,7 @@ const products = [
       "Front of zip tote bag with white canvas, black canvas straps and handle, and black zipper pulls.",
     price: "$140",
     position: 24,
+    styleName: "tshirt-brown",
   },
   {
     id: 4,
@@ -53,6 +59,7 @@ const products = [
       "Front of zip tote bag with white canvas, black canvas straps and handle, and black zipper pulls.",
     price: "$140",
     position: 32,
+    styleName: "tshirt-green",
   },
 
   // More products...
@@ -65,7 +72,7 @@ const Shop = () => {
 
   useEffect(() => {
     dispatch(setPreviewOutfit(character.currentOutfit));
-  });
+  }, []);
 
   return (
     <div className="bg-white h-screen py-5">
@@ -99,7 +106,7 @@ const Shop = () => {
                         transform: `translate3d(${
                           -32 * 6 * product.position
                         }px,0,0)`,
-                        "image-rendering": "pixelated",
+                        imageRendering: "pixelated",
                       }}
                       src={basicClothes}
                     />
@@ -121,7 +128,12 @@ const Shop = () => {
                 </div>
               </div>
               <div className="mt-6">
-                <button className="relative w-full flex items-center justify-center rounded-md border border-transparent bg-gray-100 px-8 py-2 text-sm font-medium text-gray-900 hover:bg-gray-200">
+                <button
+                  onClick={() =>
+                    dispatch(updatePreviewOutfit({ top: product.styleName }))
+                  }
+                  className="relative w-full flex items-center justify-center rounded-md border border-transparent bg-gray-100 px-8 py-2 text-sm font-medium text-gray-900 hover:bg-gray-200"
+                >
                   Preview
                 </button>
               </div>
