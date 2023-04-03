@@ -73,9 +73,11 @@ code {
   z-index: -1;
 }
 
+.pixelated {
+  image-rendering: pixelated;
+}
 
 /* character style templates */
-
 
 .characterContainer {
   position: relative;
