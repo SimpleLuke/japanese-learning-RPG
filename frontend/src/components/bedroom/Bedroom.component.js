@@ -42,7 +42,8 @@ const Bedroom = () => {
 
 
       <div className="pixelated">
-    <div className="bg-bedroom2 bg-cover bg-center h-screen w-screen p-4 "> 
+    <div className="bg-bedroom2 relative bg-cover bg-center h-screen w-screen p-4 "> 
+      
       <div className="w-80 h-40 relative left-[250px] overflow-hidden rounded-lg bg-white bg-opacity-80 px-4 py-5 shadow sm:p-6">
         <dd
           data-test="email"
@@ -81,13 +82,13 @@ const Bedroom = () => {
       <div className="ml-50 mt-100 relative left-[700px] top-[270px]">
         {character.currentOutfit && <CharacterComponent data={character.currentOutfit}/>}
       </div>
-      <div className="bookshelf relative left-[275px] top-[35px]"></div>
+      <div className="bookshelf cursor-pointer relative left-[361px] top-[41px]"></div>
       <div 
-        className="study-desk cursor-pointer relative left-[935px] top-[-20px]" 
+        className="study-desk cursor-pointer relative left-[927px] top-[8px]" 
         data-test="study-desk"
         onClick={() => dispatch(setCurrentScene("START_GAME"))}>
       </div>
-      <div className="wardrobe absolute pixelated top-[505px] left-[300px]"></div>
+      <div className="wardrobe cursor-pointer absolute pixelated top-[485px] left-[404px]"></div>
     </div>
     </div>
     </>
