@@ -37,10 +37,12 @@ const EndGame = () => {
   };
 
   const storeResult = async () => {
+    const token = window.localStorage.getItem('token')
     const response = await fetch("http://localhost:8000/game/update", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
+        Authorization: token,
       },
       body: JSON.stringify({
         email: email,
