@@ -41,7 +41,7 @@ const Bedroom = () => {
       */}
 
 
-
+      <div className="pixelated">
     <div className="bg-bedroom2 bg-cover bg-center h-screen w-screen p-4 "> 
       <div className="w-80 h-40 relative left-[250px] overflow-hidden rounded-lg bg-white bg-opacity-80 px-4 py-5 shadow sm:p-6">
         <dd
@@ -87,7 +87,8 @@ const Bedroom = () => {
         data-test="study-desk"
         onClick={() => dispatch(setCurrentScene("START_GAME"))}>
       </div>
-      <div className="wardrobe relative top-[300px] left-[300px]"></div>
+      <div className="wardrobe absolute pixelated top-[505px] left-[300px]"></div>
+    </div>
     </div>
     </>
   );

@@ -200,8 +200,15 @@ code {
 
 /* bedroom components */
 
+.pixelated {
+  image-rendering: pixelated;
+}
+
 .bedroom-bg {
   background-image: url('../public/img/bedroom4.jpg');
+  image-rendering: auto;
+  image-rendering: crisp-edges;
+  image-rendering: pixelated;
 }
 
 .wardrobe {
@@ -209,19 +216,30 @@ code {
   width: 189px;
   height: 109px;
   overflow: hidden;
-  position: sticky;
+  transform: scale(1.18);
+  image-rendering: auto;
+  image-rendering: crisp-edges;
+  image-rendering: pixelated;
 }
 
 .study-desk {
   background-image: url('../public/img/study-desk.png');
   width: 95px;
   height: 85px;
+  transform: scale(1.18);
+  image-rendering: auto;
+  image-rendering: crisp-edges;
+  image-rendering: pixelated;
 }
 
 .bookshelf {
   background-image: url('../public/img/bookshelf.jpg');
   width: 90px;
   height: 98px;
+  transform: scale(1.18);
+  image-rendering: auto;
+  image-rendering: crisp-edges;
+  image-rendering: pixelated;
 }
 
 /* bedroom grid */
