@@ -16,6 +16,7 @@ import gameModalReducer from "./game-modal/gameModalSlice";
 import sceneReducer from "./scene/sceneSlice";
 import gameReducer from "./game/gameSlice";
 import userReducer from "./user/userSlice";
+import statModalReducer from "./stat-modal/statModalSlice";
 
 const persistConfig = {
   key: "root",
@@ -28,6 +29,7 @@ const reducers = combineReducers({
   scene: sceneReducer,
   game: gameReducer,
   user: userReducer,
+  statModal: statModalReducer,
 });
 
 const persistedReducer = persistReducer(persistConfig, reducers);
