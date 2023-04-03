@@ -214,9 +214,15 @@ code {
   height: 46px;
   overflow: hidden;
   transform: scale(3);
-  image-rendering: auto;
-  image-rendering: crisp-edges;
-  image-rendering: pixelated;
+}
+
+.wardrobe:hover {
+  background-image: url('../public/img/wardrobepng.png');
+  width: 63px;
+  height: 46px;
+  overflow: hidden;
+  transform: scale(3.2);
+  cursor: pointer;
 }
 
 .study-desk {
@@ -224,9 +230,14 @@ code {
   width: 30px;
   height: 40px;
   transform: scale(3);
-  image-rendering: auto;
-  image-rendering: crisp-edges;
-  image-rendering: pixelated;
+}
+
+.study-desk:hover {
+  background-image: url('../public/img/deskpng.png');
+  width: 30px;
+  height: 40px;
+  transform: scale(3.2);
+  cursor: pointer;
 }
 
 .bookshelf {
@@ -234,13 +245,25 @@ code {
   width: 39px;
   height: 44px;
   transform: scale(3);
-  image-rendering: auto;
-  image-rendering: crisp-edges;
-  image-rendering: pixelated;
+}
+
+.bookshelf:hover {
+  background-image: url('../public/img/bookshelfpng.png');
+  width: 39px;
+  height: 44px;
+  transform: scale(3.2);
+  cursor: pointer;
 }
 
 .text-tag {
-  font-size: 5px;
+  font-size: 3.5px;
+  /* font-weight: 700; */
+  font-family: "Press Start 2P", cursive;
+}
+
+.font-email {
+  font-size: 10px;
+  font-family: "Press Start 2P", cursive;
 }
 
 /* bedroom grid */
