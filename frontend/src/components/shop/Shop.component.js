@@ -121,12 +121,21 @@ const Shop = () => {
                 </button>
               </div>
               <div className="mt-6">
-                <button
-                  onClick={() => dispatch(addItem(product.styleName))}
-                  className="relative w-full flex items-center justify-center rounded-md border border-transparent bg-gray-100 px-8 py-2 text-sm font-medium text-gray-900 hover:bg-gray-200"
-                >
-                  Buy
-                </button>
+                {character.inventory.includes(product.styleName) ? (
+                  <button
+                    disabled
+                    className=" relative w-full flex items-center justify-center rounded-md border border-transparent bg-red-100 px-8 py-2 text-sm font-medium text-gray-900 cursor-not-allowed"
+                  >
+                    Sold
+                  </button>
+                ) : (
+                  <button
+                    onClick={() => dispatch(addItem(product.styleName))}
+                    className="relative w-full flex items-center justify-center rounded-md border border-transparent bg-gray-100 px-8 py-2 text-sm font-medium text-gray-900 hover:bg-gray-200"
+                  >
+                    Buy
+                  </button>
+                )}
               </div>
             </div>
           ))}
