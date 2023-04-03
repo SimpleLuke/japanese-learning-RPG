@@ -6,7 +6,7 @@ const usersRouter = express.Router();
 
 usersRouter.post("/", UsersController.Create);
 usersRouter.get("/", UsersController.GetUserData);
-usersRouter.post("/achievements", UsersController.PostAchiements)
+// usersRouter.post("/achievements", UsersController.PostAchievements)
 usersRouter.post("/outfit", UsersController.UpdateOutfit);
 
 module.exports = usersRouter;
