@@ -45,13 +45,16 @@ describe("User model", () => {
           xp: 0,
           level: 0,
           wordsKnown: 0,
+          coins: 0,
         },
 
         inventory: [],
-        equipped: {
-          head: "",
-          outfit: "",
-          trousers: "",
+        currentOutfit: {
+          body: "",
+          hair: "",
+          top: "",
+          bottoms: "",
+          shoes: "",
         },
       },
     });
@@ -68,13 +71,16 @@ describe("User model", () => {
             xp: 0,
             level: 0,
             wordsKnown: 0,
+            coins: 0,
           },
 
           inventory: [],
-          equipped: {
-            head: "",
-            outfit: "",
-            trousers: "",
+          currentOutfit: {
+            body: "",
+            hair: "",
+            top: "",
+            bottoms: "",
+            shoes: "",
           },
         },
       });
