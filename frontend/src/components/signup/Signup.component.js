@@ -143,25 +143,52 @@ const Signup = () => {
 
 
 
-      <div class="min-h-full min-w-full bg-gray-200">
-        <div class="h-screen flex justify-center items-center">
-          <div class="m-7 flex flex-col relative w-1/3">
-            <div class="bg-red-500 mt-7 shadow-2xl sm:rounded-sm">
-              <div class="p-5 text-white">
-                <h1 class="text-8xl md:text-5xl lg:text-7xl">.</h1>
-                <p class="text-base md:text-lg lg:text-8xl">.</p>
-                <p class="sm:mt-32 text-base md:text-lg lg:text-7xl">.</p>
+      <div className="min-h-full min-w-full bg-gray-200">
+        <div className="h-screen flex justify-center items-center">
+          <div className="m-7 flex flex-col relative w-1/3">
+            <div className="bg-red-500 mt-7 shadow-2xl sm:rounded-sm">
+              <div className="p-5 text-white">
+                <h1 className="text-8xl md:text-5xl lg:text-7xl">.</h1>
+                <p className="text-base md:text-lg lg:text-8xl">.</p>
+                <p className="sm:mt-32 text-base md:text-lg lg:text-7xl">.</p>
               </div>
             </div>
-            <div class="flex justify-center items-center flex-col shadow-xl bg-white sm:rounded-sm p-6 sm:absolute sm:right-16 md:right-20 lg:right-32 sm:w-72">
-              <h2 class="text-red-500 mt-5 mb-4 text-base md:text-lg lg:text-xl font-bold">Log In</h2>
-              <div class="avatar rounded-full w-16 h-16 bg-white mb-6">
+            <div className="flex justify-center items-center flex-col shadow-xl bg-white sm:rounded-sm p-6 sm:absolute sm:right-16 md:right-20 lg:right-32 sm:w-72">
+              <h2 className="text-red-500 mt-5 mb-4 text-base md:text-lg lg:text-xl font-bold">Sign Up</h2>
+              <div className="avatar rounded-full w-16 h-16 bg-white mb-6">
                 <img src="/img/pixel-onigiri.png" />
               </div>
-              <input placeholder="Enter username" type="text" class="border-b-2 border-grey-600 text-base md:text-lg lg:text-xl p-2 focus:outline-none focus:border-red-500 mb-4 bg-transparent w-full" />
-              <input type="password" placeholder="Enter password" class="w-full border-b-2 border-grey-600 text-base md:text-lg lg:text-xl p-2 focus:outline-none focus:border-red-500 mb-4" />
-              <button class="bg-red-500 hover:bg-red-600 text-white w-full mt-6 mb-8 focus:outline-none text-base md:text-lg lg:text-xl p-3">LOGIN</button>
-              <a href="#" class="text-red-500 mb-5 text-base md:text-lg lg:text-xl">Return to Homepage</a>
+              <input
+                  id="email-address"
+                  name="email"
+                  type="email"
+                  autoComplete="email"
+                  required
+                  className="w-full border-b-2 border-grey-600 text-base md:text-lg lg:text-xl p-2 focus:outline-none focus:border-red-500 mb-4"
+                  placeholder="Enter Email Address"
+                  onChange={handleEmailChange}
+                  data-test="emailSignupInput"
+                />
+              <input
+                  id="password"
+                  name="password"
+                  type="password"
+                  autoComplete="current-password"
+                  required
+                  className="w-full border-b-2 border-grey-600 text-base md:text-lg lg:text-xl p-2 focus:outline-none focus:border-red-500 mb-4"
+                  placeholder="Enter Password"
+                  onChange={handlePasswordChange}
+                  data-test="passwordSignupInput"
+                />
+              <button className="bg-red-500 hover:bg-red-600 text-white w-full mt-6 mb-8 focus:outline-none text-base md:text-lg lg:text-xl p-3">SIGNUP</button>
+              <button
+              type="button"
+              className="text-red-500 mb-5 text-base md:text-lg lg:text-xl"
+              onClick={() => dispatch(setCurrentScene("START_MENU"))}
+              data-test="backToMenuButton"
+              >
+                Return to Homepage
+              </button>
             </div>
           </div>
         </div>
