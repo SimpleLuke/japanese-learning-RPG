@@ -28,7 +28,7 @@ const Bedroom = () => {
     <>
       <div className="pixelated">
     <div className="bg-bedroom2 relative bg-cover bg-center h-screen w-screen p-4 "> 
-      <div className="w-80 h-26 flex flex-wrap relative left-[290px] overflow-hidden border-8 border-indigo-900 bg-red-100 bg-opacity-80 px-4 py-2 shadow sm:p-2">
+      <div className="w-80 h-26 flex flex-wrap relative left-[290px] overflow-hidden border-8 border-blue-900 bg-red-100 bg-opacity-80 px-4 py-2 shadow sm:p-2">
         <div className="w-1/2">
         <dt
           data-test="level"
