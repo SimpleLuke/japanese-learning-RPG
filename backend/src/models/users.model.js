@@ -15,8 +15,8 @@ const UserSchema = new mongoose.Schema({
       body: String,
       hair: String,
       top: String,
-      bottoms:String,
-      shoes:String
+      bottoms: String,
+      shoes: String,
     },
   },
 });

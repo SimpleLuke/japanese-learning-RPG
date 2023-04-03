@@ -33,11 +33,11 @@ describe("/users", () => {
 
             inventory: [],
             currentOutfit: {
-              body: "",
-              hair: "",
-              top: "",
               bottoms: "",
               shoes: "",
+              hair: "",
+              top: "",
+              body: "",
             },
           },
         });
@@ -50,11 +50,11 @@ describe("/users", () => {
       expect(newUser.character.attributes.wordsKnown).toEqual(0);
       expect(newUser.character.inventory).toEqual([]);
       expect(newUser.character.currentOutfit).toEqual({
-        body: "",
-        hair: "",
-        top: "",
         bottoms: "",
         shoes: "",
+        hair: "",
+        top: "",
+        body: "",
       });
     });
   });
