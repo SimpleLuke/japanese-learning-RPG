@@ -17,6 +17,7 @@ function App() {
   const dispatch = useDispatch();
   const { currentScene } = useSelector((state) => state.scene);
   const [audio, setAudio] = useState(true);
+  const [currentSongIndex, setCurrentSongIndex] = useState(0); // lift state up to App component
 
   useEffect(() => {
     if (
@@ -29,8 +30,10 @@ function App() {
 
   return (
     <div className="flex flex-col justify-center items-center overflow-hidden h-screen">
-      <MusicPlayer audio={audio} />
-      <AudioPlayer />
+      <AudioPlayer
+        currentSongIndex={currentSongIndex}
+        setCurrentSongIndex={setCurrentSongIndex}
+      />
 
       {currentScene === "MAIN_GAME" && <MainGame />}
       {currentScene === "START_GAME" && <StartGame />}
@@ -38,7 +41,7 @@ function App() {
       {currentScene === "START_MENU" && <StartMenu />}
       {currentScene === "LOGIN" && <Login />}
       {currentScene === "SIGNUP" && <Signup />}
-      {currentScene === "BEDROOM" && <Bedroom setAudioHandle={setAudio} />}
+      {currentScene === "BEDROOM" && <Bedroom />}
       {currentScene === "BOOKSHELF" && <Bookshelf />}
       {currentScene === "CHARACTER" && <CharacterDesign />}
     </div>

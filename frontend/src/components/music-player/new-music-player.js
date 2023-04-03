@@ -7,8 +7,7 @@ import spirited from "../../music/spirited.mp3";
 import wind from "../../music/wind.mp3";
 import { useSelector } from "react-redux";
 
-function AudioPlayer() {
-  const [currentSongIndex, setCurrentSongIndex] = useState(0);
+function AudioPlayer({ currentSongIndex, setCurrentSongIndex }) {
   const [audioElement, setAudioElement] = useState(null);
   const { toggle } = useSelector((state) => state.musicPlayer);
   const trackList = [mononoke, kiki, pokemon, porco, spirited, wind];
