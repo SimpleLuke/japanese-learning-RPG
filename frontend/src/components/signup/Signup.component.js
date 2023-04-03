@@ -139,10 +139,6 @@ const Signup = () => {
         </div>
       </div> */}
 
-
-
-
-
       <div className="min-h-full min-w-full bg-gray-200 pixel-font">
         <form
           className=""
