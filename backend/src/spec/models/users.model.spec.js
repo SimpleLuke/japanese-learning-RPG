@@ -45,6 +45,7 @@ describe("User model", () => {
           xp: 0,
           level: 0,
           wordsKnown: 0,
+          coins: 0,
         },
 
         inventory: [],
@@ -70,6 +71,7 @@ describe("User model", () => {
             xp: 0,
             level: 0,
             wordsKnown: 0,
+            coins: 0,
           },
 
           inventory: [],
