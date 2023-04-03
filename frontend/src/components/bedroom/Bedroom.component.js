@@ -25,17 +25,25 @@ const Bedroom = () => {
   }, []);
 
   return (
-    <div className="bg-bedroom2 bg-cover bg-center h-screen w-screen grid grid-cols-4 grid-rows-4 gap-4 p-4 ">
-      <div className="wardrobe">
+    <>
+    {/* <div className="relative">
+      <div className="bedroom-bg absolute bg-cover bg-center h-screen w-screen"></div>
+        <div className="mx-auto absolute w-4/6 h-32 border border-red-500"></div>
+          <div className="wardrobe absolute col-start-2 row-start-2 ml-4 my-30 fixed"></div>
+    </div> 
+    <div
+        data-test="study-desk"
+        onClick={() => dispatch(setCurrentScene("START_GAME"))}
+        className="w-40 h-40 col-start-4 row-start-2 cursor-pointer overflow-hidden rounded-lg bg-white bg-opacity-80 px-4 py-5 shadow sm:p-6"
+      >
+        Study desk
       </div>
-      <div className="study-desk">
-      </div>
-      <div className="bookshelf">
-      </div>
-      <div className="col-start-8 row-start-1 row-end-1">
-        <BurgerMenu />
-      </div>
-      <div className="col-start-1 row-start-1 w-80 h-40 overflow-hidden rounded-lg bg-white bg-opacity-80 px-4 py-5 shadow sm:p-6">
+      */}
+
+
+
+    <div className="bg-bedroom2 bg-cover bg-center h-screen w-screen p-4 "> 
+      <div className="w-80 h-40 relative left-[250px] overflow-hidden rounded-lg bg-white bg-opacity-80 px-4 py-5 shadow sm:p-6">
         <dd
           data-test="email"
           className="mt-1 text-3xl font-semibold tracking-tight text-gray-900"
@@ -67,17 +75,21 @@ const Bedroom = () => {
           Coins: {coins}
         </dt>
       </div>
-      <div
-        data-test="study-desk"
-        onClick={() => dispatch(setCurrentScene("START_GAME"))}
-        className="w-40 h-40 col-start-4 row-start-2 cursor-pointer overflow-hidden rounded-lg bg-white bg-opacity-80 px-4 py-5 shadow sm:p-6"
-      >
-        Study desk
-      </div>
-      <div className="ml-50 mt-100">
+      <div className="relative left-[1060px] top-[-150px]">
+        <BurgerMenu />
+      </div> 
+      <div className="ml-50 mt-100 relative left-[700px] top-[270px]">
         {character.currentOutfit && <CharacterComponent data={character.currentOutfit}/>}
       </div>
+      <div className="bookshelf relative left-[275px] top-[35px]"></div>
+      <div 
+        className="study-desk cursor-pointer relative left-[935px] top-[-20px]" 
+        data-test="study-desk"
+        onClick={() => dispatch(setCurrentScene("START_GAME"))}>
+      </div>
+      <div className="wardrobe relative top-[300px] left-[300px]"></div>
     </div>
+    </>
   );
 };
 
