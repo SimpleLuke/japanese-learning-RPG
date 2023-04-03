@@ -46,6 +46,9 @@ const UsersController = {
       return res.status(400).json({ message: "Bad request" });
     }
   },
+  GetAchievements: async (req,res) => {
+    
+  }
 };
 
 module.exports = UsersController;
