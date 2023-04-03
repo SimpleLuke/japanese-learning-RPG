@@ -7,7 +7,7 @@ import BurgerMenu from "../BurgerMenu/BurgerMenu.component";
 
 import { updateUserInfo } from "../../redux-store/user/userSlice";
 import { openStatModal } from "../../redux-store/stat-modal/statModalSlice";
-import statModal from "../stat-modal/statModal.component";
+import StatModal from "../stat-modal/statModal.component";
 
 const Bedroom = () => {
   const dispatch = useDispatch();
@@ -32,6 +32,8 @@ const Bedroom = () => {
       <div className="col-start-8 row-start-1 row-end-1">
         <BurgerMenu />
       </div>
+
+      <StatModal />
 
       <div
         onClick={() => dispatch(openStatModal())}
