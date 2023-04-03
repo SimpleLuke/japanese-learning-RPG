@@ -196,3 +196,24 @@ code {
   background-position:  -1536px 0px ;
   position: absolute;
 }
+
+
+/* bedroom components */
+
+.wardrobe {
+  background-image: url('../public/img/wardrobe.jpg');
+  width: 189px;
+  height: 109px;
+}
+
+.study-desk {
+  background-image: url('../public/img/study-desk.png');
+  width: 95px;
+  height: 85px;
+}
+
+.bookshelf {
+  background-image: url('../public/img/bookshelf.jpg');
+  width: 90px;
+  height: 98px;
+}
