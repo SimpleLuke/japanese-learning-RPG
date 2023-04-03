@@ -29,7 +29,7 @@ const Achievements = () => {
 
     const xpAchievements = Math.floor(xp / 100);
     for (let i = 1; i <= xpAchievements; i++) {
-      newAchievements.push(`Reached ${i * 1000} XP`);
+      newAchievements.push(`Reached ${i * 100} XP`);
     };
 
       setAchievements(newAchievements);
