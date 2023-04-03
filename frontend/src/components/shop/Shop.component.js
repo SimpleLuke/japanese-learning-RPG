@@ -15,7 +15,7 @@ const products = [
     name: "Dark blue t-shirt",
     imageSrc:
       "https://tailwindui.com/img/ecommerce-images/product-page-03-related-product-01.jpg",
-    price: 140,
+    price: 100,
     position: 8,
     styleName: "tshirt-dark-blue",
   },
@@ -24,7 +24,7 @@ const products = [
     name: "Light blue t-shirt",
     imageSrc:
       "https://tailwindui.com/img/ecommerce-images/product-page-03-related-product-01.jpg",
-    price: 140,
+    price: 100,
     position: 20,
     styleName: "tshirt-light-blue",
   },
@@ -33,7 +33,7 @@ const products = [
     name: "Brown t-shirt",
     imageSrc:
       "https://tailwindui.com/img/ecommerce-images/product-page-03-related-product-01.jpg",
-    price: 140,
+    price: 100,
     position: 24,
     styleName: "tshirt-brown",
   },
@@ -42,7 +42,7 @@ const products = [
     name: "Green t-shirt",
     imageSrc:
       "https://tailwindui.com/img/ecommerce-images/product-page-03-related-product-01.jpg",
-    price: 140,
+    price: 100,
     position: 32,
     styleName: "tshirt-green",
   },

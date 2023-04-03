@@ -6,6 +6,8 @@ import CharacterComponent from "../design-character/character.component";
 import BurgerMenu from "../BurgerMenu/BurgerMenu.component";
 
 import { updateUserInfo } from "../../redux-store/user/userSlice";
+import { openStatModal } from "../../redux-store/stat-modal/statModalSlice";
+import StatModal from "../stat-modal/statModal.component";
 
 const Bedroom = () => {
   const dispatch = useDispatch();
@@ -19,6 +21,8 @@ const Bedroom = () => {
     dispatch(updateUserInfo(data));
   };
 
+  // const { statMenuOpen } = useSelector((state) => state.statModal);
+
   useEffect(() => {
     fetchUserData();
   }, []);
@@ -28,7 +32,11 @@ const Bedroom = () => {
       <div className="col-start-8 row-start-1 row-end-1">
         <BurgerMenu />
       </div>
-      <div className="col-start-1 row-start-1 flex w-96 h-40 overflow-hidden rounded-lg bg-white bg-opacity-80 px-4 py-5 shadow sm:p-6">
+      <StatModal />
+      <div
+        onClick={() => dispatch(openStatModal())}
+        className="col-start-1 row-start-1 flex w-96 h-40 overflow-hidden rounded-lg bg-white bg-opacity-80 px-4 py-5 shadow sm:p-6"
+      >
         <div>
           <dd
             data-test="email"
