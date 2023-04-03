@@ -18,7 +18,6 @@ const UserSchema = new mongoose.Schema({
       bottoms:String,
       shoes:String
     },
-    // achievements: [String],
   },
 });
 
