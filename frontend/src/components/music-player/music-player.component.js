@@ -4,16 +4,17 @@ import pokemon from "../../music/pokemon.mp3";
 import porco from "../../music/porco.mp3";
 import spirited from "../../music/spirited.mp3";
 import wind from "../../music/wind.mp3";
-
-import React from "react";
 import { useSelector } from "react-redux";
-
-const playSongs = () => {
-  new Audio(mononoke);
-};
+import React, { useState, useEffect, useRef } from "react";
 
 export default function MusicPlayer() {
   const { toggle } = useSelector((state) => state.musicPlayer);
+  const trackList = [mononoke, kiki, pokemon, porco, spirited, wind];
+
+  const [trackIndex, setTrackIndex] = useState(0);
+  const [trackProgress, setTrackProgress] = useState(0);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const audioElement = new Audio();
 
   return (
     <>

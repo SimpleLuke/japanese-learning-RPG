@@ -11,6 +11,7 @@ import { useEffect, useState } from "react";
 import { setCurrentScene } from "./redux-store/scene/sceneSlice";
 import Bookshelf from "./components/bookshelf/Bookshelf.component";
 import MusicPlayer from "./components/music-player/music-player.component";
+import AudioPlayer from "./components/music-player/new-music-player";
 
 function App() {
   const dispatch = useDispatch();
@@ -29,6 +30,7 @@ function App() {
   return (
     <div className="flex flex-col justify-center items-center overflow-hidden h-screen">
       <MusicPlayer audio={audio} />
+      <AudioPlayer />
 
       {currentScene === "MAIN_GAME" && <MainGame />}
       {currentScene === "START_GAME" && <StartGame />}
