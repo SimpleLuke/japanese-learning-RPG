@@ -71,13 +71,18 @@ const Bedroom = () => {
       <div className="ml-50 mt-100 absolute left-[695px] top-[450px]">
         {character.currentOutfit && <CharacterComponent data={character.currentOutfit}/>}
       </div>
-      <div className="bookshelf cursor-pointer absolute left-[377px] top-[252px]"></div>
+      <div className="bookshelf cursor-pointer absolute left-[377px] top-[252px]">
+        <p className="text-tag relative left-[7px]">Bookshelf</p>
+      </div>
       <div 
         className="study-desk cursor-pointer absolute left-[942px] top-[265px]" 
         data-test="study-desk"
         onClick={() => dispatch(setCurrentScene("START_GAME"))}>
+          <p className="text-tag absolute left-[9px] top-[3px]">Desk</p>
       </div>
-      <div className="wardrobe cursor-pointer absolute pixelated top-[485px] left-[404px]"></div>
+      <div className="wardrobe cursor-pointer absolute pixelated top-[485px] left-[404px]">
+        <p className="text-tag absolute left-[9px]">Wardrobe</p>
+      </div>
     </div>
     </div>
     </>

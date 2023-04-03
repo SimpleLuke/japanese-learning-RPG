@@ -239,6 +239,10 @@ code {
   image-rendering: pixelated;
 }
 
+.text-tag {
+  font-size: 5px;
+}
+
 /* bedroom grid */
 .bedroom-grid{
   display: grid;
