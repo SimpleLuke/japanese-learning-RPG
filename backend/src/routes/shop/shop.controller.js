@@ -10,7 +10,8 @@ const ShopController = {
       await user.save();
       return res.status(201).json({ message: "OK" });
     } catch (err) {
-      return res.status(400).json({ message: "Bad request" });
+      console.log(err);
+      return res.status(400).json({ message: "Bad request", error: err });
     }
   },
 };
