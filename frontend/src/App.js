@@ -10,14 +10,7 @@ import CharacterDesign from "./components/design-character/chooseCharacter.compo
 import { useEffect, useState } from "react";
 import { setCurrentScene } from "./redux-store/scene/sceneSlice";
 import Bookshelf from "./components/bookshelf/Bookshelf.component";
-import MusicPlayer from "./components/music-player/music-player.component";
-import mononoke from "./music/mononoke.mp3";
-import kiki from "./music/kiki.mp3";
-import pokemon from "./music/pokemon.mp3";
-import porco from "./music/porco.mp3";
-import spirited from "./music/spirited.mp3";
-import wind from "./music/wind.mp3";
-import MusicPlayerContainer from "./components/music-player/music-player.component";
+import MusicPlayer from "./components/music-player/musicPlayer.component";
 
 function App() {
   const dispatch = useDispatch();
@@ -25,9 +18,6 @@ function App() {
   const [audio, setAudio] = useState(true);
 
   //audio functions lifted from music-player.component to avoid issues on re-render
-  const [currentSongIndex, setCurrentSongIndex] = useState(0);
-  const audioElement = new Audio();
-  const trackList = [mononoke, kiki, pokemon, porco, spirited, wind];
 
   useEffect(() => {
     if (
