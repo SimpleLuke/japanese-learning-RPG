@@ -54,10 +54,30 @@ const products = [
 
 const Wardrobe = () => {
   const dispatch = useDispatch();
-  const { character } = useSelector((state) => state.user);
+  const { character, email } = useSelector((state) => state.user);
 
-  const changeOutfitHandle = (outfit) => {
+  const fetchChangeOutfit = async (email, outfit) => {
+    const response = await fetch("http://localhost:8000/users/outfit/change", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        email: email,
+        outfit: outfit,
+      }),
+    });
+    if (response.status === 201) {
+      const data = await response.json();
+      console.log("outfit update", data.message);
+    } else {
+      console.log("OPPS");
+    }
+  };
+
+  const changeOutfitHandle = async (outfit) => {
     dispatch(changeOutfit({ top: outfit }));
+    await fetchChangeOutfit(email, { top: outfit });
   };
 
   useEffect(() => {}, []);
