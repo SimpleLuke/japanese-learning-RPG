@@ -10,6 +10,7 @@ import CharacterDesign from "./components/design-character/chooseCharacter.compo
 import { useEffect } from "react";
 import { setCurrentScene } from "./redux-store/scene/sceneSlice";
 import Bookshelf from "./components/bookshelf/Bookshelf.component";
+import MusicPlayer from "./components/music-player/music-player.component";
 
 function App() {
   const dispatch = useDispatch();
@@ -26,6 +27,8 @@ function App() {
 
   return (
     <div className="flex flex-col justify-center items-center overflow-hidden h-screen">
+      <MusicPlayer />
+
       {currentScene === "MAIN_GAME" && <MainGame />}
       {currentScene === "START_GAME" && <StartGame />}
       {currentScene === "END_GAME" && <EndGame />}

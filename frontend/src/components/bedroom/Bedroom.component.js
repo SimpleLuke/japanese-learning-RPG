@@ -8,6 +8,7 @@ import BurgerMenu from "../BurgerMenu/BurgerMenu.component";
 import { updateUserInfo } from "../../redux-store/user/userSlice";
 import { openStatModal } from "../../redux-store/stat-modal/statModalSlice";
 import StatModal from "../stat-modal/statModal.component";
+import MusicPlayer from "../music-player/music-player.component";
 
 const Bedroom = () => {
   const dispatch = useDispatch();
