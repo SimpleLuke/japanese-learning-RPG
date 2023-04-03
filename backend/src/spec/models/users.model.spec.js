@@ -48,10 +48,12 @@ describe("User model", () => {
         },
 
         inventory: [],
-        equipped: {
-          head: "",
-          outfit: "",
-          trousers: "",
+        currentOutfit: {
+          bottoms: "",
+          shoes: "",
+          hair: "",
+          top: "",
+          body: "",
         },
       },
     });
@@ -71,10 +73,12 @@ describe("User model", () => {
           },
 
           inventory: [],
-          equipped: {
-            head: "",
-            outfit: "",
-            trousers: "",
+          currentOutfit: {
+            bottoms: "",
+            shoes: "",
+            hair: "",
+            top: "",
+            body: "",
           },
         },
       });
