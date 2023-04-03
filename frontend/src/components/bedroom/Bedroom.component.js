@@ -26,31 +26,11 @@ const Bedroom = () => {
 
   return (
     <>
-    {/* <div className="relative">
-      <div className="bedroom-bg absolute bg-cover bg-center h-screen w-screen"></div>
-        <div className="mx-auto absolute w-4/6 h-32 border border-red-500"></div>
-          <div className="wardrobe absolute col-start-2 row-start-2 ml-4 my-30 fixed"></div>
-    </div> 
-    <div
-        data-test="study-desk"
-        onClick={() => dispatch(setCurrentScene("START_GAME"))}
-        className="w-40 h-40 col-start-4 row-start-2 cursor-pointer overflow-hidden rounded-lg bg-white bg-opacity-80 px-4 py-5 shadow sm:p-6"
-      >
-        Study desk
-      </div>
-      */}
-
-
       <div className="pixelated">
     <div className="bg-bedroom2 relative bg-cover bg-center h-screen w-screen p-4 "> 
       
-      <div className="w-80 h-40 relative left-[250px] overflow-hidden rounded-lg bg-white bg-opacity-80 px-4 py-5 shadow sm:p-6">
-        <dd
-          data-test="email"
-          className="mt-1 text-3xl font-semibold tracking-tight text-gray-900"
-        >
-          {email}
-        </dd>
+      <div className="w-60 h-24 flex flex-wrap relative left-[290px] overflow-hidden rounded-lg bg-white bg-opacity-80 px-4 py-2 shadow sm:p-3">
+        <div className="w-1/2">
         <dt
           data-test="level"
           className="truncate text-sm font-medium text-gray-500"
@@ -75,16 +55,25 @@ const Bedroom = () => {
         >
           Coins: {coins}
         </dt>
+        </div>
+        <div className="w-1/2">
+        <dd
+          data-test="email"
+          className="text-2xl font-semibold tracking-tight text-gray-900"
+        >
+          {email}
+        </dd>
+        </div>
       </div>
-      <div className="relative left-[1060px] top-[-150px]">
+      <div className="relative left-[1015px] top-[-90px]">
         <BurgerMenu />
       </div> 
-      <div className="ml-50 mt-100 relative left-[700px] top-[270px]">
+      <div className="ml-50 mt-100 absolute left-[695px] top-[450px]">
         {character.currentOutfit && <CharacterComponent data={character.currentOutfit}/>}
       </div>
-      <div className="bookshelf cursor-pointer relative left-[361px] top-[41px]"></div>
+      <div className="bookshelf cursor-pointer absolute left-[377px] top-[252px]"></div>
       <div 
-        className="study-desk cursor-pointer relative left-[927px] top-[8px]" 
+        className="study-desk cursor-pointer absolute left-[942px] top-[265px]" 
         data-test="study-desk"
         onClick={() => dispatch(setCurrentScene("START_GAME"))}>
       </div>
