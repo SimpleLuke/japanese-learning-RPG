@@ -31,10 +31,12 @@ describe("/users", () => {
             },
 
             inventory: [],
-            equipped: {
-              head: "",
-              outfit: "",
-              trousers: "",
+            currentOutfit: {
+              bottoms: "",
+              shoes: "",
+              hair: "",
+              top: "",
+              body: "",
             },
           },
         });
@@ -46,10 +48,12 @@ describe("/users", () => {
       expect(newUser.character.attributes.level).toEqual(0);
       expect(newUser.character.attributes.wordsKnown).toEqual(0);
       expect(newUser.character.inventory).toEqual([]);
-      expect(newUser.character.equipped).toEqual({
-        head: "",
-        outfit: "",
-        trousers: "",
+      expect(newUser.character.currentOutfit).toEqual({
+        bottoms: "",
+        shoes: "",
+        hair: "",
+        top: "",
+        body: "",
       });
     });
   });
