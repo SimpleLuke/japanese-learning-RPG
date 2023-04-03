@@ -13,6 +13,10 @@ const shopSlice = createSlice({
     setPreviewOutfit: (state, action) => {
       state.previewOutfit = action.payload;
     },
+    updatePreviewOutfit: (state, action) => {
+      const { top } = action.payload;
+      state.previewOutfit.top = top;
+    },
     extraReducers: (builder) => {
       builder.addCase(PURGE, (state) => {
         return { ...initialState };
@@ -21,5 +25,6 @@ const shopSlice = createSlice({
   },
 });
 
-export const { resetShop, setPreviewOutfit } = shopSlice.actions;
+export const { resetShop, setPreviewOutfit, updatePreviewOutfit } =
+  shopSlice.actions;
 export default shopSlice.reducer;
