@@ -11,12 +11,23 @@ import { useEffect, useState } from "react";
 import { setCurrentScene } from "./redux-store/scene/sceneSlice";
 import Bookshelf from "./components/bookshelf/Bookshelf.component";
 import MusicPlayer from "./components/music-player/music-player.component";
+import mononoke from "./music/mononoke.mp3";
+import kiki from "./music/kiki.mp3";
+import pokemon from "./music/pokemon.mp3";
+import porco from "./music/porco.mp3";
+import spirited from "./music/spirited.mp3";
+import wind from "./music/wind.mp3";
+import MusicPlayerContainer from "./components/music-player/music-player.component";
 
 function App() {
   const dispatch = useDispatch();
   const { currentScene } = useSelector((state) => state.scene);
   const [audio, setAudio] = useState(true);
-  const [currentSongIndex, setCurrentSongIndex] = useState(0); // lift state up to App component
+
+  //audio functions lifted from music-player.component to avoid issues on re-render
+  const [currentSongIndex, setCurrentSongIndex] = useState(0);
+  const audioElement = new Audio();
+  const trackList = [mononoke, kiki, pokemon, porco, spirited, wind];
 
   useEffect(() => {
     if (
@@ -29,10 +40,7 @@ function App() {
 
   return (
     <div className="flex flex-col justify-center items-center overflow-hidden h-screen">
-      <MusicPlayer
-        currentSongIndex={currentSongIndex}
-        setCurrentSongIndex={setCurrentSongIndex}
-      />
+      <MusicPlayerContainer />
 
       {currentScene === "MAIN_GAME" && <MainGame />}
       {currentScene === "START_GAME" && <StartGame />}
