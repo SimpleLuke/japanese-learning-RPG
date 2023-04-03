@@ -50,12 +50,37 @@ const products = [
 
 const Shop = () => {
   const dispatch = useDispatch();
-  const { character } = useSelector((state) => state.user);
+  const { character, email } = useSelector((state) => state.user);
   const { previewOutfit } = useSelector((state) => state.shop);
 
-  const buyNewOutfit = (product) => {
-    dispatch(addItem(product.styleName));
-    dispatch(spendCoins(product.price));
+  const fetchPurchase = async (item, cost) => {
+    const response = await fetch("http://localhost:8000/shop/purchase", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        email: email,
+        item: item,
+        cost: cost,
+      }),
+    });
+    if (response.status === 201) {
+      const data = await response.json();
+      console.log("Shop update", data.message);
+    } else {
+      console.log("OPPS");
+    }
+  };
+
+  const buyNewOutfit = async (product) => {
+    if (character.attributes.coins >= product.price) {
+      dispatch(addItem(product.styleName));
+      dispatch(spendCoins(product.price));
+      await fetchPurchase(product.styleName, product.price);
+    } else {
+      alert("Not enough of coins");
+    }
   };
 
   useEffect(() => {

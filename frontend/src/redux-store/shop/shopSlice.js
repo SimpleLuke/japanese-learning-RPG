@@ -9,7 +9,7 @@ const shopSlice = createSlice({
   name: "shop",
   initialState,
   reducers: {
-    resetScene: () => initialState,
+    resetShop: () => initialState,
     setPreviewOutfit: (state, action) => {
       state.previewOutfit = action.payload;
     },
