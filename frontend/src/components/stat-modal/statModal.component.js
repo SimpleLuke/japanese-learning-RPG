@@ -1,15 +1,14 @@
 import { useDispatch, useSelector } from "react-redux";
-import statModalSlice from "../../redux-store/stat-modal/statModalSlice";
 import { setCurrentScene } from "../../redux-store/scene/sceneSlice";
-import { Fragment, useState } from "react";
+import { Fragment, useRef } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import { CheckIcon } from "@heroicons/react/24/outline";
 import { closeStatModal } from "../../redux-store/stat-modal/statModalSlice";
 
 export default function StatModal() {
   const dispatch = useDispatch();
-  const { statMenuOpen } = useSelector((state) => state.statModal);
-  console.log(statMenuOpen);
+  const { statModalOpen } = useSelector((state) => state.statModal);
+  console.log(statModalOpen);
 
   const closeStatModalAndQuit = () => {
     dispatch(closeStatModal());
@@ -17,7 +16,7 @@ export default function StatModal() {
   };
 
   return (
-    <Transition.Root show={statMenuOpen} as={Fragment}>
+    <Transition.Root show={statModalOpen}>
       {console.log("stat modal open")}
       <Dialog
         as="div"
@@ -25,7 +24,6 @@ export default function StatModal() {
         onClose={() => dispatch(closeStatModal())}
       >
         <Transition.Child
-          as={Fragment}
           enter="ease-out duration-300"
           enterFrom="opacity-0"
           enterTo="opacity-100"
@@ -39,7 +37,6 @@ export default function StatModal() {
         <div className="fixed inset-0 z-10 overflow-y-auto">
           <div className="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
             <Transition.Child
-              as={Fragment}
               enter="ease-out duration-300"
               enterFrom="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
               enterTo="opacity-100 translate-y-0 sm:scale-100"
