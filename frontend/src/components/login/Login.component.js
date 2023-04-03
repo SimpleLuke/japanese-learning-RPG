@@ -156,7 +156,7 @@ const Login = () => {
                   autoComplete="email"
                   required
                   className="w-full border-b-2 border-grey-600 text-base md:text-s lg:text-s p-2 focus:outline-none focus:border-japanese-brown mb-4 sm:rounded-lg"
-                  placeholder="Email address"
+                  placeholder="Email Address"
                   onChange={handleEmailChange}
                   data-test="emailInput"
                 />

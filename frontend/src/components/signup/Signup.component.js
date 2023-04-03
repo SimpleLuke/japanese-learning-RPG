@@ -31,7 +31,8 @@ const Signup = () => {
     console.log(email);
     console.log(password);
     event.preventDefault();
-    fetch("http://localhost:8000/users", {
+    
+    const postUsers = fetch("http://localhost:8000/users", {
       method: "post",
       headers: {
         "Content-Type": "application/json",
@@ -42,14 +43,34 @@ const Signup = () => {
         wordsLearnt: wordsLearnt,
         character: character,
       }),
-    }).then((response) => {
-      if (response.status === 201) {
-      dispatch(setCurrentUser(email));
-        dispatch(setCurrentScene("CHARACTER"));
-      } else {
-        console.log("response was: ", response);
-      }
     });
+
+    Promise.all([postUsers])
+  .then(([postUsersResponse]) => {
+    if (postUsersResponse.status === 201) {
+      const getTokens = fetch("http://localhost:8000/tokens", {
+        method: "post",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email: email, password: password }),
+      });
+
+      getTokens.then((getTokensResponse) => {
+        if (getTokensResponse.status === 201) {
+          getTokensResponse.json().then((data) => {
+            window.localStorage.setItem("token", data.token);
+            dispatch(setCurrentUser(email));
+            dispatch(setCurrentScene("CHARACTER"));
+          });
+        } else {
+          console.log("response was: error with /tokens");
+        }
+      });
+    } else {
+      console.log("response was: error with /users");
+    }
+  });
   };
 
   const handleEmailChange = (event) => {
@@ -167,7 +188,7 @@ const Signup = () => {
                   autoComplete="email"
                   required
                   className="w-full border-b-2 border-grey-600 text-base md:text-s lg:text-s p-2 focus:outline-none focus:border-japanese-brown-2 mb-4 sm:rounded-lg"
-                  placeholder="Enter Email"
+                  placeholder="Email Address"
                   onChange={handleEmailChange}
                   data-test="emailSignupInput"
                 />
@@ -178,7 +199,7 @@ const Signup = () => {
                   autoComplete="current-password"
                   required
                   className="w-full border-b-2 border-grey-600 text-base md:text-s lg:text-s p-2 focus:outline-none focus:border-japanese-brown-2 mb-4 sm:rounded-lg"
-                  placeholder="Enter Password"
+                  placeholder="Password"
                   onChange={handlePasswordChange}
                   data-test="passwordSignupInput"
                 />
