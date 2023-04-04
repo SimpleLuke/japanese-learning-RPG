@@ -9,13 +9,6 @@ const UsersController = {
     } catch (err) {
       return res.status(400).json({ message: "Bad request" });
     }
-    // await user.save((err) => {
-    //   if (err) {
-    //     res.status(400).json({ message: "Bad request" });
-    //   } else {
-    //     res.status(201).json({ message: "OK" });
-    //   }
-    // });
   },
   GetUserData: async (req, res) => {
     try {

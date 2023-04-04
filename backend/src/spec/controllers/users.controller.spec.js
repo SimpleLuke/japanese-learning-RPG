@@ -139,5 +139,19 @@ describe("/users", () => {
       expect(user.character.currentOutfit.bottoms).toEqual("bottoms");
       expect(user.character.currentOutfit.shoes).toEqual("shoes");
     });
+
+    test("POST /outfit/change", async () => {
+      let response = await request(app)
+        .post("/users/outfit/change")
+        .send({
+          email: "outfit@email.com",
+          outfit: {
+            top: "top",
+          },
+        });
+      expect(response.status).toEqual(201);
+      const user = await User.findOne({ email: "outfit@email.com" });
+      expect(user.character.currentOutfit.top).toEqual("top");
+    });
   });
 });
