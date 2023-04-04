@@ -6,10 +6,14 @@ import { useState } from "react";
 
 const hairStyles = ["gentlemanHair-blond", "hair-emo", "hair-long-blonde"];
 const topStyles = ["tshirt-gray", "tshirt-green-flower", "vest"];
+const bottomStyles = ["pants-blue", "pants-pink", "skirt"];
+const shoeStyles = ["shoes-navy", "shoes-green", "shoes-purple"];
 
 const CharacterDesign = () => {
   const [hairStyleIndex, setHairStyleIndex] = useState(0);
   const [topStyleIndex, setTopStyleIndex] = useState(0);
+  const [bottomStyleIndex, setBottomStyleIndex] = useState(0);
+  const [shoeStyleIndex, setShoeStyleIndex] = useState(0);
 
   const flickThroughHair = () => {
     if (hairStyleIndex < (hairStyles.length -1)) {
@@ -24,6 +28,22 @@ const CharacterDesign = () => {
       setTopStyleIndex(topStyleIndex + 1); 
     } else {
       setTopStyleIndex(0);
+    }
+  }
+
+  const flickThroughBottoms = () => {
+    if (bottomStyleIndex < (bottomStyles.length -1)) {
+      setBottomStyleIndex(bottomStyleIndex + 1); 
+    } else {
+      setBottomStyleIndex(0);
+    }
+  }
+
+  const flickThroughShoes = () => {
+    if (shoeStyleIndex < (shoeStyles.length -1)) {
+      setShoeStyleIndex(shoeStyleIndex + 1); 
+    } else {
+      setShoeStyleIndex(0);
     }
   }
 
@@ -54,8 +74,8 @@ const CharacterDesign = () => {
     body: "body",
     hair: hairStyles[hairStyleIndex],
     top: topStyles[topStyleIndex],
-    bottoms: "pants-blue",
-    shoes: "shoes-navy"
+    bottoms: bottomStyles[bottomStyleIndex],
+    shoes: shoeStyles[shoeStyleIndex]
   };
 
   return (
@@ -68,8 +88,10 @@ const CharacterDesign = () => {
           <CharacterComponent data={charData} />
         </div>
       </div>
-        <button data-test="char-button" onClick={() => {flickThroughHair()}}>change hair</button>
-        <button data-test="char-button" onClick={() => {flickThroughTop()}}>change top</button>
+      <div><button onClick={() => {flickThroughHair()}}>change hair</button></div>
+      <div><button onClick={() => {flickThroughTop()}}>change top</button></div>
+      <div><button onClick={() => {flickThroughBottoms()}}>change bottoms</button></div>
+      <div><button onClick={() => {flickThroughShoes()}}>change shoes</button></div>
         {/* <button 
           onClick={() => {storeOutfit(charData)}}
           type='submit'
