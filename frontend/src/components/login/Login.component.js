@@ -54,9 +54,9 @@ const Login = () => {
             <div className="m-7 flex flex-col relative w-2/5">
               <div className="bg-japanese-brown mt-7 shadow-2xl sm:rounded-xl">
                 <div className="p-5 text-white">
-                  <h1 className="text-8xl md:text-5xl lg:text-7xl">.</h1>
-                  <p className="text-base md:text-lg lg:text-8xl">.</p>
-                  <p className="sm:mt-32 text-base md:text-lg lg:text-7xl">.</p>
+                  <div className="text-8xl md:text-5xl lg:text-7xl">.</div>
+                  <div className="text-base md:text-lg lg:text-8xl">.</div>
+                  <div className="sm:mt-32 text-base md:text-lg lg:text-7xl">.</div>
                 </div>
               </div>
               <div className="flex justify-center items-center flex-col shadow-xl bg-white p-6 sm:absolute sm:right-16 md:right-20 lg:right-32 sm:w-85 sm:rounded-xl">
