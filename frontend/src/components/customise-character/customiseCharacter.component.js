@@ -16,40 +16,44 @@ const CharacterDesign = () => {
   const [shoeStyleIndex, setShoeStyleIndex] = useState(0);
 
   const flickThrough = (currentIndex, setIndex, stylesArray) => {
-    
-  }
-
-  const flickThroughHair = () => {
-    if (hairStyleIndex < (hairStyles.length -1)) {
-      setHairStyleIndex(hairStyleIndex + 1); 
+    if (currentIndex < (stylesArray.length -1)) {
+      setIndex(currentIndex + 1); 
     } else {
-      setHairStyleIndex(0);
+      setIndex(0);
     }
   }
 
-  const flickThroughTop = () => {
-    if (topStyleIndex < (topStyles.length -1)) {
-      setTopStyleIndex(topStyleIndex + 1); 
-    } else {
-      setTopStyleIndex(0);
-    }
-  }
+  // const flickThroughHair = () => {
+  //   if (hairStyleIndex < (hairStyles.length -1)) {
+  //     setHairStyleIndex(hairStyleIndex + 1); 
+  //   } else {
+  //     setHairStyleIndex(0);
+  //   }
+  // }
 
-  const flickThroughBottoms = () => {
-    if (bottomStyleIndex < (bottomStyles.length -1)) {
-      setBottomStyleIndex(bottomStyleIndex + 1); 
-    } else {
-      setBottomStyleIndex(0);
-    }
-  }
+  // const flickThroughTop = () => {
+  //   if (topStyleIndex < (topStyles.length -1)) {
+  //     setTopStyleIndex(topStyleIndex + 1); 
+  //   } else {
+  //     setTopStyleIndex(0);
+  //   }
+  // }
 
-  const flickThroughShoes = () => {
-    if (shoeStyleIndex < (shoeStyles.length -1)) {
-      setShoeStyleIndex(shoeStyleIndex + 1); 
-    } else {
-      setShoeStyleIndex(0);
-    }
-  }
+  // const flickThroughBottoms = () => {
+  //   if (bottomStyleIndex < (bottomStyles.length -1)) {
+  //     setBottomStyleIndex(bottomStyleIndex + 1); 
+  //   } else {
+  //     setBottomStyleIndex(0);
+  //   }
+  // }
+
+  // const flickThroughShoes = () => {
+  //   if (shoeStyleIndex < (shoeStyles.length -1)) {
+  //     setShoeStyleIndex(shoeStyleIndex + 1); 
+  //   } else {
+  //     setShoeStyleIndex(0);
+  //   }
+  // }
 
   const dispatch = useDispatch();
   const {email} = useSelector(state=>state.user)
@@ -92,10 +96,10 @@ const CharacterDesign = () => {
           <CharacterComponent data={charData} />
         </div>
       </div>
-      <div><button onClick={() => {flickThroughHair()}}>change hair</button></div>
-      <div><button onClick={() => {flickThroughTop()}}>change top</button></div>
-      <div><button onClick={() => {flickThroughBottoms()}}>change bottoms</button></div>
-      <div><button onClick={() => {flickThroughShoes()}}>change shoes</button></div>
+      <div><button onClick={() => {flickThrough(hairStyleIndex, setHairStyleIndex, hairStyles)}}>change hair</button></div>
+      <div><button onClick={() => {flickThrough(topStyleIndex, setTopStyleIndex, topStyles)}}>change top</button></div>
+      <div><button onClick={() => {flickThrough(bottomStyleIndex, setBottomStyleIndex, bottomStyles)}}>change bottoms</button></div>
+      <div><button onClick={() => {flickThrough(shoeStyleIndex, setShoeStyleIndex, shoeStyles)}}>change shoes</button></div>
         {/* <button 
           onClick={() => {storeOutfit(charData)}}
           type='submit'
