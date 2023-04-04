@@ -1,11 +1,20 @@
 import React from "react";
 import { useDispatch } from "react-redux";
+import  {random_ten_questions,all_questions} from "./questions";
 import { setCurrentScene } from "../../redux-store/scene/sceneSlice";
+import {
+  setHasGameStarted,
+  setSelectedWords,
+} from "../../redux-store/game/gameSlice";
 
 const StartGame = () => {
   const dispatch = useDispatch()
-
+  
   const handleBedroom = () => {
+    dispatch(setHasGameStarted(true))
+    const newSet = random_ten_questions(all_questions)
+    console.log(newSet)
+    dispatch(setSelectedWords(newSet))
     dispatch(setCurrentScene("MAIN_GAME"))
   }
 

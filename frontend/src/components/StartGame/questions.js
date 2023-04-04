@@ -602,15 +602,15 @@ export const all_questions = [
 ];
 
 export const random_ten_questions = (all_questions) => {
-  // Randomizes and chooses 10 questions from the bank
-  const chosen_questions = all_questions
+  // Create a deep copy of the questions array
+  const chosen_questions = JSON.parse(JSON.stringify(all_questions))
+    // Randomizes and chooses 10 questions from the bank
     .sort(() => Math.random() - 0.5)
     .slice(0, 10);
   chosen_questions.forEach((question) => {
     // Randomizes the options array of each of the 10 chosen questions
-    question.options = question.options.sort(() => Math.random() - 0.5);
+    question.options.sort(() => Math.random() - 0.5);
   });
-  console.log(chosen_questions)
   return chosen_questions;
 };
 
