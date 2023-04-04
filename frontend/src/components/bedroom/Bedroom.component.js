@@ -17,7 +17,6 @@ const Bedroom = () => {
   const fetchUserData = async () => {
     const response = await fetch(`http://localhost:8000/users?email=${email}`);
     const data = await response.json();
-    console.log("LOOOOK", data);
     dispatch(updateUserInfo(data));
   };
 

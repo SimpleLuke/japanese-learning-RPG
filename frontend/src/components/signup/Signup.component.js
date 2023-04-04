@@ -20,16 +20,12 @@ import { useState } from "react";
 
 const Signup = () => {
   const dispatch = useDispatch();
-  const { character, wordsLearnt } = useSelector(
-    (state) => state.user
-  );
+  const { character, wordsLearnt } = useSelector((state) => state.user);
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const handleSubmit = async (event) => {
-    console.log(email);
-    console.log(password);
     event.preventDefault();
     fetch("http://localhost:8000/users", {
       method: "post",
@@ -44,7 +40,7 @@ const Signup = () => {
       }),
     }).then((response) => {
       if (response.status === 201) {
-      dispatch(setCurrentUser(email));
+        dispatch(setCurrentUser(email));
         dispatch(setCurrentScene("CHARACTER"));
       } else {
         console.log("response was: ", response);
