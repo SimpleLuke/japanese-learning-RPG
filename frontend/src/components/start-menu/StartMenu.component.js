@@ -5,7 +5,7 @@ const StartMenu = () => {
   const dispatch = useDispatch();
 
   return (
-    <div className="bg-startMenu bg-cover bg-center full-screen ">
+    <div className="bg-pixelFishes bg-cover bg-center full-screen ">
       <button
         data-test="login-btn"
         className="pixel-btn mb-12"
