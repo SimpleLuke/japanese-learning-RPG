@@ -5,7 +5,8 @@ require("../mongodb_helper");
 
 describe("/shop", () => {
   describe("/shop/purchase", () => {
-    beforeAll(async () => {
+    beforeEach(async () => {
+      await User.deleteMany({});
       const user = new User({
         email: "shop@email.com",
         password: "1234",
@@ -30,7 +31,7 @@ describe("/shop", () => {
       await user.save();
     });
 
-    afterAll(async () => {
+    afterEach(async () => {
       await User.deleteMany({});
     });
 
@@ -39,7 +40,7 @@ describe("/shop", () => {
         .post("/shop/purchase")
         .send({ email: "shop@email.com", item: "tshirt-green", cost: 40 });
       expect(response.statusCode).toEqual(201);
-      let user = await User.findOne({ email: "shop@email.com" });
+      const user = await User.findOne({ email: "shop@email.com" });
       expect(user.character.inventory.length).toEqual(1);
       expect(user.character.attributes.coins).toEqual(-40);
     });

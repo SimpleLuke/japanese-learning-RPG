@@ -17,11 +17,8 @@ const Bedroom = () => {
   const fetchUserData = async () => {
     const response = await fetch(`http://localhost:8000/users?email=${email}`);
     const data = await response.json();
-    console.log("LOOOOK", data);
     dispatch(updateUserInfo(data));
   };
-
-  // const { statMenuOpen } = useSelector((state) => state.statModal);
 
   useEffect(() => {
     fetchUserData();
@@ -91,7 +88,10 @@ const Bedroom = () => {
         >
           <p className="text-tag absolute left-[8px] top-[4px]">Desk</p>
         </div>
-        <div className="wardrobe cursor-pointer absolute pixelated top-[485px] left-[404px]">
+        <div
+          onClick={() => dispatch(setCurrentScene("WARDROBE"))}
+          className="wardrobe cursor-pointer absolute pixelated top-[485px] left-[404px]"
+        >
           <p className="text-tag absolute left-[8px] top-[1px]">Wardrobe</p>
         </div>
         <div

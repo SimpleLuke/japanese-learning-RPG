@@ -11,8 +11,6 @@ const Login = () => {
   const [password, setPassword] = useState("");
 
   const handleSubmit = async (event) => {
-    console.log(email);
-    console.log(password);
     event.preventDefault();
 
     let response = await fetch("http://localhost:8000/tokens", {
