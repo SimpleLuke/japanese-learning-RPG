@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import  {random_ten_questions,all_questions} from "./questions";
 import { useDispatch, useSelector } from "react-redux";
 import QuizParticles from "./particleParams";
 import { setCurrentScene } from "../../redux-store/scene/sceneSlice";
@@ -13,14 +12,19 @@ import {
   setShowAnswer,
   addWordsStudied,
   setWordsStudied,
+  setHasGameStarted,
+  setSelectedWords,
 } from "../../redux-store/game/gameSlice";
 
 const MainGame = () => {
-  const [questions,setQuestions] = useState(random_ten_questions(all_questions))
-  const { currentScore, currentQuestion, userAnswer, showAnswer } = useSelector(
+  const dispatch = useDispatch()
+  const [isClicked, setIsClicked] = useState(false);
+
+  const [questions,setQuestions] = useState(useSelector((state) => state.game.selectedWords))
+  
+  const { currentScore, currentQuestion, userAnswer, showAnswer, hasGameStarted} = useSelector(
     (state) => state.game
   );
-  const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(setCurrentScore(0));
@@ -32,9 +36,15 @@ const MainGame = () => {
     const isCorrect = answer === questions[currentQuestion].answer;
     dispatch(setUserAnswer(answer));
     dispatch(setShowAnswer(true));
+    setIsClicked(true);
     if (isCorrect) {
       dispatch(addCurrentScore());
-      dispatch(addWordsStudied([questions[currentQuestion].japanese, questions[currentQuestion].answer]));
+      dispatch(
+        addWordsStudied([
+          questions[currentQuestion].japanese,
+          questions[currentQuestion].answer,
+        ])
+      );
     }
 
     setTimeout(() => {
@@ -42,12 +52,21 @@ const MainGame = () => {
       if (nextQuestion < questions.length) {
         dispatch(setCurrentQuestion(nextQuestion));
       } else {
+        dispatch(setHasGameStarted(false))
+        dispatch(setSelectedWords([]))
         dispatch(setCurrentScene("END_GAME"));
       }
       dispatch(setShowAnswer(false));
       dispatch(setUserAnswer(null));
+      setIsClicked(false);
     }, 750);
   };
+
+  const handleQuitMenu = () => {
+    dispatch(setHasGameStarted(false))
+    dispatch(setSelectedWords([]))
+    dispatch(openQuitMenu())
+  }
 
   const getButtonClassNames = (answer) => {
     if (showAnswer) {
@@ -71,7 +90,7 @@ const MainGame = () => {
           <QuitGameModal />
 
           <button
-            onClick={() => dispatch(openQuitMenu())}
+            onClick={() => handleQuitMenu()}
             className="back-btn absolute top-0 left-0 p-1 text-lg"
           >
             <img
@@ -93,6 +112,7 @@ const MainGame = () => {
               key={index}
               className={getButtonClassNames(answerOption)}
               onClick={() => handleAnswerOptionClick(answerOption)}
+              disabled={isClicked}
             >
               {answerOption}
             </button>

@@ -1,6 +1,6 @@
 import React from "react";
 import MainGame from "./MainGame";
-import questions from "./questions";
+import questions from "../StartGame/questions";
 
 describe("MainGame", () => {
   // beforeEach(() => {

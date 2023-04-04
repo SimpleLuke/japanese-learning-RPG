@@ -1,9 +1,22 @@
 import React from "react";
 import { useDispatch } from "react-redux";
+import  {random_ten_questions,all_questions} from "./questions";
 import { setCurrentScene } from "../../redux-store/scene/sceneSlice";
+import {
+  setHasGameStarted,
+  setSelectedWords,
+} from "../../redux-store/game/gameSlice";
 
 const StartGame = () => {
-  const dispatch = useDispatch();
+  const dispatch = useDispatch()
+  
+  const handleBedroom = () => {
+    dispatch(setHasGameStarted(true))
+    const newSet = random_ten_questions(all_questions)
+    console.log(newSet)
+    dispatch(setSelectedWords(newSet))
+    dispatch(setCurrentScene("MAIN_GAME"))
+  }
 
   return (
     <div className="absolute inset-0 bg-black flex justify-center items-center">
@@ -19,7 +32,7 @@ const StartGame = () => {
         <div className="option-section grid grid-cols-1 gap-8">
           <button
             data-test = "start-game"
-            onClick={() => dispatch(setCurrentScene("MAIN_GAME"))}
+            onClick={() => handleBedroom()}
             // onClick={() => handleStartGameClick()}
             className="bg-yellow-400 text-white font-bold py-4 px-8 rounded-full shadow-lg hover:bg-yellow-500 transition-colors duration-200"
           >
