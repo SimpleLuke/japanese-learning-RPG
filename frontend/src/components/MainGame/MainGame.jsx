@@ -13,14 +13,20 @@ import {
   setShowAnswer,
   addWordsStudied,
   setWordsStudied,
+  setHasGameStarted,
+  setSelectedWords,
 } from "../../redux-store/game/gameSlice";
 
 const MainGame = () => {
+  const dispatch = useDispatch();
+  
   const [questions,setQuestions] = useState(random_ten_questions(all_questions))
-  const { currentScore, currentQuestion, userAnswer, showAnswer } = useSelector(
+  // dispatch(setHasGameStarted(true)) <- put this in StartGame
+  // use above line to determine is setSelectedWords should be reset
+  
+  const { currentScore, currentQuestion, userAnswer, showAnswer, setHasGameStarted, setSelectedWords } = useSelector(
     (state) => state.game
   );
-  const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(setCurrentScore(0));
