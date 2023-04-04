@@ -4,10 +4,14 @@ require("../mongodb_helper");
 const User = require("../../models/users.model");
 
 describe("User model", () => {
-  beforeEach((done) => {
-    mongoose.connection.collections.users.drop(() => {
-      done();
-    });
+  // beforeEach((done) => {
+  //   mongoose.connection.collections.users.drop(() => {
+  //     done();
+  //   });
+  // });
+
+  beforeEach(async () => {
+    await User.deleteMany({});
   });
 
   it("has an email address", () => {
@@ -45,13 +49,16 @@ describe("User model", () => {
           xp: 0,
           level: 0,
           wordsKnown: 0,
+          coins: 0,
         },
 
         inventory: [],
-        equipped: {
-          head: "",
-          outfit: "",
-          trousers: "",
+        currentOutfit: {
+          bottoms: "",
+          shoes: "",
+          hair: "",
+          top: "",
+          body: "",
         },
       },
     });
@@ -68,13 +75,16 @@ describe("User model", () => {
             xp: 0,
             level: 0,
             wordsKnown: 0,
+            coins: 0,
           },
 
           inventory: [],
-          equipped: {
-            head: "",
-            outfit: "",
-            trousers: "",
+          currentOutfit: {
+            bottoms: "",
+            shoes: "",
+            hair: "",
+            top: "",
+            body: "",
           },
         },
       });
