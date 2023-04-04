@@ -9,7 +9,7 @@ describe("/users", () => {
   });
 
   afterEach(async () => {
-    // await User.deleteMany({});
+    await User.deleteMany({});
   });
 
   describe("POST, when email and password are provided", () => {
@@ -72,7 +72,7 @@ describe("/users", () => {
     });
 
     test("does not create a user", async () => {
-      await request(app).post("/users").send({ email: "test@email.com" });
+      await request(app).post("/users").send({ email: "tester@email.com" });
       let users = await User.find();
       expect(users.length).toEqual(0);
     });

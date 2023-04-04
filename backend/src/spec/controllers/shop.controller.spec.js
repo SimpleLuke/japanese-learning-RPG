@@ -40,7 +40,7 @@ describe("/shop", () => {
         .post("/shop/purchase")
         .send({ email: "shop@email.com", item: "tshirt-green", cost: 40 });
       expect(response.statusCode).toEqual(201);
-      let user = await User.findOne({ email: "shop@email.com" });
+      const user = await User.findOne({ email: "shop@email.com" });
       expect(user.character.inventory.length).toEqual(1);
       expect(user.character.attributes.coins).toEqual(-40);
     });

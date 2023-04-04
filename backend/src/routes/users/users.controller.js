@@ -19,16 +19,12 @@ const UsersController = {
       }
       res.json(user);
     } catch (error) {
-      console.error(error);
       res.status(500).json({ error: "Server error" });
     }
   },
   UpdateOutfit: async (req, res) => {
     const { outfit, email } = req.body;
-    console.log(outfit, "  +", email);
     const { body, hair, top, bottoms, shoes } = outfit;
-    const usertest = await User.findOne({ email: email });
-    console.log(usertest);
 
     try {
       const user = await User.findOne({ email: email });
