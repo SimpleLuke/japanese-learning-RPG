@@ -610,5 +610,8 @@ export const random_ten_questions = (all_questions) => {
     // Randomizes the options array of each of the 10 chosen questions
     question.options = question.options.sort(() => Math.random() - 0.5);
   });
+  console.log(chosen_questions)
   return chosen_questions;
 };
+
+
