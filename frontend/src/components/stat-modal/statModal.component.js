@@ -6,6 +6,7 @@ import { CheckIcon } from "@heroicons/react/24/outline";
 import { closeStatModal } from "../../redux-store/stat-modal/statModalSlice";
 import userSlice from "../../redux-store/user/userSlice";
 import CharacterComponent from "../design-character/character.component";
+import Achievements from "../achievements/achievements.component";
 
 export default function StatModal() {
   const dispatch = useDispatch();
@@ -54,15 +55,21 @@ export default function StatModal() {
                   <div className="mt-3 text-center sm:mt-5">
                     <Dialog.Title
                       as="h3"
-                      className="text-base font-semibold leading-6 text-gray-900 mt-12"
+                      className="pixel-font text-base font-semibold leading-6 text-gray-900 mt-12"
                     >
                       User Stats
                     </Dialog.Title>
                     <div className="mt-2">
-                      <p className="text-sm text-gray-500">level: {level}</p>
-                      <p className="text-sm text-gray-500">XP: {xp}</p>
-                      <p className="text-sm text-gray-500">Coins: {coins}</p>
-                      <p className="text-sm text-gray-500">
+                      <p className="text-sm text-gray-500 pixel-font">
+                        level: {level}
+                      </p>
+                      <p className="text-sm text-gray-500 pixel-font">
+                        XP: {xp}
+                      </p>
+                      <p className="text-sm text-gray-500 pixel-font">
+                        Coins: {coins}
+                      </p>
+                      <p className="text-sm text-gray-500 pixel-font">
                         Words Known: {wordsKnown}
                       </p>
                     </div>
@@ -71,7 +78,7 @@ export default function StatModal() {
                 <div className="mt-5 sm:mt-6">
                   <button
                     type="button"
-                    className="inline-flex w-full justify-center rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                    className="inline-flex w-full justify-center rounded-md bg-japanese-brown px-3 py-2 text-sm pixel-font text-white shadow-sm hover:bg-darker-japanese-brown focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 sm:rounded-xl p-3"
                     onClick={() => closeStatModalAndQuit()}
                   >
                     Go back to bedroom
