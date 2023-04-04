@@ -3,6 +3,7 @@ import { Provider } from "react-redux";
 import { configureStore } from "@reduxjs/toolkit";
 import sceneReducer from "../../redux-store/scene/sceneSlice";
 import userReducer from "../../redux-store/user/userSlice";
+import musicPlayerReducer from "../../redux-store/music/musicSlice";
 import BurgerMenu from "./BurgerMenu.component";
 
 describe("Bedroom component", () => {
@@ -10,7 +11,11 @@ describe("Bedroom component", () => {
 
   beforeEach(() => {
     store = configureStore({
-      reducer: { scene: sceneReducer, user: userReducer },
+      reducer: {
+        scene: sceneReducer,
+        user: userReducer,
+        musicPlayer: musicPlayerReducer,
+      },
       preloadedState: {
         scene: {
           currentScene: "BEDROOM",
@@ -38,7 +43,7 @@ describe("Bedroom component", () => {
     cy.getTest("options").should("exist");
   });
 
-  it("clicks on burger menu and logout button appears", () => {
+  it("clicks on burger menu and logout / music toggle buttons appear", () => {
     cy.mount(
       <Provider store={store}>
         <BurgerMenu />
@@ -46,5 +51,15 @@ describe("Bedroom component", () => {
     );
     cy.get('[data-test="options"]').click();
     cy.getTest("logout").should("exist");
+    cy.getTest("musicToggle").should("exist");
+  });
+
+  it("music plays by default", () => {
+    cy.mount(
+      <Provider store={store}>
+        <BurgerMenu />
+      </Provider>
+    );
+    expect(store.getState().musicPlayer.toggle).to.equal(true);
   });
 });
