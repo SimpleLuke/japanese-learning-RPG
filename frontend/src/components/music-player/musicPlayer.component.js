@@ -1,11 +1,11 @@
 import { useState, useEffect, useRef } from "react";
 import { useSelector } from "react-redux";
-import gameSoundtrack from "../../music/gameSoundtrack.mp3";
+import gameSounds from "../../music/gameSounds.mp3";
 
 function MusicPlayer() {
   const [playing, setPlaying] = useState(false);
   const audioRef = useRef(null);
-  const trackList = [gameSoundtrack];
+  const trackList = [gameSounds];
   const { toggle } = useSelector((state) => state.musicPlayer);
 
   useEffect(() => {
