@@ -9,12 +9,21 @@ const topStyles = ["tshirt-gray", "tshirt-green-flower", "vest"];
 
 const CharacterDesign = () => {
   const [hairStyleIndex, setHairStyleIndex] = useState(0);
+  const [topStyleIndex, setTopStyleIndex] = useState(0);
 
   const flickThroughHair = () => {
     if (hairStyleIndex < (hairStyles.length -1)) {
       setHairStyleIndex(hairStyleIndex + 1); 
     } else {
       setHairStyleIndex(0);
+    }
+  }
+
+  const flickThroughTop = () => {
+    if (topStyleIndex < (topStyles.length -1)) {
+      setTopStyleIndex(topStyleIndex + 1); 
+    } else {
+      setTopStyleIndex(0);
     }
   }
 
@@ -44,7 +53,7 @@ const CharacterDesign = () => {
   const charData = { 
     body: "body",
     hair: hairStyles[hairStyleIndex],
-    top: "tshirt-gray",
+    top: topStyles[topStyleIndex],
     bottoms: "pants-blue",
     shoes: "shoes-navy"
   };
@@ -60,6 +69,7 @@ const CharacterDesign = () => {
         </div>
       </div>
         <button data-test="char-button" onClick={() => {flickThroughHair()}}>change hair</button>
+        <button data-test="char-button" onClick={() => {flickThroughTop()}}>change top</button>
         {/* <button 
           onClick={() => {storeOutfit(charData)}}
           type='submit'
