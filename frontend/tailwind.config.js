@@ -28,6 +28,7 @@ module.exports = {
         pixelSepia: "url('../public/img/pixel-sepia.gif')",
         pixelNoodles: "url('../public/img/pixel-noodles.gif')",
         pixelTrain: "url('../public/img/pixel-train.gif')",
+        shopBg: "url('../public/img/shop-bg.gif')",
       },
     },
   },
