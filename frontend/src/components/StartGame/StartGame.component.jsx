@@ -5,6 +5,10 @@ import { setCurrentScene } from "../../redux-store/scene/sceneSlice";
 const StartGame = () => {
   const dispatch = useDispatch();
 
+  const handleBedroom = () => {
+    dispatch(setCurrentScene("MAIN_GAME"))
+  }
+
   return (
     <div className="absolute inset-0 bg-black flex justify-center items-center">
       <div className="menu-container bg-red-600 w-2/3 mx-auto my-16 px-8 py-10 rounded-lg shadow-lg">
@@ -19,7 +23,7 @@ const StartGame = () => {
         <div className="option-section grid grid-cols-1 gap-8">
           <button
             data-test = "start-game"
-            onClick={() => dispatch(setCurrentScene("MAIN_GAME"))}
+            onClick={() => handleBedroom()}
             // onClick={() => handleStartGameClick()}
             className="bg-yellow-400 text-white font-bold py-4 px-8 rounded-full shadow-lg hover:bg-yellow-500 transition-colors duration-200"
           >
