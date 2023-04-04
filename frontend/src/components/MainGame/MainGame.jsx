@@ -40,7 +40,7 @@ const MainGame = () => {
     dispatch(setShowAnswer(true));
     if (isCorrect) {
       dispatch(addCurrentScore());
-      dispatch(addWordsStudied(questions[currentQuestion].japanese));
+      dispatch(addWordsStudied([questions[currentQuestion].japanese, questions[currentQuestion].answer]));
     }
 
     setTimeout(() => {
