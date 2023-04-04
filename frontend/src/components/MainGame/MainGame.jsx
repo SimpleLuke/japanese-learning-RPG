@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import  {random_ten_questions,all_questions} from "./questions";
+import { random_ten_questions, all_questions } from "./questions";
 import { useDispatch, useSelector } from "react-redux";
 import QuizParticles from "./particleParams";
 import { setCurrentScene } from "../../redux-store/scene/sceneSlice";
@@ -19,14 +19,22 @@ import {
 
 const MainGame = () => {
   const dispatch = useDispatch();
-  
-  const [questions,setQuestions] = useState(random_ten_questions(all_questions))
+
+  const [questions, setQuestions] = useState(
+    random_ten_questions(all_questions)
+  );
+  const [isClicked, setIsClicked] = useState(false);
   // dispatch(setHasGameStarted(true)) <- put this in StartGame
   // use above line to determine is setSelectedWords should be reset
-  
-  const { currentScore, currentQuestion, userAnswer, showAnswer, setHasGameStarted, setSelectedWords } = useSelector(
-    (state) => state.game
-  );
+
+  const {
+    currentScore,
+    currentQuestion,
+    userAnswer,
+    showAnswer,
+    setHasGameStarted,
+    setSelectedWords,
+  } = useSelector((state) => state.game);
 
   useEffect(() => {
     dispatch(setCurrentScore(0));
@@ -38,9 +46,15 @@ const MainGame = () => {
     const isCorrect = answer === questions[currentQuestion].answer;
     dispatch(setUserAnswer(answer));
     dispatch(setShowAnswer(true));
+    setIsClicked(true);
     if (isCorrect) {
       dispatch(addCurrentScore());
-      dispatch(addWordsStudied([questions[currentQuestion].japanese, questions[currentQuestion].answer]));
+      dispatch(
+        addWordsStudied([
+          questions[currentQuestion].japanese,
+          questions[currentQuestion].answer,
+        ])
+      );
     }
 
     setTimeout(() => {
@@ -52,6 +66,7 @@ const MainGame = () => {
       }
       dispatch(setShowAnswer(false));
       dispatch(setUserAnswer(null));
+      setIsClicked(false);
     }, 750);
   };
 
@@ -99,6 +114,7 @@ const MainGame = () => {
               key={index}
               className={getButtonClassNames(answerOption)}
               onClick={() => handleAnswerOptionClick(answerOption)}
+              disabled={isClicked}
             >
               {answerOption}
             </button>
