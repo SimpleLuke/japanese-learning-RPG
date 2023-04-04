@@ -3,50 +3,39 @@ import { useSelector } from "react-redux";
 
 const Achievements = () => {
   const { character } = useSelector((state) => state.user);
-  const { xp, level, wordsKnown, coins } = character.attributes;
+  const { xp, level, wordsKnown } = character.attributes;
   const [achievements, setAchievements] = useState([]);
 
   useEffect(() => {
     const calculateAchievements = () => {
       const newAchievements = [];
 
-      
-    for (let i = 2; i <= level; i++) {
-      if (level >= i) {
-        newAchievements.push(`Reached level ${i}`);
-      };
-    };
+      let highestWordsAchievement = Math.floor(wordsKnown / 10) * 10;
+      if (highestWordsAchievement > 0) {
+        newAchievements.push(`Learned ${highestWordsAchievement} words`);
+      }
 
-    const wordsAchievements = Math.floor(wordsKnown / 10);
-    for (let i = 1; i <= wordsAchievements; i++) {
-      newAchievements.push(`Learned ${i * 10} words`);
-    };
-
-    const coinsAchievements = Math.floor(coins / 100);
-    for (let i = 1; i <= coinsAchievements; i++) {
-      newAchievements.push(`Earned ${i * 100} coins`);
-    };
-
-    const xpAchievements = Math.floor(xp / 100);
-    for (let i = 1; i <= xpAchievements; i++) {
-      newAchievements.push(`Reached ${i * 100} XP`);
-    };
+      let highestXpAchievement = Math.floor(xp / 100) * 100;
+      if (highestXpAchievement > 0) {
+        newAchievements.push(`Reached ${highestXpAchievement} XP`);
+      }
 
       setAchievements(newAchievements);
     };
 
     calculateAchievements();
-  }, [xp, level, wordsKnown, coins]);
-
+  }, [xp, level, wordsKnown]);
 
   return (
-    <div className="flex flex-col gap-4">
+    <div className="flex gap-4 pb-4">
       {achievements.map((achievement, index) => (
         <div
           key={index}
-          className="w-32 h-32 rounded-full border-4 border-gray-800 border-dashed border-opacity-50 bg-gray-300 bg-opacity-50 backdrop-filter backdrop-blur-lg px-8 py-6 text-gray-900 font-bold text-center text-lg tracking-wide"
+          className="flex items-center justify-center w-32 h-32 rounded-full bg-gradient-to-br bg-japanese-brown shadow-lg"
         >
-          {achievement}
+          <span className="text-white text-m font-bold pixel-font">
+            {achievement}
+          </span>
         </div>
       ))}
     </div>

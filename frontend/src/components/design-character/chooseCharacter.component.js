@@ -45,7 +45,7 @@ const CharacterDesign = () => {
     if (response.status === 201) {
       const data = await response.json();
       console.log("outfit update", data.message);
-      dispatch(setCurrentScene("BEDROOM"));
+      dispatch(setCurrentScene("CUT_SCENE"));
     } else {
       console.log("OPPS");
     }
