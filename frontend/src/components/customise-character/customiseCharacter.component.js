@@ -23,38 +23,6 @@ const CharacterDesign = () => {
     }
   }
 
-  // const flickThroughHair = () => {
-  //   if (hairStyleIndex < (hairStyles.length -1)) {
-  //     setHairStyleIndex(hairStyleIndex + 1); 
-  //   } else {
-  //     setHairStyleIndex(0);
-  //   }
-  // }
-
-  // const flickThroughTop = () => {
-  //   if (topStyleIndex < (topStyles.length -1)) {
-  //     setTopStyleIndex(topStyleIndex + 1); 
-  //   } else {
-  //     setTopStyleIndex(0);
-  //   }
-  // }
-
-  // const flickThroughBottoms = () => {
-  //   if (bottomStyleIndex < (bottomStyles.length -1)) {
-  //     setBottomStyleIndex(bottomStyleIndex + 1); 
-  //   } else {
-  //     setBottomStyleIndex(0);
-  //   }
-  // }
-
-  // const flickThroughShoes = () => {
-  //   if (shoeStyleIndex < (shoeStyles.length -1)) {
-  //     setShoeStyleIndex(shoeStyleIndex + 1); 
-  //   } else {
-  //     setShoeStyleIndex(0);
-  //   }
-  // }
-
   const dispatch = useDispatch();
   const {email} = useSelector(state=>state.user)
 
