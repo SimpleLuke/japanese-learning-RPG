@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { useSelector } from "react-redux";
-import gameSoundtrack from "../../music/gameSoundtrack.wav";
+import gameSoundtrack from "../../music/gameSoundtrack.mp3";
 
 function MusicPlayer() {
   const [playing, setPlaying] = useState(false);
