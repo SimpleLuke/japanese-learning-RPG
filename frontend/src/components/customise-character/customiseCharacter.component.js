@@ -15,6 +15,10 @@ const CharacterDesign = () => {
   const [bottomStyleIndex, setBottomStyleIndex] = useState(0);
   const [shoeStyleIndex, setShoeStyleIndex] = useState(0);
 
+  const flickThrough = (currentIndex, setIndex, stylesArray) => {
+    
+  }
+
   const flickThroughHair = () => {
     if (hairStyleIndex < (hairStyles.length -1)) {
       setHairStyleIndex(hairStyleIndex + 1); 
