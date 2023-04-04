@@ -70,6 +70,6 @@ describe("Bedroom component", () => {
       </Provider>
     );
 
-    cy.getTest("study-desk").should("contain.text", "Study desk");
+    cy.getTest("study-desk").should("contain.text", "Desk");
   });
 });
