@@ -10,20 +10,14 @@ const Achievements = () => {
     const calculateAchievements = () => {
       const newAchievements = [];
 
-      for (let i = 2; i <= level; i++) {
-        if (level >= i) {
-          newAchievements.push(`Reached level ${i}`);
-        }
+      let highestWordsAchievement = Math.floor(wordsKnown / 10) * 10;
+      if (highestWordsAchievement > 0) {
+        newAchievements.push(`Learned ${highestWordsAchievement} words`);
       }
 
-      const wordsAchievements = Math.floor(wordsKnown / 10);
-      for (let i = 1; i <= wordsAchievements; i++) {
-        newAchievements.push(`Learned ${i * 10} words`);
-      }
-
-      const xpAchievements = Math.floor(xp / 100);
-      for (let i = 1; i <= xpAchievements; i++) {
-        newAchievements.push(`Reached ${i * 100} XP`);
+      let highestXpAchievement = Math.floor(xp / 100) * 100;
+      if (highestXpAchievement > 0) {
+        newAchievements.push(`Reached ${highestXpAchievement} XP`);
       }
 
       setAchievements(newAchievements);
