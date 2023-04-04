@@ -22,6 +22,7 @@ module.exports = {
         jpRoom: "url('../public/img/japanese-room-background.gif')",
         onigiri: "url('../public/img/onigiri.jpg')",
         bedroom: "url('../public/img/bedroom-temp.gif')",
+        bedroom2: "url('../public/img/pixelatedbedroomwithbackground2.jpg')",
         loadingWalk: "url('../public/img/loading-walk.gif')",
         pixelFishes: "url('../public/img/pixel-fishes.gif')",
         pixelSepia: "url('../public/img/pixel-sepia.gif')",
