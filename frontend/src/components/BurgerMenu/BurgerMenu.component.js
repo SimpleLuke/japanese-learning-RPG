@@ -7,8 +7,10 @@ import { setCurrentScene } from "../../redux-store/scene/sceneSlice";
 import { resetStore } from "../../redux-store/utils/reset";
 import { useSelector } from "react-redux";
 import { toggleOn, toggleOff } from "../../redux-store/music/musicSlice";
-// import MusicPlayer from "../music-player/music-player.component";
-// import musicSlice from "../../redux-store/music/musicSlice";
+
+function classNames(...classes) {
+  return classes.filter(Boolean).join(" ");
+}
 
 const BurgerMenu = () => {
   const dispatch = useDispatch();
@@ -53,17 +55,20 @@ const BurgerMenu = () => {
         leaveFrom="transform opacity-100 scale-100"
         leaveTo="transform opacity-0 scale-95"
       >
-        <Menu.Items>
+        <Menu.Items className="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
           <div className="py-1">
             <Menu.Item>
               {({ active }) => (
                 <>
                   <a
-                    data-test="logout"
-                    onClick={logout}
-                    className="w-40 h-40 col-start-4 row-start-2 cursor-pointer overflow-hidden rounded-lg bg-white bg-opacity-80 px-4 py-5 shadow sm:p-6"
+                    data-test="musicToggle"
+                    onClick={handleMusicToggle}
+                    className={classNames(
+                      active ? "bg-gray-100 text-gray-900" : "text-gray-700",
+                      "cursor-pointer hover:bg-gray-200 block px-4 py-2 text-sm"
+                    )}
                   >
-                    Logout
+                    Toggle Music
                   </a>
                 </>
               )}
@@ -72,11 +77,14 @@ const BurgerMenu = () => {
               {({ active }) => (
                 <>
                   <a
-                    data-test="musicToggle"
-                    onClick={handleMusicToggle}
-                    className="w-40 h-40 col-start-4 row-start-2 cursor-pointer overflow-hidden rounded-lg bg-white bg-opacity-80 px-4 py-5 shadow sm:p-6"
+                    data-test="logout"
+                    onClick={logout}
+                    className={classNames(
+                      active ? "bg-gray-100 text-gray-900" : "text-gray-700",
+                      "cursor-pointer hover:bg-gray-200 block px-4 py-2 text-sm"
+                    )}
                   >
-                    Toggle Music
+                    Logout
                   </a>
                 </>
               )}
