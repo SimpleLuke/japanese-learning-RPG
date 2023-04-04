@@ -67,7 +67,7 @@ const Bedroom = () => {
             </dt>
           </div>
         </div>
-        <div className="relative left-[1300px] top-[-140px]">
+        <div className="relative left-[1166px] top-[-140px]">
           <BurgerMenu />
         </div>
         <div className="ml-50 mt-100 absolute left-[695px] top-[450px]">

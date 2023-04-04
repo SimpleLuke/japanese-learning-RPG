@@ -7,15 +7,19 @@ import Login from "./components/login/Login.component";
 import Signup from "./components/signup/Signup.component";
 import Bedroom from "./components/bedroom/Bedroom.component";
 import CharacterDesign from "./components/design-character/chooseCharacter.component";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { setCurrentScene } from "./redux-store/scene/sceneSlice";
 import Bookshelf from "./components/bookshelf/Bookshelf.component";
+import MusicPlayer from "./components/music-player/musicPlayer.component";
 import Shop from "./components/shop/Shop.component";
 import Wardrobe from "./components/wardrobe/Wardrobe.component";
 
 function App() {
   const dispatch = useDispatch();
   const { currentScene } = useSelector((state) => state.scene);
+  const [audio, setAudio] = useState(true);
+
+  //audio functions lifted from music-player.component to avoid issues on re-render
 
   useEffect(() => {
     if (
@@ -28,6 +32,8 @@ function App() {
 
   return (
     <div className="flex flex-col justify-center items-center overflow-hidden h-screen">
+      <MusicPlayer />
+
       {currentScene === "MAIN_GAME" && <MainGame />}
       {currentScene === "START_GAME" && <StartGame />}
       {currentScene === "END_GAME" && <EndGame />}
