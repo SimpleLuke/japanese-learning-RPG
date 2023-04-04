@@ -27,13 +27,15 @@ const Achievements = () => {
   }, [xp, level, wordsKnown]);
 
   return (
-    <div className="flex gap-4 pb-6">
+    <div className="flex gap-4 pb-4">
       {achievements.map((achievement, index) => (
         <div
           key={index}
-          className="flex items-center justify-center w-32 h-32 rounded-full border-4 border-yellow-400 bg-gradient-to-br from-yellow-300 to-yellow-200 shadow-lg"
+          className="flex items-center justify-center w-32 h-32 rounded-full bg-gradient-to-br bg-japanese-brown shadow-lg"
         >
-          <span className="text-white text-lg font-bold">{achievement}</span>
+          <span className="text-white text-m font-bold pixel-font">
+            {achievement}
+          </span>
         </div>
       ))}
     </div>

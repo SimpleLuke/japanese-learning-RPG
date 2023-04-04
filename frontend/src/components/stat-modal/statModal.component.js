@@ -73,8 +73,15 @@ export default function StatModal() {
                         Words Known: {wordsKnown}
                       </p>
                     </div>
+                    <Dialog.Title
+                      as="h3"
+                      className="pixel-font text-base font-semibold leading-6 text-gray-900 mt-12"
+                    >
+                      Achievments
+                    </Dialog.Title>
                   </div>
                 </div>
+
                 <div className="mt-5 sm:mt-6">
                   <Achievements />
 
