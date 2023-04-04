@@ -5,7 +5,8 @@ require("../mongodb_helper");
 
 describe("/shop", () => {
   describe("/shop/purchase", () => {
-    beforeAll(async () => {
+    beforeEach(async () => {
+      await User.deleteMany({});
       const user = new User({
         email: "shop@email.com",
         password: "1234",
@@ -30,7 +31,7 @@ describe("/shop", () => {
       await user.save();
     });
 
-    afterAll(async () => {
+    afterEach(async () => {
       await User.deleteMany({});
     });
 

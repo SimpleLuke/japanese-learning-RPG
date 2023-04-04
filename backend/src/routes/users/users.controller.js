@@ -32,7 +32,11 @@ const UsersController = {
   },
   UpdateOutfit: async (req, res) => {
     const { outfit, email } = req.body;
+    console.log(outfit, "  +", email);
     const { body, hair, top, bottoms, shoes } = outfit;
+    const usertest = await User.findOne({ email: email });
+    console.log(usertest);
+
     try {
       const user = await User.findOne({ email: email });
       user.character.currentOutfit.body = body;
@@ -43,6 +47,7 @@ const UsersController = {
       await user.save();
       return res.status(201).json({ message: "OK" });
     } catch (err) {
+      console.log(err);
       return res.status(400).json({ message: "Bad request" });
     }
   },
