@@ -5,15 +5,28 @@ import { clearPersistedData } from "../../redux-store/store";
 import { useDispatch } from "react-redux";
 import { setCurrentScene } from "../../redux-store/scene/sceneSlice";
 import { resetStore } from "../../redux-store/utils/reset";
+import { useSelector } from "react-redux";
+import { toggleOn, toggleOff } from "../../redux-store/music/musicSlice";
+// import MusicPlayer from "../music-player/music-player.component";
+// import musicSlice from "../../redux-store/music/musicSlice";
 
 const BurgerMenu = () => {
   const dispatch = useDispatch();
+  const { toggle } = useSelector((state) => state.musicPlayer);
 
   const logout = () => {
     clearPersistedData();
     resetStore(dispatch);
     window.localStorage.removeItem("token");
     dispatch(setCurrentScene("START_MENU"));
+  };
+
+  const handleMusicToggle = () => {
+    if (toggle === true) {
+      dispatch(toggleOff());
+    } else {
+      dispatch(toggleOn());
+    }
   };
 
   return (
@@ -44,13 +57,28 @@ const BurgerMenu = () => {
           <div className="py-1">
             <Menu.Item>
               {({ active }) => (
-                <a
-                  data-test="logout"
-                  onClick={logout}
-                  className="w-40 h-40 col-start-4 row-start-2 cursor-pointer overflow-hidden rounded-lg bg-white bg-opacity-80 px-4 py-5 shadow sm:p-6"
-                >
-                  Logout
-                </a>
+                <>
+                  <a
+                    data-test="logout"
+                    onClick={logout}
+                    className="w-40 h-40 col-start-4 row-start-2 cursor-pointer overflow-hidden rounded-lg bg-white bg-opacity-80 px-4 py-5 shadow sm:p-6"
+                  >
+                    Logout
+                  </a>
+                </>
+              )}
+            </Menu.Item>
+            <Menu.Item>
+              {({ active }) => (
+                <>
+                  <a
+                    data-test="musicToggle"
+                    onClick={handleMusicToggle}
+                    className="w-40 h-40 col-start-4 row-start-2 cursor-pointer overflow-hidden rounded-lg bg-white bg-opacity-80 px-4 py-5 shadow sm:p-6"
+                  >
+                    Toggle Music
+                  </a>
+                </>
               )}
             </Menu.Item>
           </div>
