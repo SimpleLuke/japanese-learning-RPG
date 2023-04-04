@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  toggle: true,
+  toggle: false,
 };
 
 const musicSlice = createSlice({

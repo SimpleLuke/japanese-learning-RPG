@@ -65,7 +65,12 @@ const BurgerMenu = () => {
                   >
                     Logout
                   </a>
-
+                </>
+              )}
+            </Menu.Item>
+            <Menu.Item>
+              {({ active }) => (
+                <>
                   <a
                     data-test="musicToggle"
                     onClick={handleMusicToggle}
