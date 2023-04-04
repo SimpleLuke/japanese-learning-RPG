@@ -11,6 +11,7 @@ import { useEffect } from "react";
 import { setCurrentScene } from "./redux-store/scene/sceneSlice";
 import Bookshelf from "./components/bookshelf/Bookshelf.component";
 import Shop from "./components/shop/Shop.component";
+import CutScene from "./components/cutscene/cutscene.component";
 
 function App() {
   const dispatch = useDispatch();
@@ -37,6 +38,7 @@ function App() {
       {currentScene === "BOOKSHELF" && <Bookshelf />}
       {currentScene === "CHARACTER" && <CharacterDesign />}
       {currentScene === "SHOP" && <Shop />}
+      {currentScene === "CUT_SCENE" && <CutScene/>}
     </div>
   );
 }
