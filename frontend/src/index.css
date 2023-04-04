@@ -287,6 +287,21 @@ code {
   cursor: pointer;
 }
 
+.shop {
+  background-image: url('../public/img/shop.png');
+  width: 29px;
+  height: 49px;
+  transform: scale(3);
+}
+
+.shop:hover {
+  background-image: url('../public/img/shop.png');
+  width: 29px;
+  height: 49px;
+  transform: scale(3.2);
+  cursor: pointer;
+}
+
 .text-tag {
   font-size: 3.5px;
   /* font-weight: 700; */

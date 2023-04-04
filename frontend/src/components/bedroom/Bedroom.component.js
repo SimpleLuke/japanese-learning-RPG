@@ -65,52 +65,6 @@ const Bedroom = () => {
         >
           {email}
         </dd>
-{/* =======
-    <div className="bg-bedroom bg-cover bg-center h-screen w-screen grid grid-cols-4 grid-rows-4 gap-4 p-4 ">
-      <div className="col-start-8 row-start-1 row-end-1">
-        <BurgerMenu />
-      </div>
-      <StatModal />
-      <div
-        onClick={() => dispatch(openStatModal())}
-        className="col-start-1 row-start-1 flex w-96 h-40 overflow-hidden rounded-lg bg-white bg-opacity-80 px-4 py-5 shadow sm:p-6"
-      >
-        <div>
-          <dd
-            data-test="email"
-            className="mt-1 text-3xl font-semibold tracking-tight text-gray-900"
-          >
-            {email}
-          </dd>
-          <dt
-            data-test="level"
-            className="truncate text-sm font-medium text-gray-500"
-          >
-            Level: {level}
-          </dt>
-          <dt
-            data-test="exp"
-            className="truncate text-sm font-medium text-gray-500"
-          >
-            Exp: {xp}
-          </dt>
-          <dt
-            data-test="words"
-            className="truncate text-sm font-medium text-gray-500"
-          >
-            Words: {wordsKnown}
-          </dt>
-          <dt
-            data-test="coins"
-            className="truncate text-sm font-medium text-gray-500"
-          >
-            Coins: {coins}
-          </dt>
-        </div>
-        <div className=" flex justify-center items-baseline w-40 ">
-          {character.currentOutfit && (
-            <CharacterComponent data={character.currentOutfit} />
-          )} */}
         </div>
       </div>
       <div className="relative left-[1015px] top-[-90px]">
@@ -133,23 +87,16 @@ const Bedroom = () => {
       <div className="wardrobe cursor-pointer absolute pixelated top-[485px] left-[404px]">
         <p className="text-tag absolute left-[8px] top-[1px]">Wardrobe</p>
       </div>
-      {/* <div
-        data-test="bookshelf"
-        onClick={() => dispatch(setCurrentScene("BOOKSHELF"))}
-        className="w-40 h-40 col-start-3 row-start-2 cursor-pointer overflow-hidden rounded-lg bg-white bg-opacity-80 px-4 py-5 shadow sm:p-6"
-      >
-        Bookshelf
-      </div> */}
       <div
         data-test="shop"
         onClick={() => dispatch(setCurrentScene("SHOP"))}
-        className="w-40 h-40 col-start-4 row-start-3 cursor-pointer overflow-hidden rounded-lg bg-white bg-opacity-80 px-4 py-5 shadow sm:p-6"
+        className="shop cursor-pointer absolute pixelated top-[420px] left-[1048px]"
       >
-        Shop
+        <p className="text-tag absolute left-[7px] top-[1px]">Shop</p>
       </div>
-    
     </div>
     </>
+    // w-40 h-40 col-start-4 row-start-3 cursor-pointer overflow-hidden rounded-lg bg-white bg-opacity-80 px-4 py-5 shadow sm:p-6
   );
 };
 
