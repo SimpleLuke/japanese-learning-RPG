@@ -30,9 +30,15 @@ const Bedroom = () => {
   return (
     <>
     <div className="bg-bedroom2 pixelated relative bg-cover bg-center h-screen w-screen p-4 "> 
-      <div className="w-80 h-26 flex flex-wrap relative left-[290px] overflow-hidden border-8 border-blue-900 bg-red-100 bg-opacity-80 px-4 py-2 shadow sm:p-2">
+      <div onClick={() => dispatch(openStatModal())} className="w-64 h-26 absolute flex flex-wrap relative cursor-pointer overflow-hidden border-8 border-blue-900 bg-red-100 bg-opacity-80 px-4 py-2 shadow sm:p-2">
         <div><StatModal /></div>
-        <div onClick={() => dispatch(openStatModal())} className="w-1/2">
+        <div>
+        <dd
+          data-test="email"
+          className="text-2xl font-semibold tracking-tight text-gray-900"
+        >
+          {email}
+        </dd>
         <dt
           data-test="level"
           className="truncate text-sm font-medium text-gray-500"
@@ -58,16 +64,8 @@ const Bedroom = () => {
           Coins: {coins}
         </dt>
         </div>
-        <div className="w-1/2 font-email absolute left-[120px]">
-        <dd
-          data-test="email"
-          className="text-2xl font-semibold tracking-tight text-gray-900"
-        >
-          {email}
-        </dd>
-        </div>
       </div>
-      <div className="relative left-[1015px] top-[-90px]">
+      <div className="relative left-[1300px] top-[-140px]">
         <BurgerMenu />
       </div> 
       <div className="ml-50 mt-100 absolute left-[695px] top-[450px]">
@@ -96,7 +94,6 @@ const Bedroom = () => {
       </div>
     </div>
     </>
-    // w-40 h-40 col-start-4 row-start-3 cursor-pointer overflow-hidden rounded-lg bg-white bg-opacity-80 px-4 py-5 shadow sm:p-6
   );
 };
 

@@ -236,9 +236,6 @@ code {
   image-rendering: pixelated;
 }
 
-.bedroom-bg {
-  background-image: url('../public/img/bedroompixelated1.png');
-}
 
 .wardrobe {
   background-image: url('../public/img/wardrobepng.png');
