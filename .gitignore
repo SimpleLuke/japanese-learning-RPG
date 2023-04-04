@@ -65,3 +65,6 @@ frontend/cypress/videos/
 frontend/cypress/screenshots/
 
 .DS_Store
+
+# redundant music file
+frontend/src/music/gameSoundtrack.wav
