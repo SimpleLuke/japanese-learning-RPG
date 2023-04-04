@@ -97,7 +97,7 @@ const EndGame = () => {
                   {newVarWords.map((word) => {
                     return (
                       <div key={word} className="p-1">
-                        <span>{word}</span>
+                        <span>{word[0]}</span>
                       </div>
                     );
                   })}
