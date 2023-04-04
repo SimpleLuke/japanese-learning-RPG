@@ -27,13 +27,13 @@ const Achievements = () => {
   }, [xp, level, wordsKnown]);
 
   return (
-    <div className="flex flex-col gap-4">
+    <div className="flex gap-4 pb-6">
       {achievements.map((achievement, index) => (
         <div
           key={index}
-          className="w-32 h-32 rounded-full border-4 border-gray-800 border-dashed border-opacity-50 bg-gray-300 bg-opacity-50 backdrop-filter backdrop-blur-lg px-8 py-6 text-gray-900 font-bold text-center text-lg tracking-wide"
+          className="flex items-center justify-center w-32 h-32 rounded-full border-4 border-yellow-400 bg-gradient-to-br from-yellow-300 to-yellow-200 shadow-lg"
         >
-          {achievement}
+          <span className="text-white text-lg font-bold">{achievement}</span>
         </div>
       ))}
     </div>
