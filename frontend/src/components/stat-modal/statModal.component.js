@@ -81,6 +81,7 @@ export default function StatModal() {
                     className="inline-flex w-full justify-center rounded-md bg-japanese-brown px-3 py-2 text-sm pixel-font text-white shadow-sm hover:bg-darker-japanese-brown focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 sm:rounded-xl p-3"
                     onClick={() => closeStatModalAndQuit()}
                   >
+                    <Achievements />
                     Go back to bedroom
                   </button>
                 </div>

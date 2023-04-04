@@ -3,41 +3,34 @@ import { useSelector } from "react-redux";
 
 const Achievements = () => {
   const { character } = useSelector((state) => state.user);
-  const { xp, level, wordsKnown, coins } = character.attributes;
+  const { xp, level, wordsKnown } = character.attributes;
   const [achievements, setAchievements] = useState([]);
 
   useEffect(() => {
     const calculateAchievements = () => {
       const newAchievements = [];
 
-      
-    for (let i = 2; i <= level; i++) {
-      if (level >= i) {
-        newAchievements.push(`Reached level ${i}`);
-      };
-    };
+      for (let i = 2; i <= level; i++) {
+        if (level >= i) {
+          newAchievements.push(`Reached level ${i}`);
+        }
+      }
 
-    const wordsAchievements = Math.floor(wordsKnown / 10);
-    for (let i = 1; i <= wordsAchievements; i++) {
-      newAchievements.push(`Learned ${i * 10} words`);
-    };
+      const wordsAchievements = Math.floor(wordsKnown / 10);
+      for (let i = 1; i <= wordsAchievements; i++) {
+        newAchievements.push(`Learned ${i * 10} words`);
+      }
 
-    const coinsAchievements = Math.floor(coins / 100);
-    for (let i = 1; i <= coinsAchievements; i++) {
-      newAchievements.push(`Earned ${i * 100} coins`);
-    };
-
-    const xpAchievements = Math.floor(xp / 100);
-    for (let i = 1; i <= xpAchievements; i++) {
-      newAchievements.push(`Reached ${i * 100} XP`);
-    };
+      const xpAchievements = Math.floor(xp / 100);
+      for (let i = 1; i <= xpAchievements; i++) {
+        newAchievements.push(`Reached ${i * 100} XP`);
+      }
 
       setAchievements(newAchievements);
     };
 
     calculateAchievements();
-  }, [xp, level, wordsKnown, coins]);
-
+  }, [xp, level, wordsKnown]);
 
   return (
     <div className="flex flex-col gap-4">
