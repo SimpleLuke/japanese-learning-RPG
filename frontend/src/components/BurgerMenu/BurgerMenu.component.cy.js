@@ -60,6 +60,6 @@ describe("Bedroom component", () => {
         <BurgerMenu />
       </Provider>
     );
-    expect(store.getState().musicPlayer.toggle).to.equal(true);
+    expect(store.getState().musicPlayer.toggle).to.equal(false);
   });
 });
