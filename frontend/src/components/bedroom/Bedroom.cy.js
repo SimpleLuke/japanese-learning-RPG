@@ -3,6 +3,7 @@ import { Provider } from "react-redux";
 import { configureStore } from "@reduxjs/toolkit";
 import sceneReducer from "../../redux-store/scene/sceneSlice";
 import userReducer from "../../redux-store/user/userSlice";
+import statModalReducer from "../../redux-store/stat-modal/statModalSlice";
 import Bedroom from "./Bedroom.component";
 
 describe("Bedroom component", () => {
@@ -10,7 +11,11 @@ describe("Bedroom component", () => {
 
   beforeEach(() => {
     store = configureStore({
-      reducer: { scene: sceneReducer, user: userReducer },
+      reducer: {
+        scene: sceneReducer,
+        user: userReducer,
+        statModal: statModalReducer,
+      },
       preloadedState: {
         scene: {
           currentScene: "BEDROOM",
@@ -28,7 +33,7 @@ describe("Bedroom component", () => {
               hair: "gentlemanHair-blond",
               top: "tshirt-gray",
               bottoms: "pants-blue",
-              shoes: "shoes-navy"
+              shoes: "shoes-navy",
             },
           },
         },
@@ -65,6 +70,6 @@ describe("Bedroom component", () => {
       </Provider>
     );
 
-    cy.getTest("study-desk").should("contain.text", "Study desk");
+    cy.getTest("study-desk").should("contain.text", "Desk");
   });
 });

@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const UserSchema = new mongoose.Schema({
   email: { type: String, required: true },
   password: { type: String, required: true },
-  wordsLearnt: [String],
+  wordsLearnt: { type: [[String, String]], default: [] },
   character: {
     attributes: {
       xp: Number,
@@ -15,8 +15,8 @@ const UserSchema = new mongoose.Schema({
       body: String,
       hair: String,
       top: String,
-      bottoms:String,
-      shoes:String
+      bottoms: String,
+      shoes: String,
     },
   },
 });

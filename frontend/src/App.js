@@ -11,6 +11,7 @@ import { useEffect, useState } from "react";
 import { setCurrentScene } from "./redux-store/scene/sceneSlice";
 import Bookshelf from "./components/bookshelf/Bookshelf.component";
 import MusicPlayer from "./components/music-player/musicPlayer.component";
+import Shop from "./components/shop/Shop.component";
 
 function App() {
   const dispatch = useDispatch();
@@ -41,6 +42,7 @@ function App() {
       {currentScene === "BEDROOM" && <Bedroom />}
       {currentScene === "BOOKSHELF" && <Bookshelf />}
       {currentScene === "CHARACTER" && <CharacterDesign />}
+      {currentScene === "SHOP" && <Shop />}
     </div>
   );
 }

@@ -16,6 +16,7 @@ import gameModalReducer from "./game-modal/gameModalSlice";
 import sceneReducer from "./scene/sceneSlice";
 import gameReducer from "./game/gameSlice";
 import userReducer from "./user/userSlice";
+import shopReducer from "./shop/shopSlice";
 import statModalReducer from "./stat-modal/statModalSlice";
 import musicPlayerReducer from "./music/musicSlice";
 
@@ -30,6 +31,7 @@ const reducers = combineReducers({
   scene: sceneReducer,
   game: gameReducer,
   user: userReducer,
+  shop: shopReducer,
   statModal: statModalReducer,
   musicPlayer: musicPlayerReducer,
 });

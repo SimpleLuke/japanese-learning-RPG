@@ -73,9 +73,11 @@ code {
   z-index: -1;
 }
 
+.pixelated {
+  image-rendering: pixelated;
+}
 
 /* character style templates */
-
 
 .characterContainer {
   position: relative;
@@ -88,15 +90,15 @@ code {
 }
 
 .characterContainer:hover {
-  background-color:aliceblue;
+  background-color: aliceblue;
 }
 
 .body {
   width: 32px;
   height: 32px;
   transform: scale(6);
-  background-image: url('./components/design-character/character-sprites/char1.png');
-  background-position:  -256px 0px ;
+  background-image: url("./components/design-character/character-sprites/char1.png");
+  background-position: -256px 0px;
   position: absolute;
   image-rendering: pixelated;
 }
@@ -104,93 +106,221 @@ code {
 .gentlemanHair-blond {
   width: 32px;
   height: 32px;
-  background-image: url('./components/design-character/character-sprites/gentleman-hair.png');
-  background-position:  -256px 0px ;
+  background-image: url("./components/design-character/character-sprites/gentleman-hair.png");
+  background-position: -256px 0px;
   position: absolute;
 }
 
 .tshirt-gray {
   width: 32px;
   height: 32px;
-  background-image: url('./components/design-character/character-sprites/basic-clothes.png');
+  background-image: url("./components/design-character/character-sprites/basic-clothes.png");
   position: absolute;
+}
+
+.tshirt-dark-blue {
+  width: 32px;
+  height: 32px;
+  background-image: url("./components/design-character/character-sprites/basic-clothes.png");
+  position: absolute;
+  background-position: calc(-32 * 8px) 0px;
+}
+
+.tshirt-light-blue {
+  width: 32px;
+  height: 32px;
+  background-image: url("./components/design-character/character-sprites/basic-clothes.png");
+  position: absolute;
+  background-position: calc(-32 * 20px) 0px;
+}
+
+.tshirt-brown {
+  width: 32px;
+  height: 32px;
+  background-image: url("./components/design-character/character-sprites/basic-clothes.png");
+  position: absolute;
+  background-position: calc(-32 * 24px) 0px;
+}
+
+.tshirt-green {
+  width: 32px;
+  height: 32px;
+  background-image: url("./components/design-character/character-sprites/basic-clothes.png");
+  position: absolute;
+  background-position: calc(-32 * 32px) 0px;
 }
 
 .pants-blue {
   width: 32px;
   height: 32px;
-  background-image: url('./components/design-character/character-sprites/pants.png');
-  background-position:  -512px 0px ;
+  background-image: url("./components/design-character/character-sprites/pants.png");
+  background-position: -512px 0px;
   position: absolute;
 }
 
 .shoes-navy {
   width: 32px;
   height: 32px;
-  background-image: url('./components/design-character/character-sprites/shoes.png');
-  background-position:  -512px 0px ;
+  background-image: url("./components/design-character/character-sprites/shoes.png");
+  background-position: -512px 0px;
   position: absolute;
 }
 
 .tshirt-green-flower {
   width: 32px;
   height: 32px;
-  background-image: url('./components/design-character/character-sprites/floral.png');
-  background-position:  -1024px 0px ;
+  background-image: url("./components/design-character/character-sprites/floral.png");
+  background-position: -1024px 0px;
   position: absolute;
 }
 
 .pants-pink {
   width: 32px;
   height: 32px;
-  background-image: url('./components/design-character/character-sprites/pants.png');
-  background-position:  -1536px 0px ;
+  background-image: url("./components/design-character/character-sprites/pants.png");
+  background-position: -1536px 0px;
   position: absolute;
 }
 
 .hair-emo {
   width: 32px;
   height: 32px;
-  background-image: url('./components/design-character/character-sprites/emo.png');
+  background-image: url("./components/design-character/character-sprites/emo.png");
   position: absolute;
 }
 
 .shoes-green {
   width: 32px;
   height: 32px;
-  background-image: url('./components/design-character/character-sprites/shoes.png');
-  background-position:  -1280px 0px ;
+  background-image: url("./components/design-character/character-sprites/shoes.png");
+  background-position: -1280px 0px;
   position: absolute;
 }
 
 .vest {
   width: 32px;
   height: 32px;
-  background-image: url('./components/design-character/character-sprites/spaghetti.png');
-  background-position:  -1536px 0px ;
+  background-image: url("./components/design-character/character-sprites/spaghetti.png");
+  background-position: -1536px 0px;
   position: absolute;
 }
 
 .skirt {
   width: 32px;
   height: 32px;
-  background-image: url('./components/design-character/character-sprites/skirt.png');
-  background-position:  -1536px 0px ;
+  background-image: url("./components/design-character/character-sprites/skirt.png");
+  background-position: -1536px 0px;
   position: absolute;
-} 
+}
 
 .hair-long-blonde {
   width: 32px;
   height: 32px;
-  background-image: url('./components/design-character/character-sprites/wavy.png');
-  background-position:  -768px 0px ;
+  background-image: url("./components/design-character/character-sprites/wavy.png");
+  background-position: -768px 0px;
   position: absolute;
-} 
+}
 
 .shoes-purple {
   width: 32px;
   height: 32px;
-  background-image: url('./components/design-character/character-sprites/shoes.png');
-  background-position:  -1536px 0px ;
+  background-image: url("./components/design-character/character-sprites/shoes.png");
+  background-position: -1536px 0px;
   position: absolute;
+}
+
+
+/* bedroom components */
+
+.pixelated {
+  image-rendering: pixelated;
+}
+
+
+.wardrobe {
+  background-image: url('../public/img/wardrobepng.png');
+  width: 63px;
+  height: 46px;
+  overflow: hidden;
+  transform: scale(3);
+}
+
+.wardrobe:hover {
+  background-image: url('../public/img/wardrobepng.png');
+  width: 63px;
+  height: 46px;
+  overflow: hidden;
+  transform: scale(3.2);
+  cursor: pointer;
+}
+
+.study-desk {
+  background-image: url('../public/img/deskpng.png');
+  width: 30px;
+  height: 40px;
+  transform: scale(3);
+}
+
+.study-desk:hover {
+  background-image: url('../public/img/deskpng.png');
+  width: 30px;
+  height: 40px;
+  transform: scale(3.2);
+  cursor: pointer;
+}
+
+.bookshelf {
+  background-image: url('../public/img/bookshelfpng.png');
+  width: 39px;
+  height: 44px;
+  transform: scale(3);
+}
+
+.bookshelf:hover {
+  background-image: url('../public/img/bookshelfpng.png');
+  width: 39px;
+  height: 44px;
+  transform: scale(3.2);
+  cursor: pointer;
+}
+
+.shop {
+  background-image: url('../public/img/shop.png');
+  width: 29px;
+  height: 49px;
+  transform: scale(3);
+}
+
+.shop:hover {
+  background-image: url('../public/img/shop.png');
+  width: 29px;
+  height: 49px;
+  transform: scale(3.2);
+  cursor: pointer;
+}
+
+.text-tag {
+  font-size: 3.5px;
+  /* font-weight: 700; */
+  font-family: "Press Start 2P", cursive;
+}
+
+.font-email {
+  font-size: 10px;
+  font-family: "Press Start 2P", cursive;
+}
+
+/* bedroom grid */
+.bedroom-grid{
+  display: grid;
+  grid-template-areas:
+  'one one two three four five'
+  'five'
+  'five'
+  'five'
+  ;
+}
+
+.stat-grid{
+  grid-area:one;
 }

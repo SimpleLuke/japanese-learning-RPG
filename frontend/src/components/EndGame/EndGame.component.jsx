@@ -37,10 +37,12 @@ const EndGame = () => {
   };
 
   const storeResult = async () => {
+    const token = window.localStorage.getItem('token')
     const response = await fetch("http://localhost:8000/game/update", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
       },
       body: JSON.stringify({
         email: email,
@@ -95,7 +97,7 @@ const EndGame = () => {
                   {newVarWords.map((word) => {
                     return (
                       <div key={word} className="p-1">
-                        <span>{word}</span>
+                        <span>{word[0]}</span>
                       </div>
                     );
                   })}

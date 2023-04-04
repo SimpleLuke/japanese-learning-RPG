@@ -1,17 +1,3 @@
-/*
-  This example requires some changes to your config:
-  
-  ```
-  // tailwind.config.js
-  module.exports = {
-    // ...
-    plugins: [
-      // ...
-      require('@tailwindcss/forms'),
-    ],
-  }
-  ```
-*/
 import { LockClosedIcon } from "@heroicons/react/20/solid";
 import { useDispatch, useSelector } from "react-redux";
 import { setCurrentScene } from "../../redux-store/scene/sceneSlice";
@@ -27,7 +13,8 @@ const Signup = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    fetch("http://localhost:8000/users", {
+
+    const postUsers = fetch("http://localhost:8000/users", {
       method: "post",
       headers: {
         "Content-Type": "application/json",
@@ -38,12 +25,31 @@ const Signup = () => {
         wordsLearnt: wordsLearnt,
         character: character,
       }),
-    }).then((response) => {
-      if (response.status === 201) {
-        dispatch(setCurrentUser(email));
-        dispatch(setCurrentScene("CHARACTER"));
+    });
+
+    Promise.all([postUsers]).then(([postUsersResponse]) => {
+      if (postUsersResponse.status === 201) {
+        const getTokens = fetch("http://localhost:8000/tokens", {
+          method: "post",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ email: email, password: password }),
+        });
+
+        getTokens.then((getTokensResponse) => {
+          if (getTokensResponse.status === 201) {
+            getTokensResponse.json().then((data) => {
+              window.localStorage.setItem("token", data.token);
+              dispatch(setCurrentUser(email));
+              dispatch(setCurrentScene("CHARACTER"));
+            });
+          } else {
+            console.log("response was: error with /tokens");
+          }
+        });
       } else {
-        console.log("response was: ", response);
+        console.log("response was: error with /users");
       }
     });
   };
