@@ -7,6 +7,7 @@ import Login from "./components/login/Login.component";
 import Signup from "./components/signup/Signup.component";
 import Bedroom from "./components/bedroom/Bedroom.component";
 import CharacterDesign from "./components/design-character/chooseCharacter.component";
+import CustomiseCharacter from "./components/customise-character/customiseCharacter.component";
 import { useEffect } from "react";
 import { setCurrentScene } from "./redux-store/scene/sceneSlice";
 import Bookshelf from "./components/bookshelf/Bookshelf.component";
@@ -21,7 +22,7 @@ function App() {
       window.localStorage.getItem("token") &&
       window.localStorage.getItem("token") !== "undefined"
     ) {
-      dispatch(setCurrentScene("BEDROOM"));
+      dispatch(setCurrentScene("CUSTOM_CHAR")); //BEDROOM
     }
   }, [dispatch]);
 
@@ -37,6 +38,7 @@ function App() {
       {currentScene === "BOOKSHELF" && <Bookshelf />}
       {currentScene === "CHARACTER" && <CharacterDesign />}
       {currentScene === "SHOP" && <Shop />}
+      {currentScene === "CUSTOM_CHAR" && <CustomiseCharacter />}
     </div>
   );
 }

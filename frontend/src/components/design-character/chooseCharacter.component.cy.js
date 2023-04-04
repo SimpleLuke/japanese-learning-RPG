@@ -37,7 +37,7 @@ describe("CharacterDesign component", () => {
         <CharacterDesign />
       </Provider>
     );
-    expect(store.getState().scene.currentScene).to.equal("CHARACTER");
+    expect(store.getState().scene.currentScene).to.equal("CUSTOM_CHAR");
   })
 
   it('checks elements are rendered', () => {
