@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import { setCurrentScene } from "../../redux-store/scene/sceneSlice";
 
 const StartGame = () => {
-  const dispatch = useDispatch();
+  const dispatch = useDispatch()
 
   return (
     <div className="absolute inset-0 bg-black flex justify-center items-center">
