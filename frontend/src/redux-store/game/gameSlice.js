@@ -42,6 +42,7 @@ const gameSlice = createSlice({
     },
     setSelectedWords: (state, action) => {
       state.selectedWords = action.payload;
+      console.log(state.selectedWords)
     },
   },
 });

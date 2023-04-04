@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { random_ten_questions, all_questions } from "./questions";
 import { useDispatch, useSelector } from "react-redux";
 import QuizParticles from "./particleParams";
 import { setCurrentScene } from "../../redux-store/scene/sceneSlice";
@@ -18,23 +17,14 @@ import {
 } from "../../redux-store/game/gameSlice";
 
 const MainGame = () => {
-  const dispatch = useDispatch();
-
-  const [questions, setQuestions] = useState(
-    random_ten_questions(all_questions)
-  );
+  const dispatch = useDispatch()
   const [isClicked, setIsClicked] = useState(false);
-  // dispatch(setHasGameStarted(true)) <- put this in StartGame
-  // use above line to determine is setSelectedWords should be reset
 
-  const {
-    currentScore,
-    currentQuestion,
-    userAnswer,
-    showAnswer,
-    setHasGameStarted,
-    setSelectedWords,
-  } = useSelector((state) => state.game);
+  const [questions,setQuestions] = useState(useSelector((state) => state.game.selectedWords))
+  
+  const { currentScore, currentQuestion, userAnswer, showAnswer, hasGameStarted} = useSelector(
+    (state) => state.game
+  );
 
   useEffect(() => {
     dispatch(setCurrentScore(0));
@@ -62,6 +52,8 @@ const MainGame = () => {
       if (nextQuestion < questions.length) {
         dispatch(setCurrentQuestion(nextQuestion));
       } else {
+        dispatch(setHasGameStarted(false))
+        dispatch(setSelectedWords([]))
         dispatch(setCurrentScene("END_GAME"));
       }
       dispatch(setShowAnswer(false));
@@ -69,6 +61,12 @@ const MainGame = () => {
       setIsClicked(false);
     }, 750);
   };
+
+  const handleQuitMenu = () => {
+    dispatch(setHasGameStarted(false))
+    dispatch(setSelectedWords([]))
+    dispatch(openQuitMenu())
+  }
 
   const getButtonClassNames = (answer) => {
     if (showAnswer) {
@@ -92,7 +90,7 @@ const MainGame = () => {
           <QuitGameModal />
 
           <button
-            onClick={() => dispatch(openQuitMenu())}
+            onClick={() => handleQuitMenu()}
             className="back-btn absolute top-0 left-0 p-1 text-lg"
           >
             <img
