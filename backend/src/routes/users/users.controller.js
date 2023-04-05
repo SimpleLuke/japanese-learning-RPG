@@ -9,13 +9,6 @@ const UsersController = {
     } catch (err) {
       return res.status(400).json({ message: "Bad request" });
     }
-    // await user.save((err) => {
-    //   if (err) {
-    //     res.status(400).json({ message: "Bad request" });
-    //   } else {
-    //     res.status(201).json({ message: "OK" });
-    //   }
-    // });
   },
   GetUserData: async (req, res) => {
     try {
@@ -26,13 +19,13 @@ const UsersController = {
       }
       res.json(user);
     } catch (error) {
-      console.error(error);
       res.status(500).json({ error: "Server error" });
     }
   },
   UpdateOutfit: async (req, res) => {
-    const { outfit,email } = req.body;
-    const { body,hair,top,bottoms,shoes } = outfit;
+    const { outfit, email } = req.body;
+    const { body, hair, top, bottoms, shoes } = outfit;
+
     try {
       const user = await User.findOne({ email: email });
       user.character.currentOutfit.body = body;
@@ -40,6 +33,19 @@ const UsersController = {
       user.character.currentOutfit.top = top;
       user.character.currentOutfit.bottoms = bottoms;
       user.character.currentOutfit.shoes = shoes;
+      await user.save();
+      return res.status(201).json({ message: "OK" });
+    } catch (err) {
+      console.log(err);
+      return res.status(400).json({ message: "Bad request" });
+    }
+  },
+  ChangeOutfit: async (req, res) => {
+    const { outfit, email } = req.body;
+    const { top } = outfit;
+    try {
+      const user = await User.findOne({ email: email });
+      user.character.currentOutfit.top = top;
       await user.save();
       return res.status(201).json({ message: "OK" });
     } catch (err) {

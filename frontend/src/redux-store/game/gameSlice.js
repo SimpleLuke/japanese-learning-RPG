@@ -6,6 +6,8 @@ const initialState = {
   userAnswer: null,
   showAnswer: false,
   wordsStudied: [],
+  hasGameStarted: false,
+  selectedWords: [],
 };
 
 const gameSlice = createSlice({
@@ -35,6 +37,13 @@ const gameSlice = createSlice({
     setWordsStudied: (state, action) => {
       state.wordsStudied = action.payload;
     },
+    setHasGameStarted: (state, action) => {
+      state.hasGameStarted = action.payload;
+    },
+    setSelectedWords: (state, action) => {
+      state.selectedWords = action.payload;
+      console.log(state.selectedWords)
+    },
   },
 });
 
@@ -47,5 +56,7 @@ export const {
   resetGame,
   addWordsStudied,
   setWordsStudied,
+  setHasGameStarted,
+  setSelectedWords,
 } = gameSlice.actions;
 export default gameSlice.reducer;

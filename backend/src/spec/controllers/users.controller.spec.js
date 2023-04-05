@@ -8,6 +8,10 @@ describe("/users", () => {
     await User.deleteMany({});
   });
 
+  afterEach(async () => {
+    await User.deleteMany({});
+  });
+
   describe("POST, when email and password are provided", () => {
     test("the response code is 201", async () => {
       let response = await request(app)
@@ -68,7 +72,7 @@ describe("/users", () => {
     });
 
     test("does not create a user", async () => {
-      await request(app).post("/users").send({ email: "test@email.com" });
+      await request(app).post("/users").send({ email: "tester@email.com" });
       let users = await User.find();
       expect(users.length).toEqual(0);
     });
@@ -86,6 +90,68 @@ describe("/users", () => {
       await request(app).post("/users").send({ password: "1234" });
       let users = await User.find();
       expect(users.length).toEqual(0);
+    });
+  });
+
+  describe("/outfit", () => {
+    beforeEach(async () => {
+      const user = new User({
+        email: "outfit@email.com",
+        password: "1234",
+        wordsLearnt: [],
+        character: {
+          attributes: {
+            xp: 0,
+            level: 0,
+            wordsKnown: 0,
+            coins: 0,
+          },
+          inventory: [],
+          currentOutfit: {
+            bottoms: "",
+            shoes: "",
+            hair: "",
+            top: "",
+            body: "",
+          },
+        },
+      });
+      await user.save();
+    });
+    test("POST /outfit", async () => {
+      let response = await request(app)
+        .post("/users/outfit")
+        .send({
+          email: "outfit@email.com",
+          outfit: {
+            body: "body",
+            hair: "hair",
+            top: "top",
+            bottoms: "bottoms",
+            shoes: "shoes",
+          },
+        });
+      expect(response.status).toEqual(201);
+      const user = await User.findOne({ email: "outfit@email.com" });
+      expect(user.character.currentOutfit.body).toEqual("body");
+      expect(user.character.currentOutfit.hair).toEqual("hair");
+      expect(user.character.currentOutfit.top).toEqual("top");
+      expect(user.character.currentOutfit.bottoms).toEqual("bottoms");
+      expect(user.character.currentOutfit.shoes).toEqual("shoes");
+    });
+
+    test("POST /outfit/change", async () => {
+      let response = await request(app)
+        .post("/users/outfit/change")
+        .send({
+          email: "outfit@email.com",
+          outfit: {
+            top: "top",
+          },
+        });
+      expect(response.status).toEqual(201);
+      const user = await User.findOne({ email: "outfit@email.com" });
+      expect(user.character.currentOutfit.top).toEqual("top");
     });
   });
 });

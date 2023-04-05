@@ -11,7 +11,7 @@ const initialState = {
       coins: 0,
     },
 
-    inventory: [],
+    inventory: ["vest", "tshirt-green-flower", "tshirt-gray"],
 
     currentOutfit: {
       body: "",
@@ -70,6 +70,10 @@ const userSlice = createSlice({
       const cost = action.payload;
       state.character.attributes.coins -= cost;
     },
+    changeOutfit: (state, action) => {
+      const { top } = action.payload;
+      state.character.currentOutfit.top = top;
+    },
     extraReducers: (builder) => {
       builder.addCase(PURGE, (state) => {
         return { ...initialState };
@@ -90,5 +94,6 @@ export const {
   setStartOutfit,
   addItem,
   spendCoins,
+  changeOutfit,
 } = userSlice.actions;
 export default userSlice.reducer;
