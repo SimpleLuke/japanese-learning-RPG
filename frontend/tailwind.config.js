@@ -30,6 +30,7 @@ module.exports = {
         pixelTrain: "url('../public/img/pixel-train.gif')",
         London: "url('../public/img/London.png')",
         JapanCutscene: "url('../public/img/japanCut.gif')",
+        shopBg: "url('../public/img/shop-bg.gif')",
       },
     },
   },
