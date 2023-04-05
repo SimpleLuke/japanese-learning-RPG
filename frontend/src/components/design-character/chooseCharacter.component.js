@@ -66,7 +66,7 @@ const CharacterDesign = () => {
         </div>
       </div>
       <div className='w-1/2 p-4 flex mt-12 justify-center'>
-        <div className='justify-center' data-test="character">
+        <div className='justify-center' data-test="character-styles">
         <div className='pb-2'><div className='hair-button mb-4' onClick={() => {flickThrough(hairStyleIndex, setHairStyleIndex, hairStyles)}}></div></div>
         <div className='pb-2'><div className='top-button mb-4' onClick={() => {flickThrough(topStyleIndex, setTopStyleIndex, topStyles)}}></div></div>
         <div className='pb-2'><div className='pants-button mb-4' onClick={() => {flickThrough(bottomStyleIndex, setBottomStyleIndex, bottomStyles)}}></div></div>

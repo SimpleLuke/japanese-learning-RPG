@@ -77,7 +77,27 @@ code {
   font-family: "Press Start 2P", cursive;
 }
 
+.pixel-font-sm {
+  font-family: "Press Start 2P", cursive;
+  font-size: larger;
+}
+
 .pixelated {
+  image-rendering: pixelated;
+}
+
+.bg-pixelMom {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: 1;
+}
+
+.start-container {
+  width: 161px;
+  height: 48px;
+  background-image: url('../public/img/ryan1.png');
+  transform: scale(5);
   image-rendering: pixelated;
 }
 
