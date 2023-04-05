@@ -3,9 +3,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/othneildrew/Best-README-Template">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
-  </a>
+  <img width="861" alt="image" src="https://user-images.githubusercontent.com/89473016/230063984-a009feda-367e-413a-b91f-9b39d9175a71.png">
 
   <h3 align="center">良いね iine</h3>
 
@@ -151,7 +149,34 @@ They can always check their learning progress by reviewing the records of the wo
 
 ## Usage
 
-Screenshots
+- Sign up an account
+<img width="1433" alt="image" src="https://user-images.githubusercontent.com/89473016/230064213-bb9262bc-eedb-45fb-a414-b4093f73a41a.png">
+
+- Choose your character
+<img width="590" alt="image" src="https://user-images.githubusercontent.com/89473016/230064312-ff46aaff-bdb0-44d1-8f33-bcf6d3684cca.png">
+
+- Navigate to different features
+<img width="1433" alt="image" src="https://user-images.githubusercontent.com/89473016/230064676-02ae244d-3788-4133-be11-b8dab07594d1.png">
+
+- Play a Japanese quiz to earn exp and coins through study desk
+<img width="1437" alt="image" src="https://user-images.githubusercontent.com/89473016/230064788-e0c4766a-ba23-4e65-b664-d4418ebb6b7c.png">
+
+- Buy new outfit with coins through shop
+<img width="1433" alt="image" src="https://user-images.githubusercontent.com/89473016/230065058-39a4e89e-7ed8-43da-a621-fe1f92463034.png">
+
+- Change outfit through wardrobe
+<img width="1429" alt="image" src="https://user-images.githubusercontent.com/89473016/230065328-9ecd8c4d-1349-4f8a-9fdf-f6d3601a650e.png">
+
+- View the learning progress through bookshelf
+<img width="1436" alt="image" src="https://user-images.githubusercontent.com/89473016/230065232-bf6d89a7-24ec-4500-86d1-cb36cd23ae0a.png">
+
+- View your achievments through the stats bar
+<img width="1432" alt="image" src="https://user-images.githubusercontent.com/89473016/230066171-f84209c0-edd6-4a41-b367-934734a9d859.png">
+
+- Toggle background music and logout through menu
+<img width="302" alt="image" src="https://user-images.githubusercontent.com/89473016/230066339-4706cb40-d32a-4a64-ac07-ff0d0a2fe277.png">
+
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -194,11 +219,11 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 ## Contact
 
-Anna Magnusson - [LinkedIn](https://www.linkedin.com/) - email@example.com
-Edward Thomas - [LinkedIn](https://www.linkedin.com/) - email@example.com
-James Mcleish - [LinkedIn](https://www.linkedin.com/) - email@example.com
-Luke Lai - [LinkedIn](https://www.linkedin.com/in/luke-lai-309a3522b/) - lukelai.dev@gmail.com
-Ryan Lai - [LinkedIn](https://www.linkedin.com/) - email@example.com
+- Anna Magnusson - [LinkedIn](https://www.linkedin.com/) - email@example.com
+- Edward Thomas - [LinkedIn](https://www.linkedin.com/) - email@example.com
+- James Mcleish - [LinkedIn](https://www.linkedin.com/) - email@example.com
+- Luke Lai - [LinkedIn](https://www.linkedin.com/in/luke-lai-309a3522b/) - lukelai.dev@gmail.com
+- Ryan Lai - [LinkedIn](https://www.linkedin.com/) - email@example.com
 
 Project Link: [**[japanese-learning-RPG](https://github.com/SimpleLuke/japanese-learning-RPG)**]
 
