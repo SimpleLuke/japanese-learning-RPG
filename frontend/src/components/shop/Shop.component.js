@@ -88,7 +88,7 @@ const Shop = () => {
   }, []);
 
   return (
-    <div className="bg-shopBg bg-cover w-screen h-screen py-5">
+    <div className="bg-shopBg2 bg-cover w-screen h-screen py-5">
       <div className="flex justify-between w-3/4 mx-auto">
         <button
           data-test="back-to-bedroom"
