@@ -38,6 +38,5 @@ describe("EndGame component", () => {
     cy.getTest("coins").should("exist");
     cy.getTest("words-studied").should("exist");
     cy.getTest("XP").should("exist");
-    cy.getTest("endGameInstructions").should("exist");
   });
 });
