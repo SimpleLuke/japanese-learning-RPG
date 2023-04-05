@@ -29,39 +29,39 @@ const Bedroom = () => {
       <div className="bg-bedroom2 pixelated relative bg-cover bg-center h-screen w-screen p-4 ">
         <div
           onClick={() => dispatch(openStatModal())}
-          className="w-64 h-26 absolute flex flex-wrap relative cursor-pointer overflow-hidden border-8 border-blue-900 bg-red-100 bg-opacity-80 px-4 py-2 shadow sm:p-2"
+          className="w-[397px] h-[211px] flex flex-wrap relative z-50 cursor-pointer overflow-hidden scale-75 top-[-1.75rem] right-[3.25rem]  bg-statsBarBg bg-cover px-4 py-2 shadow sm:p-2"
         >
           <div>
             <StatModal />
           </div>
-          <div>
+          <div className="mt-2 pixel-font relative top-[2.75rem] right-[-2.25rem] ">
             <dd
               data-test="email"
-              className="text-2xl font-semibold tracking-tight text-gray-900"
+              className="text-xs relative left-3 font-medium text-gray-900"
             >
               {email}
             </dd>
             <dt
               data-test="level"
-              className="truncate text-sm font-medium text-gray-500"
+              className="truncate text-xs relative left-3 font-medium text-gray-900"
             >
               Level: {level}
             </dt>
             <dt
               data-test="exp"
-              className="truncate text-sm font-medium text-gray-500"
+              className="truncate text-xs relative left-3 font-medium text-gray-900"
             >
               Exp: {xp}
             </dt>
             <dt
               data-test="words"
-              className="truncate text-sm font-medium text-gray-500"
+              className="truncate text-xs relative left-3 font-medium text-gray-900"
             >
               Words: {wordsKnown}
             </dt>
             <dt
               data-test="coin"
-              className="truncate text-sm font-medium text-gray-500"
+              className="truncate text-xs relative left-3 font-medium text-gray-900"
             >
               Coins: {coins}
             </dt>
