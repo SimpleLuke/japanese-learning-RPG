@@ -55,25 +55,30 @@ const CharacterDesign = () => {
 
   return (
     <>
-    <div className='mb-10'>
-        <h1 data-test="page-title">Select your character</h1>
+    <div className=''>
+    <div className='mb-10 bg-blue-300 p-4'>
+        <h1 data-test="page-title" className='pixel-font'>Design your character</h1>
     </div>
-    <div className='flex flex-wrap justify-center w-80 h-80'>
-      <div className='w-1/2 p-4 bg-red-200 flex justify-center'>
-        <div className='justify-center' data-test="character">
+    <div className='flex flex-wrap justify-center w-100 h-80 bg-blue-100'>
+      <div className='w-1/2 p-4 flex mt-12 justify-center'>
+        <div className='justify-center scale-125' data-test="character">
           <CharacterComponent data={charData} />
         </div>
       </div>
-      <div className='w-1/2 p-4 space-y-6 bg-red-500 justify-center'>
-        <div><div className='hair-button mb-4' onClick={() => {flickThrough(hairStyleIndex, setHairStyleIndex, hairStyles)}}></div></div>
-        <div><div className='top-button mb-4' onClick={() => {flickThrough(topStyleIndex, setTopStyleIndex, topStyles)}}></div></div>
-        <div><div className='pants-button mb-4' onClick={() => {flickThrough(bottomStyleIndex, setBottomStyleIndex, bottomStyles)}}></div></div>
-        <div><div className='shoes-button mb-4' onClick={() => {flickThrough(shoeStyleIndex, setShoeStyleIndex, shoeStyles)}}></div></div>
+      <div className='w-1/2 p-4 flex mt-12 justify-center'>
+        <div className='justify-center' data-test="character">
+        <div className='pb-2'><div className='hair-button mb-4' onClick={() => {flickThrough(hairStyleIndex, setHairStyleIndex, hairStyles)}}></div></div>
+        <div className='pb-2'><div className='top-button mb-4' onClick={() => {flickThrough(topStyleIndex, setTopStyleIndex, topStyles)}}></div></div>
+        <div className='pb-2'><div className='pants-button mb-4' onClick={() => {flickThrough(bottomStyleIndex, setBottomStyleIndex, bottomStyles)}}></div></div>
+        <div className='pb-2'><div className='shoes-button mb-4' onClick={() => {flickThrough(shoeStyleIndex, setShoeStyleIndex, shoeStyles)}}></div></div>
+        </div>
       </div>
       <button 
           onClick={() => {storeOutfit(charData)}}
           type='submit'
+          className='pixel-font bg-red-100 -translate-y-6 px-4'
         >submit styles</button> 
+    </div>
     </div>
     </>
   )
