@@ -52,7 +52,9 @@ const EndGame = () => {
     });
     if (response.status === 201) {
       const data = await response.json();
-    } 
+    } else {
+      console.log('404: error')
+    }
   };
 
   useEffect(() => {

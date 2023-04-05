@@ -26,7 +26,9 @@ const Login = () => {
       dispatch(setCurrentScene("BEDROOM"));
       window.localStorage.setItem("token", data.token);
       dispatch(setCurrentUser(data.userData.email));
-    } 
+    } else {
+      console.log('404: error with token')
+    }
   };
 
   const handleEmailChange = (event) => {

@@ -61,9 +61,13 @@ const Signup = () => {
             dispatch(setCurrentUser(email));
             dispatch(setCurrentScene("CHARACTER"));
           });
-        } 
+        } else {
+          console.log('404: error')
+        }
       });
-    } 
+    } else {
+      console.log('404: error')
+    }
   });
   };
 
