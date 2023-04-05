@@ -56,10 +56,10 @@ const CharacterDesign = () => {
   return (
     <>
     <div className='h-screen w-screen bg-charBg bg-cover bg-center mx-auto'>
-    <div className='mb-10 mt-44 w-96 bg-blue-300 p-4 border-4 border-gray-900 mx-auto'>
+    <div className='mb-10 mt-44 w-96 bg-red-300 p-4 border-4 border-gray-900 mx-auto'>
         <h1 data-test="page-title" className='pixel-font'>Design your character</h1>
     </div>
-    <div className='flex flex-wrap justify-center w-96 mx-auto h-80 bg-blue-100 border-4 border-gray-900'>
+    <div className='flex flex-wrap justify-center w-96 mx-auto h-80 bg-red-100 border-4 border-gray-900'>
       <div className='w-1/2 p-4 flex mt-12 justify-center'>
         <div className='justify-center scale-125' data-test="character">
           <CharacterComponent data={charData} />
