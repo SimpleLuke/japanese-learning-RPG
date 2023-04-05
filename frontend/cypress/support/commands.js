@@ -34,7 +34,7 @@ Cypress.Commands.add("signup", (email, password) => {
   cy.get('[data-test="emailSignupInput"]').type(email);
   cy.get('[data-test="passwordSignupInput"]').type(password);
   cy.get('[data-test="signUpSubmitButton"]').click();
-  cy.get('[data-test="char-button1"]').click();
+  cy.get('[data-test="submitChosenCharacter"]').click();
   cy.wait(500);
-  cy.get('[data-test="study-desk"]').click();
+  cy.get('[data-test="cut-scene"]').click();
 });
