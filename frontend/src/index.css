@@ -248,16 +248,14 @@ code {
   position: absolute;
 }
 
-
 /* bedroom components */
 
 .pixelated {
   image-rendering: pixelated;
 }
 
-
 .wardrobe {
-  background-image: url('../public/img/wardrobepng.png');
+  background-image: url("../public/img/wardrobepng.png");
   width: 63px;
   height: 46px;
   overflow: hidden;
@@ -265,7 +263,7 @@ code {
 }
 
 .wardrobe:hover {
-  background-image: url('../public/img/wardrobepng.png');
+  background-image: url("../public/img/wardrobepng.png");
   width: 63px;
   height: 46px;
   overflow: hidden;
@@ -274,14 +272,14 @@ code {
 }
 
 .study-desk {
-  background-image: url('../public/img/deskpng.png');
+  background-image: url("../public/img/deskpng.png");
   width: 30px;
   height: 40px;
   transform: scale(3);
 }
 
 .study-desk:hover {
-  background-image: url('../public/img/deskpng.png');
+  background-image: url("../public/img/deskpng.png");
   width: 30px;
   height: 40px;
   transform: scale(3.2);
@@ -289,14 +287,14 @@ code {
 }
 
 .bookshelf {
-  background-image: url('../public/img/bookshelfpng.png');
+  background-image: url("../public/img/bookshelfpng.png");
   width: 39px;
   height: 44px;
   transform: scale(3);
 }
 
 .bookshelf:hover {
-  background-image: url('../public/img/bookshelfpng.png');
+  background-image: url("../public/img/bookshelfpng.png");
   width: 39px;
   height: 44px;
   transform: scale(3.2);
@@ -304,14 +302,14 @@ code {
 }
 
 .shop {
-  background-image: url('../public/img/shop.png');
+  background-image: url("../public/img/shop.png");
   width: 29px;
   height: 49px;
   transform: scale(3);
 }
 
 .shop:hover {
-  background-image: url('../public/img/shop.png');
+  background-image: url("../public/img/shop.png");
   width: 29px;
   height: 49px;
   transform: scale(3.2);
@@ -330,16 +328,66 @@ code {
 }
 
 /* bedroom grid */
-.bedroom-grid{
+.bedroom-grid {
   display: grid;
   grid-template-areas:
-  'one one two three four five'
-  'five'
-  'five'
-  'five'
-  ;
+    "one one two three four five"
+    "five"
+    "five"
+    "five";
 }
 
-.stat-grid{
-  grid-area:one;
+.stat-grid {
+  grid-area: one;
+}
+
+.headline-animation {
+  animation: up-and-down 4s linear infinite;
+}
+
+@keyframes up-and-down {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+
+/* customise character elements */
+
+.top-button {
+  background-image: url('../public/img/btn-top.png');
+  width: 24px;
+  height: 9px;
+  image-rendering: pixelated;
+  transform: scale(3);
+}
+
+.hair-button {
+  background-image: url('../public/img/btn-hair.png');
+  width: 24px;
+  height: 9px;
+  image-rendering: pixelated;
+  transform: scale(3);
+}
+
+.pants-button {
+  background-image: url('../public/img/btn-pants.png');
+  width: 24px;
+  height: 9px;
+  image-rendering: pixelated;
+  transform: scale(3);
+}
+
+.shoes-button {
+  background-image: url('../public/img/btn-shoes.png');
+  width: 24px;
+  height: 9px;
+  image-rendering: pixelated;
+  transform: scale(3);
 }
