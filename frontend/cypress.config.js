@@ -1,13 +1,18 @@
 const { defineConfig } = require("cypress");
+const mongo = require("cypress-mongodb");
 
 module.exports = defineConfig({
+  env: {
+    mongodb: {
+      uri: "mongodb://0.0.0.0/",
+      database: "rpg",
+    },
+  },
+
   e2e: {
     baseUrl: "http://localhost:3000",
     setupNodeEvents(on, config) {
-      // require("@cypress/code-coverage/task")(on, config);
-      //
-      // // on("file:preprocessor", require("@cypress/code-coverage/use-babelrc"));
-      // return config;
+      mongo.configurePlugin(on);
     },
   },
 
