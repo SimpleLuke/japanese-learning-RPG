@@ -16,6 +16,13 @@ module.exports = {
         "darker-japanese-brown": "#1f0c10",
         "japanese-brown-2": "#2e1700",
         "lighter-japanese-brown-2": "#3c2200",
+        "burgundy": "#800200",
+        "pastel-red": "#C1311C",
+        "olive-green": "#BAB86C",
+        "dark-gold": "#A26B35",
+        "creamy-beige": "#F3EAD7",
+        "dusty-pink": "#D4A6B7",
+        "charcoal-gray": "#464646",
       },
       backgroundImage: {
         startMenu: "url('../public/img/start-menu-bg.jpeg')",
