@@ -31,6 +31,7 @@ module.exports = {
         London: "url('../public/img/London.png')",
         JapanCutscene: "url('../public/img/japanCut.gif')",
         shopBg: "url('../public/img/shop-bg.gif')",
+        charBg: "url('../public/img/char-bg.gif')",
         shopBg2: "url('../public/img/shop-bg2.gif')",
         wardrobeBg: "url('../public/img/wardrobe-bg.gif')",
         libraryBg: "url('../public/img/library2.jpg')",
