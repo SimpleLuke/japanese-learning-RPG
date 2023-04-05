@@ -83,23 +83,27 @@ const Wardrobe = () => {
   useEffect(() => {}, []);
 
   return (
-    <div className="bg-white h-screen w-screen py-5">
+    <div className="bg-wardrobeBg bg-cover h-screen w-screen py-5">
       <button
         data-test="back-to-bedroom"
         onClick={() => dispatch(setCurrentScene("BEDROOM"))}
-        className="block ml-auto bg-yellow-400 text-white font-bold py-4 px-8 rounded-full shadow-lg hover:bg-yellow-500 transition-colors duration-200"
+        className="block back-btn  text-white font-bold py-4 px-8 rounded-full transition-colors duration-200"
       >
-        ベッドルームに戻る - Back To Bedroom
+        <img
+          src="/img/back-button-icon.png"
+          alt="Back Button"
+          className="h-9 w-9 bg-gray-50 bg-opacity-90 rounded-full "
+        />
       </button>
 
       <div className="flex px-10">
-        <div className="flex justify-center items-center border-black border-2 rounded-lg w-1/3 h-[calc(100vh-100px)] mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
+        <div className="flex justify-center items-center bg-beige-japanese-book bg-opacity-90  rounded-lg w-1/3 h-[calc(100vh-100px)] mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
           <CharacterComponent data={character.currentOutfit} />
         </div>
-        <div className="w-2/3 mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
+        <div className="w-2/3 mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-0 lg:max-w-7xl lg:px-8">
           <h2
             data-test="pick-title"
-            className="text-xl font-bold text-gray-900"
+            className="text-3xl font-bold text-white pixel-font"
           >
             Pick your outfit
           </h2>
@@ -113,7 +117,7 @@ const Wardrobe = () => {
                     className="relative cursor-pointer"
                     data-test={`product${index}`}
                   >
-                    <div className="relative w-[calc(32px*6)] h-[calc(32px*6)] overflow-hidden rounded-lg border-black border-2">
+                    <div className="relative w-[calc(32px*6)] h-[calc(32px*6)] overflow-hidden rounded-lg bg-beige-japanese-book bg-opacity-90">
                       <div className="w-[calc(32px*6)] h-[calc(32px*6)] overflow-hidden relative">
                         <img
                           data-test="character-display"

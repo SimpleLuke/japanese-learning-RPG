@@ -103,7 +103,7 @@ export const all_questions = [
   },
   {
     id: 18,
-    japanese: "し (or よん)",
+    japanese: "し",
     options: ["Three", "Four", "Five", "Six"],
     answer: "Four",
   },
@@ -121,7 +121,7 @@ export const all_questions = [
   },
   {
     id: 21,
-    japanese: "なな (or しち)",
+    japanese: "なな",
     options: ["Six", "Seven", "Eight", "Nine"],
     answer: "Seven",
   },
@@ -133,7 +133,7 @@ export const all_questions = [
   },
   {
     id: 23,
-    japanese: "く (or きゅう)",
+    japanese: "く",
     options: ["Eight", "Nine", "Ten", "One"],
     answer: "Nine",
   },
