@@ -28,6 +28,8 @@ module.exports = {
         pixelSepia: "url('../public/img/pixel-sepia.gif')",
         pixelNoodles: "url('../public/img/pixel-noodles.gif')",
         pixelTrain: "url('../public/img/pixel-train.gif')",
+        pixelRoom: "url('../public/img/pixel-room.png')",
+        pixelMom: "url('../public/img/pixel-mom.png')",
       },
     },
   },

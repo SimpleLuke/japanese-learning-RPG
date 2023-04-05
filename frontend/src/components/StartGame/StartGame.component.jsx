@@ -13,42 +13,42 @@ const StartGame = () => {
   const handleBedroom = () => {
     dispatch(setHasGameStarted(true))
     const newSet = random_ten_questions(all_questions)
-    console.log(newSet)
     dispatch(setSelectedWords(newSet))
     dispatch(setCurrentScene("MAIN_GAME"))
   }
 
   return (
-    <div className="absolute inset-0 bg-black flex justify-center items-center">
-      <div className="menu-container bg-red-600 w-2/3 mx-auto my-16 px-8 py-10 rounded-lg shadow-lg">
-        <div className="title-section relative">
-          <div className="title-count font-bold text-3xl text-center text-yellow-400 mb-6">
-            ゲームへようこそ！- Welcome to the Game!
-          </div>
-          <div className="title-text font-bold text-6xl text-center text-white mb-12">
-            スタートする？- Are you ready to play?
-          </div>
-        </div>
-        <div className="option-section grid grid-cols-1 gap-8">
-          <button
-            data-test = "start-game"
-            onClick={() => handleBedroom()}
-            // onClick={() => handleStartGameClick()}
-            className="bg-yellow-400 text-white font-bold py-4 px-8 rounded-full shadow-lg hover:bg-yellow-500 transition-colors duration-200"
-          >
-            スタート - Start Game
-          </button>
-          <button
-            data-test = "back-to-bedroom"
-            onClick={() => dispatch(setCurrentScene("BEDROOM"))}
-            // onClick={() => handleBackToBedroomClick()}
-            className="bg-yellow-400 text-white font-bold py-4 px-8 rounded-full shadow-lg hover:bg-yellow-500 transition-colors duration-200"
-          >
-            ベッドルームに戻る - Back To Bedroom
-          </button>
-        </div>
+<div className="bg-pixelRoom bg-cover">
+  <div className="bg-pixelRoom bg-cover absolute inset-0 bg-yellow-50 flex justify-center items-center" style={{marginTop: "-1%"}}>
+    <div className="flex flex-row justify-end space-between p-[375px] items-center">
+      <div className="start-container bg-center bg-cover flex flex-col justify-center items-center" style={{backgroundImage: "url('/img/ryan2.png')"}}>
+      <h1 className="pixel-font font-bold text-[8px] text-center text-red-600 mb-1 m;-0.5" style={{ textShadow: "1px 1px 0px #000000, 0.7px 0.7px 0px #000000" }}>
+  しゅくだいのじかん
+</h1>
+<h1 className="pixel-font font-bold text-[10px] text-center text-red-600 mb-1.5 ml-1" style={{ textShadow: "1px 1px 0px #000000, 1.5px 1.5px 0px #000000" }}>
+  Homework Time!
+</h1>
+
       </div>
     </div>
+    <div className="pixel-font option-section grid grid-cols-1 gap-8">
+      <button
+        data-test="start-game"
+        onClick={() => handleBedroom()}
+        className="bg-red-600 text-amber-100 font-bold py-4 px-8 rounded-lg shadow-lg hover:bg-red-700 transition-colors duration-200 transform-gpu hover:scale-105"
+      >
+        ゲームをはじめる - Start Game
+      </button>
+      <button
+        data-test="back-to-bedroom"
+        onClick={() => dispatch(setCurrentScene("BEDROOM"))}
+        className="bg-red-600 text-amber-100 font-bold py-4 px-8 rounded-lg shadow-lg hover:bg-red-700 transition-colors duration-200 transform-gpu hover:scale-105"
+      >
+        ベッドルームにもどる - Back To Bedroom
+      </button>
+    </div>
+    </div>
+</div>
   );
 };
 
