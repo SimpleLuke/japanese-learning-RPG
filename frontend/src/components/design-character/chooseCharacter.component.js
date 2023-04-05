@@ -37,7 +37,6 @@ const CharacterDesign = () => {
       }),
     });
     if (response.status === 201) {
-      const data = await response.json();
       dispatch(setCurrentScene("CUT_SCENE"));
     } else {
       console.log("404: error");

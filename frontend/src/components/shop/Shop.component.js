@@ -65,9 +65,7 @@ const Shop = () => {
         cost: cost,
       }),
     });
-    if (response.status === 201) {
-      const data = await response.json();
-    } else {
+    if (response.status === 404) {
       console.log('404: error posting purchase')
     }
   };

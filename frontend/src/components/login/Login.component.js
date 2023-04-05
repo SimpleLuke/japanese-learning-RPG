@@ -1,4 +1,3 @@
-import { LockClosedIcon } from "@heroicons/react/20/solid";
 import { useDispatch } from "react-redux";
 import { setCurrentScene } from "../../redux-store/scene/sceneSlice";
 import { useState } from "react";
