@@ -77,6 +77,11 @@ code {
   font-family: "Press Start 2P", cursive;
 }
 
+.pixel-font-sm {
+  font-family: "Press Start 2P", cursive;
+  font-size: larger;
+}
+
 .pixelated {
   image-rendering: pixelated;
 }
