@@ -20,7 +20,7 @@ describe("Styling", () => {
     });
   });
 
-  it("renders shop and lets user buy clothes if they have enough coins", () => {
+  it("renders shop and lets user buy clothes if they have enough coins, checks wardrobe for clothes and also checks words added to bookshelf", () => {
     cy.signup("test@test.com", "password");
     cy.wait(1000);
     cy.get('[data-test="shop"]').click();
