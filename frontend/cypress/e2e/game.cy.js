@@ -1,4 +1,10 @@
 describe("Signing up", () => {
+  afterEach(() => {
+    cy.dropCollection("users", { failSilently: true }).then((res) => {
+      cy.log(res); // prints 'Collection dropped'
+    });
+  });
+
   it("renders initial stats and updates after game", () => {
     cy.signup("test@test.com", "password");
     cy.wait(1000);
@@ -52,9 +58,5 @@ describe("Signing up", () => {
         const coins = parseInt(text.match(/\d+/)[0]);
         expect(coins).to.be.greaterThan(9);
       });
-
-    cy.dropCollection("users", { failSilently: true }).then((res) => {
-      cy.log(res); // prints 'Collection dropped'
-    });
   });
 });
