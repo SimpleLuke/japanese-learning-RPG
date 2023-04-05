@@ -33,6 +33,7 @@ module.exports = {
         wardrobeBg: "url('../public/img/wardrobe-bg.gif')",
         statsBarBg: "url('../public/img/statsBar-bg.png')",
         menuBtn: "url('../public/img/menuBtn.png')",
+        quitModal: "url('../public/img/quitModal-bg.png')",
       },
     },
   },
