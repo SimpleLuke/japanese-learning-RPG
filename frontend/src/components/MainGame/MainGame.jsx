@@ -113,6 +113,7 @@ const MainGame = () => {
               className={getButtonClassNames(answerOption)}
               onClick={() => handleAnswerOptionClick(answerOption)}
               disabled={isClicked}
+              data-test={`answer${index}`}
             >
               {answerOption}
             </button>

@@ -18,6 +18,8 @@ describe("Signing up", () => {
       "Words Learnt"
     );
     cy.get('[data-test="wordsLearntGrid"]').should("exist");
+    cy.get('[data-test="back-to-bedroom"]').click();
+    cy.get('[data-test="wardrobe"]').should("exist");
 
     cy.dropCollection("users", { failSilently: true }).then((res) => {
       cy.log(res); // prints 'Collection dropped'

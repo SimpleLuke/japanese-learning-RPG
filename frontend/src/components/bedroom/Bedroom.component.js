@@ -29,6 +29,7 @@ const Bedroom = () => {
       <div className="bg-bedroom2 pixelated relative bg-cover bg-center h-screen w-screen p-4 ">
         <div
           onClick={() => dispatch(openStatModal())}
+          data-test="statModal"
           className="w-64 h-26 absolute flex flex-wrap relative cursor-pointer overflow-hidden border-8 border-blue-900 bg-red-100 bg-opacity-80 px-4 py-2 shadow sm:p-2"
         >
           <div>
