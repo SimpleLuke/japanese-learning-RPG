@@ -7,7 +7,7 @@ const CutScene = () => {
   const [displayText, setDisplayText] = useState("");
   const [background, setBackground] = useState("bg-London");
   const text =
-    "Wait... Where am I, this isn't my home... I am in J A P A N ???!!!";
+    "W ait... Where am I, this isn't my home... I am in J A P A N ???!!!";
   const japan = "( Click to continue )";
 
   useEffect(() => {
