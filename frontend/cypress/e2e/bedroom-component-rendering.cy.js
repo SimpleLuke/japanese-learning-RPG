@@ -1,4 +1,4 @@
-describe("Signing up", () => {
+describe("Bedroom rendering", () => {
   it("can render correct components when clicked on bedroom page", () => {
     cy.signup("test@test.com", "password");
     cy.wait(1000);

@@ -1,4 +1,4 @@
-describe("Signing up", () => {
+describe("Game component", () => {
   afterEach(() => {
     cy.dropCollection("users", { failSilently: true }).then((res) => {
       cy.log(res); // prints 'Collection dropped'
