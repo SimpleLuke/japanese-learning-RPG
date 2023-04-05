@@ -55,7 +55,7 @@ const CharacterDesign = () => {
 
   return (
     <>
-    <div className=''>
+    <div className='h-screen w-screen charBg bg-cover bg-center'>
     <div className='mb-10 bg-blue-300 p-4 border-4 border-gray-900'>
         <h1 data-test="page-title" className='pixel-font'>Design your character</h1>
     </div>
