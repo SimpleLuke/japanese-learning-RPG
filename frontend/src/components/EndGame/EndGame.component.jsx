@@ -73,26 +73,26 @@ const EndGame = () => {
       <div className="quiz-container h-screen bg-gray-900 w-4/5 mx-auto my-16 px-8 py-10 rounded-lg shadow-lg">
         <div className="question-section relative">
           <div
-            className="question-text font-bold text-5xl text-center mt-8 mb-12 text-white"
+            className="pixel-font question-text font-bold text-5xl text-center mt-8 mb-12 text-white"
             data-test="score"
           >
             Score: {currentScore}/10
           </div>
           <div
             data-test="coins"
-            className="question-text font-bold text-5xl text-center mt-8 mb-12 text-white"
+            className="pixel-font question-text font-bold text-5xl text-center mt-8 mb-12 text-white"
           >
             Coins: {coinCalculator(currentScore)}
           </div>
           <div
             data-test="words-studied"
-            className="question-text font-bold text-5xl text-center mt-8 mb-12 text-white"
+            className="pixel-font question-text font-bold text-5xl text-center mt-8 mb-12 text-white"
           >
             {newVarWords.length === 0 ? (
               <div>No new words learnt</div>
             ) : (
               <div className="flex flex-col">
-                <div className="mb-5">New Words:</div>
+                <div className="pixel-font mb-5">New Words:</div>
                 <div className="flex gap-8 flex-wrap">
                   {newVarWords.map((word) => {
                     return (
@@ -107,7 +107,7 @@ const EndGame = () => {
           </div>
           <div
             data-test="XP"
-            className="question-text font-bold text-3xl text-center mt-8 mb-12 text-white"
+            className="pixel-font question-text font-bold text-3xl text-center mt-8 mb-12 text-white"
           >
             XP earned: {calculateXP(wordsStudied)}
           </div>
@@ -115,19 +115,19 @@ const EndGame = () => {
         <div className="answer-section grid grid-cols-2 gap-8">
           <button
             onClick={() => dispatch(setCurrentScene("START_GAME"))}
-            className="bg-blue-500 hover:bg-blue-700 text-white font-semibold py-4 px-8 rounded-lg shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-opacity-50 transition duration-300 ease-in-out"
+            className="pixel-font bg-blue-500 hover:bg-blue-700 text-white font-semibold py-4 px-8 rounded-lg shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-opacity-50 transition duration-300 ease-in-out"
           >
             Try Again
           </button>
           <button
             onClick={() => dispatch(setCurrentScene("BEDROOM"))}
-            className="bg-red-500 hover:bg-red-700 text-white font-semibold py-4 px-8 rounded-lg shadow-lg focus:outline-none focus:ring-2 focus:ring-red-600 focus:ring-opacity-50 transition duration-300 ease-in-out"
+            className="pixel-font bg-red-500 hover:bg-red-700 text-white font-semibold py-4 px-8 rounded-lg shadow-lg focus:outline-none focus:ring-2 focus:ring-red-600 focus:ring-opacity-50 transition duration-300 ease-in-out"
           >
             Back To Bedroom
           </button>
         </div>
         <div
-          className="score-section font-semibold text-2xl text-white text-center mt-12"
+          className="pixel-font score-section font-semibold text-2xl text-white text-center mt-12"
           data-test="endGameInstructions"
         >
           Press 'Try Again' to restart the game or 'Quit Game' to go back to

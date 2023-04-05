@@ -22,13 +22,12 @@ const StartGame = () => {
   <div className="bg-pixelRoom bg-cover absolute inset-0 bg-yellow-50 flex justify-center items-center" style={{marginTop: "-1%"}}>
     <div className="flex flex-row justify-end space-between p-[375px] items-center">
       <div className="start-container bg-center bg-cover flex flex-col justify-center items-center" style={{backgroundImage: "url('/img/ryan2.png')"}}>
-      <h1 className="pixel-font font-bold text-[8px] text-center text-red-600 mb-1 m;-0.5" style={{ textShadow: "1px 1px 0px #000000, 0.7px 0.7px 0px #000000" }}>
-  しゅくだいのじかん
-</h1>
-<h1 className="pixel-font font-bold text-[10px] text-center text-red-600 mb-1.5 ml-1" style={{ textShadow: "1px 1px 0px #000000, 1.5px 1.5px 0px #000000" }}>
-  Homework Time!
-</h1>
-
+        <h1 className="pixel-font font-bold text-[8px] text-center text-red-600 mb-1 m;-0.5" style={{ textShadow: "1px 1px 0px #000000, 0.7px 0.7px 0px #000000" }}>
+          しゅくだいのじかん
+        </h1>
+        <h1 className="pixel-font font-bold text-[10px] text-center text-red-600 mb-1.5 ml-1" style={{ textShadow: "1px 1px 0px #000000, 1.5px 1.5px 0px #000000" }}>
+          Homework Time!
+        </h1>
       </div>
     </div>
     <div className="pixel-font option-section grid grid-cols-1 gap-8">
@@ -47,7 +46,7 @@ const StartGame = () => {
         ベッドルームにもどる - Back To Bedroom
       </button>
     </div>
-    </div>
+  </div>
 </div>
   );
 };
