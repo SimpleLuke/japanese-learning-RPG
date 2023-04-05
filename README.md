@@ -8,7 +8,7 @@
   <h3 align="center">良いね iine</h3>
 
   <p align="center">
-    A Japanese learning site with a RPG adventure
+    A Japanese learning site with an RPG twist
    
 </div>
 
@@ -161,13 +161,13 @@ They can always check their achievments and learning progress by reviewing the r
 - Play a Japanese quiz to earn exp and coins through study desk
   <img width="1437" alt="image" src="https://user-images.githubusercontent.com/89473016/230064788-e0c4766a-ba23-4e65-b664-d4418ebb6b7c.png">
 
-- Buy new outfit with coins through shop
+- Buy new outfit with your coins in the shop
   <img width="1433" alt="image" src="https://user-images.githubusercontent.com/89473016/230065058-39a4e89e-7ed8-43da-a621-fe1f92463034.png">
 
-- Change outfit through wardrobe
+- Change outfit in the wardrobe
   <img width="1429" alt="image" src="https://user-images.githubusercontent.com/89473016/230065328-9ecd8c4d-1349-4f8a-9fdf-f6d3601a650e.png">
 
-- View the learning progress through bookshelf
+- View learning progress through the bookshelf
   <img width="1436" alt="image" src="https://user-images.githubusercontent.com/89473016/230065232-bf6d89a7-24ec-4500-86d1-cb36cd23ae0a.png">
 
 - View your achievments through the stats bar
@@ -183,7 +183,7 @@ They can always check their achievments and learning progress by reviewing the r
 ## Future roadmap
 
 - [ ] Host the site
-- [ ] Add different categories of quiz
+- [ ] Add different categories to the quiz
 - [ ] Add health bar
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -210,7 +210,7 @@ Remember to give the project a star! Thanks again!
 ## Contact
 
 - Anna Magnusson - [LinkedIn](https://www.linkedin.com/in/anna-magnusson-519658199/) - annamagnusson99@gmail.com
-- Edward Thomas - [LinkedIn](https://www.linkedin.com/) - email@example.com
+- Edward Thomas - [LinkedIn](https://www.linkedin.com/in/edwardthomas99/) - edwardfgtdev@gmail.com
 - James Mcleish - [LinkedIn](https://www.linkedin.com/) - email@example.com
 - Luke Lai - [LinkedIn](https://www.linkedin.com/in/luke-lai-309a3522b/) - lukelai.dev@gmail.com
 - Ryan Lai - [LinkedIn](https://www.linkedin.com/in/ryan-lai-a52211214/) - ryanlai12@gmail.com
