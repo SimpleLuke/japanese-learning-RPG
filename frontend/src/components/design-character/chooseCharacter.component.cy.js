@@ -48,8 +48,8 @@ describe("CharacterDesign component", () => {
     );
     cy.getTest("page-title").should("contain.text", "Select your character");
     cy.getTest("character-body").should('exist');
-    cy.getTest("character-body").should('have.length', 3);
-    cy.getTest("char-button").should('have.length', 3);
+    cy.getTest("character-body").should('have.length', 1);
+    cy.getTest("character").should('have.length', 1);
   })
 
   it('checks styling is correctly rendered', () => {

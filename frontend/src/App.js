@@ -27,7 +27,7 @@ function App() {
       window.localStorage.getItem("token") &&
       window.localStorage.getItem("token") !== "undefined"
     ) {
-      dispatch(setCurrentScene("BEDROOM"));
+      dispatch(setCurrentScene("BEDROOM")); 
     }
   }, [dispatch]);
 
