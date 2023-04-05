@@ -25,11 +25,8 @@ const Login = () => {
       let data = await response.json();
       dispatch(setCurrentScene("BEDROOM"));
       window.localStorage.setItem("token", data.token);
-      console.log(data.userData);
       dispatch(setCurrentUser(data.userData.email));
-    } else {
-      console.log("response was: ", response);
-    }
+    } 
   };
 
   const handleEmailChange = (event) => {

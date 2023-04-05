@@ -67,10 +67,7 @@ const Shop = () => {
     });
     if (response.status === 201) {
       const data = await response.json();
-      console.log("Shop update", data.message);
-    } else {
-      console.log("OPPS");
-    }
+    } 
   };
 
   const buyNewOutfit = async (product) => {

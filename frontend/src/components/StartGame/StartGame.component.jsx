@@ -13,7 +13,6 @@ const StartGame = () => {
   const handleBedroom = () => {
     dispatch(setHasGameStarted(true))
     const newSet = random_ten_questions(all_questions)
-    console.log(newSet)
     dispatch(setSelectedWords(newSet))
     dispatch(setCurrentScene("MAIN_GAME"))
   }

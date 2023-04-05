@@ -52,10 +52,7 @@ const EndGame = () => {
     });
     if (response.status === 201) {
       const data = await response.json();
-      console.log("Game update", data.message);
-    } else {
-      console.log("OPPS");
-    }
+    } 
   };
 
   useEffect(() => {

@@ -28,8 +28,6 @@ const Signup = () => {
   const [password, setPassword] = useState("");
 
   const handleSubmit = async (event) => {
-    console.log(email);
-    console.log(password);
     event.preventDefault();
     
     const postUsers = fetch("http://localhost:8000/users", {
@@ -63,13 +61,9 @@ const Signup = () => {
             dispatch(setCurrentUser(email));
             dispatch(setCurrentScene("CHARACTER"));
           });
-        } else {
-          console.log("response was: error with /tokens");
-        }
+        } 
       });
-    } else {
-      console.log("response was: error with /users");
-    }
+    } 
   });
   };
 
