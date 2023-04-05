@@ -37,6 +37,7 @@ module.exports = {
         statsBarBg: "url('../public/img/statsBar-bg.png')",
         menuBtn: "url('../public/img/menuBtn.png')",
         quitModal: "url('../public/img/quitModal-bg.png')",
+        achievement: "url('../public/img/achievementBg.png')",
       },
     },
   },
