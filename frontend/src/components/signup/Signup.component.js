@@ -94,7 +94,10 @@ const Signup = () => {
                 </div>
               </div>
               <div className="flex justify-center items-center flex-col shadow-xl bg-white sm:rounded-xl p-6 sm:absolute sm:right-16 md:right-20 lg:right-32 sm:w-85">
-                <h2 className="text-japanese-brown-2 mt-5 mb-4 text-base md:text-lg lg:text-xl font-bold">
+                <h2
+                  className="text-japanese-brown-2 mt-5 mb-4 text-base md:text-lg lg:text-xl font-bold"
+                  data-test="Sign-up-title"
+                >
                   Sign Up
                 </h2>
                 <div className="avatar rounded-full w-16 h-16 bg-white mb-6">
