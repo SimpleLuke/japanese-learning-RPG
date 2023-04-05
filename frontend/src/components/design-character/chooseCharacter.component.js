@@ -1,35 +1,35 @@
-import CharacterComponent from './character.component';
+import CharacterComponent from "./character.component";
 import { useDispatch, useSelector } from "react-redux";
 import { setStartOutfit } from "../../redux-store/user/userSlice";
 import { setCurrentScene } from "../../redux-store/scene/sceneSlice";
 
-const char1data = { 
+const char1data = {
   body: "body",
   hair: "gentlemanHair-blond",
   top: "tshirt-gray",
   bottoms: "pants-blue",
-  shoes: "shoes-navy"
-}
+  shoes: "shoes-navy",
+};
 
-const char2data = { 
+const char2data = {
   body: "body",
   hair: "hair-emo",
   top: "tshirt-green-flower",
   bottoms: "pants-pink",
-  shoes: "shoes-green"
-}
+  shoes: "shoes-green",
+};
 
-const char3data = { 
+const char3data = {
   body: "body",
   hair: "hair-long-blonde",
   top: "vest",
   bottoms: "skirt",
-  shoes: "shoes-purple"
-}
+  shoes: "shoes-purple",
+};
 
 const CharacterDesign = () => {
   const dispatch = useDispatch();
-  const {email} = useSelector(state=>state.user)
+  const { email } = useSelector((state) => state.user);
 
   const storeOutfit = async (outfit) => {
     const response = await fetch("http://localhost:8000/users/outfit", {
@@ -39,7 +39,7 @@ const CharacterDesign = () => {
       },
       body: JSON.stringify({
         email: email,
-        outfit: outfit
+        outfit: outfit,
       }),
     });
     if (response.status === 201) {
@@ -53,34 +53,46 @@ const CharacterDesign = () => {
 
   return (
     <div>
-      <div className='mb-10'>
+      <div className="mb-10">
         <h1 data-test="page-title">Select your character</h1>
       </div>
-      <button type="submit" data-test="char-button" onClick={() => {
-        storeOutfit(char1data)
-        }}>
-        <div className='characterContainer' data-test="char-1">
+      <button
+        type="submit"
+        data-test="char-button1"
+        onClick={() => {
+          storeOutfit(char1data);
+        }}
+      >
+        <div className="characterContainer" data-test="char-container">
           <CharacterComponent data={char1data} />
         </div>
       </button>
 
-      <button type="submit" data-test="char-button" onClick={() => {
-              storeOutfit(char2data)
-        }}>
-        <div className='characterContainer'>
-          <CharacterComponent data={char2data}/>
+      <button
+        type="submit"
+        data-test="char-button2"
+        onClick={() => {
+          storeOutfit(char2data);
+        }}
+      >
+        <div className="characterContainer">
+          <CharacterComponent data={char2data} />
         </div>
       </button>
 
-      <button type="submit" data-test="char-button" onClick={() => {
-              storeOutfit(char3data)
-        }}>
-        <div className='characterContainer'>
-          <CharacterComponent data={char3data}/>
+      <button
+        type="submit"
+        data-test="char-button3"
+        onClick={() => {
+          storeOutfit(char3data);
+        }}
+      >
+        <div className="characterContainer">
+          <CharacterComponent data={char3data} />
         </div>
       </button>
     </div>
-  )
-}
+  );
+};
 
 export default CharacterDesign;

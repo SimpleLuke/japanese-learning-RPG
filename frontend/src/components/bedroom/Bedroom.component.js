@@ -91,6 +91,7 @@ const Bedroom = () => {
         <div
           onClick={() => dispatch(setCurrentScene("WARDROBE"))}
           className="wardrobe cursor-pointer absolute pixelated top-[485px] left-[404px]"
+          data-test="wardrobe"
         >
           <p className="text-tag absolute left-[8px] top-[1px]">Wardrobe</p>
         </div>
@@ -98,6 +99,7 @@ const Bedroom = () => {
           data-test="shop"
           onClick={() => dispatch(setCurrentScene("SHOP"))}
           className="shop cursor-pointer absolute pixelated top-[420px] left-[1048px]"
+          data-test="shop"
         >
           <p className="text-tag absolute left-[7px] top-[1px]">Shop</p>
         </div>
