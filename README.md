@@ -211,7 +211,7 @@ Remember to give the project a star! Thanks again!
 
 - Anna Magnusson - [LinkedIn](https://www.linkedin.com/in/anna-magnusson-519658199/) - annamagnusson99@gmail.com
 - Edward Thomas - [LinkedIn](https://www.linkedin.com/) - email@example.com
-- James Mcleish - [LinkedIn](https://www.linkedin.com/) - email@example.com
+- James Mcleish - [LinkedIn](https://www.linkedin.com/in/james-mcleish-049446217/) - james.mcleish@icloud.com
 - Luke Lai - [LinkedIn](https://www.linkedin.com/in/luke-lai-309a3522b/) - lukelai.dev@gmail.com
 - Ryan Lai - [LinkedIn](https://www.linkedin.com/in/ryan-lai-a52211214/) - ryanlai12@gmail.com
 
