@@ -1,5 +1,3 @@
-import { addCoins } from "../../src/redux-store/user/userSlice";
-import { useDispatch } from "react-redux";
 describe("Styling", () => {
   afterEach(() => {
     cy.dropCollection("users", { failSilently: true }).then((res) => {
@@ -8,7 +6,7 @@ describe("Styling", () => {
     window.localStorage.removeItem("token");
   });
 
-  xit("renders shop and doesn't let user buy clothes if they don't have enough coins", () => {
+  it("renders shop and doesn't let user buy clothes if they don't have enough coins", () => {
     cy.signup("test@test.com", "password");
     cy.wait(1000);
     cy.get('[data-test="shop"]').click();
@@ -28,7 +26,6 @@ describe("Styling", () => {
     cy.get('[data-test="shop"]').click();
     cy.window().then((win) => {
       const token = win.localStorage.getItem("token");
-      // Use the token value here
       cy.log(token);
       const requestBody = {
         email: "test@test.com",
@@ -65,9 +62,21 @@ describe("Styling", () => {
     cy.wait(5000);
     cy.get('[data-test="back-to-bedroom"').click();
     cy.wait(3000);
+    cy.get('[data-test="coin"]')
+      .invoke("text")
+      .then((text) => {
+        const coins = parseInt(text.match(/\d+/)[0]);
+        expect(coins).equal(1000);
+      });
     cy.get('[data-test="shop"').click();
     cy.get('[data-test="purchaseButton0"]').click();
     cy.get('[data-test="soldOutButton0"]').should("exist");
-    // cy.get('[data-test=""').click();
+    cy.get('[data-test="back-to-bedroom"').click();
+    cy.get('[data-test="wardrobe"').click();
+    cy.get('[data-test="product0"]').should("exist");
+    cy.get('[data-test="back-to-bedroom"').click();
+    cy.get('[data-test="bookshelf"]').click();
+    cy.get('[data-test="word0"]').should("exist");
+    cy.get('[data-test="word0"]').should("have.text", "hellohello");
   });
 });

@@ -106,11 +106,12 @@ const Wardrobe = () => {
           <div className="mt-8 grid grid-cols-1 gap-y-12 sm:grid-cols-2 sm:gap-x-6 lg:grid-cols-4 xl:gap-x-8">
             {products
               .filter((item) => character.inventory.includes(item.styleName))
-              .map((product) => (
+              .map((product, index) => (
                 <div key={product.id}>
                   <div
                     onClick={() => changeOutfitHandle(product.styleName)}
                     className="relative cursor-pointer"
+                    data-test={`product${index}`}
                   >
                     <div className="relative w-[calc(32px*6)] h-[calc(32px*6)] overflow-hidden rounded-lg border-black border-2">
                       <div className="w-[calc(32px*6)] h-[calc(32px*6)] overflow-hidden relative">

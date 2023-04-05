@@ -38,7 +38,9 @@ const Bookshelf = () => {
             className="bg-gray-100 rounded-md p-12 text-center text-3xl"
           >
             {wordPair.map((word, i) => (
-              <div key={`${index}-${i}`}>{word}</div>
+              <div key={`${index}-${i}`} data-test={`word${index}`}>
+                {word}
+              </div>
             ))}
           </div>
         ))}
