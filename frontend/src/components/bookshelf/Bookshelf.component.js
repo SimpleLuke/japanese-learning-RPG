@@ -18,11 +18,14 @@ const Bookshelf = () => {
       </div>
 
       <div className="text-center">
-        <h2 className="text-xl font-bold">Words Learnt</h2>
+        <h2 data-test="wordsLearntTitle" className="text-xl font-bold">
+          Words Learnt
+        </h2>
       </div>
 
       <div
         className="grid grid-cols-6 gap-4"
+        data-test="wordsLearntGrid"
         style={{
           maxHeight: "61vh",
           overflowY: "auto",
@@ -30,7 +33,10 @@ const Bookshelf = () => {
         }}
       >
         {wordsLearnt.map((wordPair, index) => (
-          <div key={index} className="bg-gray-100 rounded-md p-12 text-center text-3xl">
+          <div
+            key={index}
+            className="bg-gray-100 rounded-md p-12 text-center text-3xl"
+          >
             {wordPair.map((word, i) => (
               <div key={`${index}-${i}`}>{word}</div>
             ))}

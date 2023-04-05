@@ -77,6 +77,7 @@ const Bedroom = () => {
         </div>
         <div
           className="bookshelf cursor-pointer absolute left-[377px] top-[252px]"
+          data-test="bookshelf"
           onClick={() => dispatch(setCurrentScene("BOOKSHELF"))}
         >
           <p className="text-tag relative left-[4px] top-[1px]">Bookshelf</p>
