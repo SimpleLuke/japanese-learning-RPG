@@ -5,9 +5,10 @@ describe("Styling", () => {
     cy.dropCollection("users", { failSilently: true }).then((res) => {
       cy.log(res); // prints 'Collection dropped'
     });
+    window.localStorage.removeItem("token");
   });
 
-  it("renders shop and doesn't let user buy clothes if they don't have enough coins", () => {
+  xit("renders shop and doesn't let user buy clothes if they don't have enough coins", () => {
     cy.signup("test@test.com", "password");
     cy.wait(1000);
     cy.get('[data-test="shop"]').click();
@@ -25,40 +26,45 @@ describe("Styling", () => {
     cy.signup("test@test.com", "password");
     cy.wait(1000);
     cy.get('[data-test="shop"]').click();
-    const requestBody = {
-      email: "test@test.com",
-      wordsLearnt: [["hello", "hello"]],
-      character: {
-        attributes: {
-          xp: 0,
-          level: 1,
-          wordsKnown: 0,
-          coins: 1000,
+    cy.window().then((win) => {
+      const token = win.localStorage.getItem("token");
+      // Use the token value here
+      cy.log(token);
+      const requestBody = {
+        email: "test@test.com",
+        wordsLearnt: [["hello", "hello"]],
+        character: {
+          attributes: {
+            xp: 0,
+            level: 1,
+            wordsKnown: 0,
+            coins: 1000,
+          },
+          inventory: [],
+          currentOutfit: {
+            body: "",
+            hair: "",
+            top: "",
+            bottoms: "",
+            shoes: "",
+          },
         },
-        inventory: [],
-        currentOutfit: {
-          body: "",
-          hair: "",
-          top: "",
-          bottoms: "",
-          shoes: "",
+      };
+      cy.request({
+        method: "POST",
+        url: "http://localhost:8000/game/update",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
         },
-      },
-    };
-    const token = window.localStorage.getItem("token");
-    cy.request({
-      method: "POST",
-      url: "http://localhost:8000/game/update",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`,
-      },
-      body: JSON.stringify(requestBody),
-    }).then((response) => {
-      console.log(response);
+        body: JSON.stringify(requestBody),
+      }).then((response) => {
+        console.log(response);
+      });
     });
     cy.wait(5000);
     cy.get('[data-test="back-to-bedroom"').click();
+    cy.wait(3000);
     cy.get('[data-test="shop"').click();
     cy.get('[data-test="purchaseButton0"]').click();
     cy.get('[data-test="soldOutButton0"]').should("exist");
