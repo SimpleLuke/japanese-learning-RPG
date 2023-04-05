@@ -56,10 +56,10 @@ const CharacterDesign = () => {
   return (
     <>
     <div className=''>
-    <div className='mb-10 bg-blue-300 p-4'>
+    <div className='mb-10 bg-blue-300 p-4 border-4 border-gray-900'>
         <h1 data-test="page-title" className='pixel-font'>Design your character</h1>
     </div>
-    <div className='flex flex-wrap justify-center w-100 h-80 bg-blue-100'>
+    <div className='flex flex-wrap justify-center w-100 h-80 bg-blue-100 border-4 border-gray-900'>
       <div className='w-1/2 p-4 flex mt-12 justify-center'>
         <div className='justify-center scale-125' data-test="character">
           <CharacterComponent data={charData} />
@@ -76,7 +76,7 @@ const CharacterDesign = () => {
       <button 
           onClick={() => {storeOutfit(charData)}}
           type='submit'
-          className='pixel-font bg-red-100 -translate-y-6 px-4'
+          className='pixel-font bg-red-300 border-4 border-gray-900 -translate-y-6 px-4'
         >submit styles</button> 
     </div>
     </div>
