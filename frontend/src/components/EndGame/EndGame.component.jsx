@@ -124,6 +124,7 @@ const EndGame = () => {
           <button
             onClick={() => dispatch(setCurrentScene("BEDROOM"))}
             className="pixel-font bg-red-400 hover:bg-red-500 text-white font-semibold py-4 px-8 rounded-lg shadow-lg focus:outline-none focus:ring-2 focus:ring-red-600 focus:ring-opacity-50 transition duration-300 ease-in-out"
+            data-test="backToBedroom"
           >
             Back To Bedroom
           </button>

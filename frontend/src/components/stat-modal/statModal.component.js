@@ -65,7 +65,10 @@ export default function StatModal() {
                       <p className="text-sm text-gray-900 pixel-font">
                         XP: {xp}
                       </p>
-                      <p className="text-sm text-gray-900 pixel-font">
+                      <p
+                        className="text-sm text-gray-900 pixel-font"
+                        data-test="coin"
+                      >
                         Coins: {coins}
                       </p>
                       <p className="text-sm text-gray-900 pixel-font">

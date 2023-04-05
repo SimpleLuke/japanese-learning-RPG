@@ -29,6 +29,7 @@ const Bedroom = () => {
       <div className="bg-bedroom2 pixelated relative bg-cover bg-center h-screen w-screen p-4 ">
         <div
           onClick={() => dispatch(openStatModal())}
+          data-test="statModal"
           className="w-[397px] h-[211px] flex flex-wrap relative  cursor-pointer overflow-hidden scale-75 top-[-1.75rem] right-[3.25rem]  bg-statsBarBg bg-cover px-4 py-2 shadow sm:p-2"
         >
           <div>
@@ -77,6 +78,7 @@ const Bedroom = () => {
         </div>
         <div
           className="bookshelf cursor-pointer absolute left-[377px] top-[252px]"
+          data-test="bookshelf"
           onClick={() => dispatch(setCurrentScene("BOOKSHELF"))}
         >
           <p className="text-tag relative left-[4px] top-[1px]">Bookshelf</p>
@@ -91,6 +93,7 @@ const Bedroom = () => {
         <div
           onClick={() => dispatch(setCurrentScene("WARDROBE"))}
           className="wardrobe cursor-pointer absolute pixelated top-[485px] left-[404px]"
+          data-test="wardrobe"
         >
           <p className="text-tag absolute left-[8px] top-[1px]">Wardrobe</p>
         </div>
@@ -98,6 +101,7 @@ const Bedroom = () => {
           data-test="shop"
           onClick={() => dispatch(setCurrentScene("SHOP"))}
           className="shop cursor-pointer absolute pixelated top-[420px] left-[1048px]"
+          data-test="shop"
         >
           <p className="text-tag absolute left-[7px] top-[1px]">Shop</p>
         </div>
