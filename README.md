@@ -34,7 +34,6 @@
     <li><a href="#usage">Usage</a></li>
     <li><a href="#future-roadmap">Future roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
     <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
@@ -55,6 +54,7 @@ They can always check their learning progress by reviewing the records of the wo
 ### Built With
 
 - React
+- Redux toolkit
 - Node.js
 - Express.js
 - MongoDB
@@ -204,14 +204,6 @@ Remember to give the project a star! Thanks again!
 3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- LICENSE -->
-
-## License
-
-Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
