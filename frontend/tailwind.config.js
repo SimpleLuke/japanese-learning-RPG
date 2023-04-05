@@ -32,6 +32,7 @@ module.exports = {
         shopBg2: "url('../public/img/shop-bg2.gif')",
         wardrobeBg: "url('../public/img/wardrobe-bg.gif')",
         statsBarBg: "url('../public/img/statsBar-bg.png')",
+        menuBtn: "url('../public/img/menuBtn.png')",
       },
     },
   },

@@ -29,7 +29,7 @@ const Bedroom = () => {
       <div className="bg-bedroom2 pixelated relative bg-cover bg-center h-screen w-screen p-4 ">
         <div
           onClick={() => dispatch(openStatModal())}
-          className="w-[397px] h-[211px] flex flex-wrap relative z-50 cursor-pointer overflow-hidden scale-75 top-[-1.75rem] right-[3.25rem]  bg-statsBarBg bg-cover px-4 py-2 shadow sm:p-2"
+          className="w-[397px] h-[211px] flex flex-wrap relative  cursor-pointer overflow-hidden scale-75 top-[-1.75rem] right-[3.25rem]  bg-statsBarBg bg-cover px-4 py-2 shadow sm:p-2"
         >
           <div>
             <StatModal />
@@ -67,7 +67,7 @@ const Bedroom = () => {
             </dt>
           </div>
         </div>
-        <div className="relative left-[1300px] top-[-140px]">
+        <div className="relative left-[1348px] top-[-215px]">
           <BurgerMenu />
         </div>
         <div className="ml-50 mt-100 absolute left-[695px] top-[450px]">
