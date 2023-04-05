@@ -97,7 +97,12 @@ const Wardrobe = () => {
           <CharacterComponent data={character.currentOutfit} />
         </div>
         <div className="w-2/3 mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
-          <h2 className="text-xl font-bold text-gray-900">Pick your outfit</h2>
+          <h2
+            data-test="pick-title"
+            className="text-xl font-bold text-gray-900"
+          >
+            Pick your outfit
+          </h2>
           <div className="mt-8 grid grid-cols-1 gap-y-12 sm:grid-cols-2 sm:gap-x-6 lg:grid-cols-4 xl:gap-x-8">
             {products
               .filter((item) => character.inventory.includes(item.styleName))
@@ -110,6 +115,7 @@ const Wardrobe = () => {
                     <div className="relative w-[calc(32px*6)] h-[calc(32px*6)] overflow-hidden rounded-lg border-black border-2">
                       <div className="w-[calc(32px*6)] h-[calc(32px*6)] overflow-hidden relative">
                         <img
+                          data-test="character-display"
                           className="max-w-none w-[calc(32px*80*6)] absolute"
                           style={{
                             transform: `translate3d(${
