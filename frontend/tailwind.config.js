@@ -38,6 +38,7 @@ module.exports = {
         menuBtn: "url('../public/img/menuBtn.png')",
         quitModal: "url('../public/img/quitModal-bg.png')",
         achievement: "url('../public/img/achievementBg.png')",
+        woodVertical: "url('../public/img/wood-vertical.png')",
       },
     },
   },

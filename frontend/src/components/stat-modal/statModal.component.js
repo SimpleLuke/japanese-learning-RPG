@@ -49,7 +49,7 @@ export default function StatModal() {
               leaveFrom="opacity-100 translate-y-0 sm:scale-100"
               leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
             >
-              <Dialog.Panel className="relative transform overflow-hidden rounded-lg bg-white px-4 pb-4 pt-5 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-m w-full sm:p-6">
+              <Dialog.Panel className="relative transform h-[490px] w-[265px] overflow-hidden rounded-lg bg-woodVertical bg-cover px-4 pb-4 pt-5 text-left shadow-xl transition-all sm:my-8  sm:max-w-m  sm:p-6">
                 <div className="relative">
                   <div className="mt-3 text-center sm:mt-5">
                     <Dialog.Title
@@ -59,16 +59,16 @@ export default function StatModal() {
                       User Stats
                     </Dialog.Title>
                     <div className="mt-2">
-                      <p className="text-sm text-gray-500 pixel-font">
+                      <p className="text-sm text-gray-900 pixel-font">
                         level: {level}
                       </p>
-                      <p className="text-sm text-gray-500 pixel-font">
+                      <p className="text-sm text-gray-900 pixel-font">
                         XP: {xp}
                       </p>
-                      <p className="text-sm text-gray-500 pixel-font">
+                      <p className="text-sm text-gray-900 pixel-font">
                         Coins: {coins}
                       </p>
-                      <p className="text-sm text-gray-500 pixel-font">
+                      <p className="text-sm text-gray-900 pixel-font">
                         Words Known: {wordsKnown}
                       </p>
                     </div>
@@ -89,7 +89,7 @@ export default function StatModal() {
                     className="inline-flex w-full justify-center rounded-md bg-japanese-brown px-3 py-2 text-sm pixel-font text-white shadow-sm hover:bg-darker-japanese-brown focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 sm:rounded-xl p-3"
                     onClick={() => closeStatModalAndQuit()}
                   >
-                    Go back to bedroom
+                    Back
                   </button>
                 </div>
               </Dialog.Panel>
