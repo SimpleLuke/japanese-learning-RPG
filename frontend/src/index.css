@@ -324,3 +324,38 @@ code {
 .stat-grid{
   grid-area:one;
 }
+
+
+/* customise character elements */
+
+.top-button {
+  background-image: url('../public/img/btn-top.png');
+  width: 24px;
+  height: 9px;
+  image-rendering: pixelated;
+  transform: scale(3);
+}
+
+.hair-button {
+  background-image: url('../public/img/btn-hair.png');
+  width: 24px;
+  height: 9px;
+  image-rendering: pixelated;
+  transform: scale(3);
+}
+
+.pants-button {
+  background-image: url('../public/img/btn-pants.png');
+  width: 24px;
+  height: 9px;
+  image-rendering: pixelated;
+  transform: scale(3);
+}
+
+.shoes-button {
+  background-image: url('../public/img/btn-shoes.png');
+  width: 24px;
+  height: 9px;
+  image-rendering: pixelated;
+  transform: scale(3);
+}

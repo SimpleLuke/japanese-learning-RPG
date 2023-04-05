@@ -22,7 +22,7 @@ function App() {
       window.localStorage.getItem("token") &&
       window.localStorage.getItem("token") !== "undefined"
     ) {
-      dispatch(setCurrentScene("CUSTOM_CHAR")); //BEDROOM
+      dispatch(setCurrentScene("BEDROOM")); 
     }
   }, [dispatch]);
 
@@ -38,7 +38,7 @@ function App() {
       {currentScene === "BOOKSHELF" && <Bookshelf />}
       {currentScene === "CHARACTER" && <CharacterDesign />}
       {currentScene === "SHOP" && <Shop />}
-      {currentScene === "CUSTOM_CHAR" && <CustomiseCharacter />}
+      {/* {currentScene === "CUSTOM_CHAR" && <CustomiseCharacter />} */}
     </div>
   );
 }
