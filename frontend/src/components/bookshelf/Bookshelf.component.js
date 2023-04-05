@@ -12,9 +12,13 @@ const Bookshelf = () => {
           <button
             data-test="back-to-bedroom"
             onClick={() => dispatch(setCurrentScene("BEDROOM"))}
-            className="bg-yellow-100 text-black font-bold py-4 px-8 rounded-full shadow-lg hover:bg-yellow-200 transition-colors duration-200"
+            className="block back-btn  text-white font-bold py-4 px-8 rounded-full transition-colors duration-200"
           >
-            ベッドルームに戻る - Back To Bedroom
+            <img
+              src="/img/back-button-icon.png"
+              alt="Back Button"
+              className="h-9 w-9 bg-gray-50 bg-opacity-90 rounded-full "
+            />
           </button>
         </div>
 

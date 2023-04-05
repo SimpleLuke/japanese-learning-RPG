@@ -1,4 +1,10 @@
 describe("Styling", () => {
+  beforeEach(() => {
+    cy.dropCollection("users", { failSilently: true }).then((res) => {
+      cy.log(res); // prints 'Collection dropped'
+    });
+    window.localStorage.removeItem("token");
+  });
   afterEach(() => {
     cy.dropCollection("users", { failSilently: true }).then((res) => {
       cy.log(res); // prints 'Collection dropped'
