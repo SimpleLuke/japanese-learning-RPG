@@ -6,23 +6,24 @@ const Bookshelf = () => {
   const { character, wordsLearnt } = useSelector((state) => state.user);
 
   return (
-    <div className="grid grid-cols-1 gap-4 justify-items-start">
-      <div className="absolute top-0 left-0">
+    <div className="h-screen w-screen bg-libraryBg bg-cover bg-center">
+    <div className="grid grid-cols-1 gap-4 justify-items-start mt-12">
+      <div className="absolute top-4 left-4">
         <button
           data-test="back-to-bedroom"
           onClick={() => dispatch(setCurrentScene("BEDROOM"))}
-          className="bg-yellow-400 text-white font-bold py-4 px-8 rounded-full shadow-lg hover:bg-yellow-500 transition-colors duration-200"
+          className="bg-yellow-100 text-black font-bold py-4 px-8 rounded-full shadow-lg hover:bg-yellow-200 transition-colors duration-200"
         >
           ベッドルームに戻る - Back To Bedroom
         </button>
       </div>
 
-      <div className="text-center">
-        <h2 className="text-xl font-bold">Words Learnt</h2>
+      <div className="text-center mx-auto bg-red-200 mb-4 px-4 py-4 border-4 border-gray-900">
+        <h2 className="text-xl font-bold pixel-font">Words Learnt</h2>
       </div>
 
       <div
-        className="grid grid-cols-6 gap-4"
+        className="grid grid-cols-6 gap-4 ml-2"
         style={{
           maxHeight: "61vh",
           overflowY: "auto",
@@ -30,13 +31,14 @@ const Bookshelf = () => {
         }}
       >
         {wordsLearnt.map((wordPair, index) => (
-          <div key={index} className="bg-gray-100 rounded-md p-12 text-center text-3xl">
+          <div key={index} className="bg-gray-100 pixel-font-sm bg-yellow-50 border-4 border-gray-900 p-12 text-center text-4xl">
             {wordPair.map((word, i) => (
               <div key={`${index}-${i}`}>{word}</div>
             ))}
           </div>
         ))}
       </div>
+    </div>
     </div>
   );
 };
