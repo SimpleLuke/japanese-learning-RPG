@@ -98,21 +98,26 @@ const Wardrobe = () => {
           <CharacterComponent data={character.currentOutfit} />
         </div>
         <div className="w-2/3 mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-0 lg:max-w-7xl lg:px-8">
-          <h2 className="text-3xl font-bold text-white pixel-font">
+          <h2
+            data-test="pick-title"
+            className="text-3xl font-bold text-white pixel-font"
+          >
             Pick your outfit
           </h2>
           <div className="mt-8 grid grid-cols-1 gap-y-12 sm:grid-cols-2 sm:gap-x-6 lg:grid-cols-4 xl:gap-x-8">
             {products
               .filter((item) => character.inventory.includes(item.styleName))
-              .map((product) => (
+              .map((product, index) => (
                 <div key={product.id}>
                   <div
                     onClick={() => changeOutfitHandle(product.styleName)}
                     className="relative cursor-pointer"
+                    data-test={`product${index}`}
                   >
                     <div className="relative w-[calc(32px*6)] h-[calc(32px*6)] overflow-hidden rounded-lg bg-beige-japanese-book bg-opacity-90">
                       <div className="w-[calc(32px*6)] h-[calc(32px*6)] overflow-hidden relative">
                         <img
+                          data-test="character-display"
                           className="max-w-none w-[calc(32px*80*6)] absolute"
                           style={{
                             transform: `translate3d(${

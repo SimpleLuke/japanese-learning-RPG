@@ -29,45 +29,46 @@ const Bedroom = () => {
       <div className="bg-bedroom2 pixelated relative bg-cover bg-center h-screen w-screen p-4 ">
         <div
           onClick={() => dispatch(openStatModal())}
-          className="w-64 h-26 absolute flex flex-wrap relative cursor-pointer overflow-hidden border-8 border-blue-900 bg-red-100 bg-opacity-80 px-4 py-2 shadow sm:p-2"
+          data-test="statModal"
+          className="w-[397px] h-[211px] flex flex-wrap relative  cursor-pointer overflow-hidden scale-75 top-[-1.75rem] right-[3.25rem]  bg-statsBarBg bg-cover px-4 py-2 shadow sm:p-2"
         >
           <div>
             <StatModal />
           </div>
-          <div>
+          <div className="mt-2 pixel-font relative top-[2.75rem] right-[-2.25rem] ">
             <dd
               data-test="email"
-              className="text-2xl font-semibold tracking-tight text-gray-900"
+              className="text-xs relative left-3 font-medium text-gray-900"
             >
               {email}
             </dd>
             <dt
               data-test="level"
-              className="truncate text-sm font-medium text-gray-500"
+              className="truncate text-xs relative left-3 font-medium text-gray-900"
             >
               Level: {level}
             </dt>
             <dt
               data-test="exp"
-              className="truncate text-sm font-medium text-gray-500"
+              className="truncate text-xs relative left-3 font-medium text-gray-900"
             >
               Exp: {xp}
             </dt>
             <dt
               data-test="words"
-              className="truncate text-sm font-medium text-gray-500"
+              className="truncate text-xs relative left-3 font-medium text-gray-900"
             >
               Words: {wordsKnown}
             </dt>
             <dt
               data-test="coin"
-              className="truncate text-sm font-medium text-gray-500"
+              className="truncate text-xs relative left-3 font-medium text-gray-900"
             >
               Coins: {coins}
             </dt>
           </div>
         </div>
-        <div className="relative left-[1300px] top-[-140px]">
+        <div className="relative left-[1348px] top-[-215px]">
           <BurgerMenu />
         </div>
         <div className="ml-50 mt-100 absolute left-[695px] top-[450px]">
@@ -77,6 +78,7 @@ const Bedroom = () => {
         </div>
         <div
           className="bookshelf cursor-pointer absolute left-[377px] top-[252px]"
+          data-test="bookshelf"
           onClick={() => dispatch(setCurrentScene("BOOKSHELF"))}
         >
           <p className="text-tag relative left-[4px] top-[1px]">Bookshelf</p>
@@ -91,6 +93,7 @@ const Bedroom = () => {
         <div
           onClick={() => dispatch(setCurrentScene("WARDROBE"))}
           className="wardrobe cursor-pointer absolute pixelated top-[485px] left-[404px]"
+          data-test="wardrobe"
         >
           <p className="text-tag absolute left-[8px] top-[1px]">Wardrobe</p>
         </div>
@@ -98,6 +101,7 @@ const Bedroom = () => {
           data-test="shop"
           onClick={() => dispatch(setCurrentScene("SHOP"))}
           className="shop cursor-pointer absolute pixelated top-[420px] left-[1048px]"
+          data-test="shop"
         >
           <p className="text-tag absolute left-[7px] top-[1px]">Shop</p>
         </div>

@@ -26,3 +26,15 @@
 Cypress.Commands.add("getTest", (selector, ...args) => {
   return cy.get(`[data-test=${selector}]`, ...args);
 });
+
+Cypress.Commands.add("signup", (email, password) => {
+  cy.visit("/");
+  cy.wait(7000);
+  cy.get('[data-test="signup-btn"]').click();
+  cy.get('[data-test="emailSignupInput"]').type(email);
+  cy.get('[data-test="passwordSignupInput"]').type(password);
+  cy.get('[data-test="signUpSubmitButton"]').click();
+  cy.get('[data-test="submitChosenCharacter"]').click();
+  cy.wait(500);
+  cy.get('[data-test="cut-scene"]').click();
+});
