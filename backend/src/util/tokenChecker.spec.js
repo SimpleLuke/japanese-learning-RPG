@@ -1,7 +1,4 @@
 const JWT = require("jsonwebtoken");
-const app = require("./../app");
-const request = require("supertest");
-const express = require('express');
 
 describe("tokenChecker", () => {
   it("should call next middleware if token is valid", async () => {
