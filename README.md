@@ -153,28 +153,29 @@ They can always check their achievments and learning progress by reviewing the r
   <img width="1433" alt="image" src="https://user-images.githubusercontent.com/89473016/230064213-bb9262bc-eedb-45fb-a414-b4093f73a41a.png">
 
 - Choose your character
-  <img width="590" alt="image" src="https://user-images.githubusercontent.com/89473016/230064312-ff46aaff-bdb0-44d1-8f33-bcf6d3684cca.png">
+  <img width="1402" alt="image" src="https://user-images.githubusercontent.com/89473016/230333940-a930387e-a28b-4e37-9889-c3557f872772.png">
 
 - Navigate to different features
-  <img width="1433" alt="image" src="https://user-images.githubusercontent.com/89473016/230064676-02ae244d-3788-4133-be11-b8dab07594d1.png">
+  <img width="1436" alt="image" src="https://user-images.githubusercontent.com/89473016/230334141-ea88fbea-182e-422a-a487-4021cf23cdfd.png">
 
 - Play a Japanese quiz to earn exp and coins through study desk
   <img width="1437" alt="image" src="https://user-images.githubusercontent.com/89473016/230064788-e0c4766a-ba23-4e65-b664-d4418ebb6b7c.png">
 
 - Buy new outfit with your coins in the shop
-  <img width="1433" alt="image" src="https://user-images.githubusercontent.com/89473016/230065058-39a4e89e-7ed8-43da-a621-fe1f92463034.png">
+  <img width="1436" alt="image" src="https://user-images.githubusercontent.com/89473016/230334259-5b8e444c-5893-47ab-b4b2-b2d65fbe3117.png">
 
 - Change outfit in the wardrobe
-  <img width="1429" alt="image" src="https://user-images.githubusercontent.com/89473016/230065328-9ecd8c4d-1349-4f8a-9fdf-f6d3601a650e.png">
+  <img width="1438" alt="image" src="https://user-images.githubusercontent.com/89473016/230334356-3b7d4199-4a05-467b-9ae0-7f27316f6b35.png">
 
 - View learning progress through the bookshelf
-  <img width="1436" alt="image" src="https://user-images.githubusercontent.com/89473016/230065232-bf6d89a7-24ec-4500-86d1-cb36cd23ae0a.png">
+  <img width="1438" alt="image" src="https://user-images.githubusercontent.com/89473016/230334581-92c42f33-13f4-4402-a273-6ebbd6b142e0.png">
 
 - View your achievments through the stats bar
-  <img width="1432" alt="image" src="https://user-images.githubusercontent.com/89473016/230066171-f84209c0-edd6-4a41-b367-934734a9d859.png">
+  <img width="1438" alt="image" src="https://user-images.githubusercontent.com/89473016/230334973-7f86048e-73a2-43ad-8068-4ba976506c31.png">
 
 - Toggle background music and logout through menu
-  <img width="302" alt="image" src="https://user-images.githubusercontent.com/89473016/230066339-4706cb40-d32a-4a64-ac07-ff0d0a2fe277.png">
+
+  <img width="414" alt="image" src="https://user-images.githubusercontent.com/89473016/230335122-7c3ca7ce-e158-4575-8a2d-8160c2591c69.png">
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
