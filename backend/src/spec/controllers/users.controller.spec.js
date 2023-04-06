@@ -2,6 +2,7 @@ const app = require("../../app");
 const request = require("supertest");
 require("../mongodb_helper");
 const User = require("../../models/users.model");
+const UsersController = require("../../routes/users/users.controller");
 
 describe("/users", () => {
   beforeEach(async () => {
@@ -118,6 +119,7 @@ describe("/users", () => {
       });
       await user.save();
     });
+
     test("POST /outfit", async () => {
       let response = await request(app)
         .post("/users/outfit")
@@ -152,6 +154,93 @@ describe("/users", () => {
       expect(response.status).toEqual(201);
       const user = await User.findOne({ email: "outfit@email.com" });
       expect(user.character.currentOutfit.top).toEqual("top");
+    });
+
+    test("POST /outfit returns 400 error for missing email field", async () => {
+      let response = await request(app)
+        .post("/users/outfit")
+        .send({
+          outfit: {
+            body: "body",
+            hair: "hair",
+            top: "top",
+            bottoms: "bottoms",
+            shoes: "shoes",
+          },
+        });
+      expect(response.status).toEqual(400);
+      expect(response.body.message).toEqual("Bad request");
+    });
+    
+    test("POST /outfit/change returns 400 error for missing email field", async () => {
+      let response = await request(app)
+        .post("/users/outfit/change")
+        .send({
+          outfit: {
+            body: "body",
+            hair: "hair",
+            top: "top",
+            bottoms: "bottoms",
+            shoes: "shoes",
+          },
+        });
+      expect(response.status).toEqual(400);
+      expect(response.body.message).toEqual("Bad request");
+    });
+
+  });
+  describe("GetUserData function", () => {
+    let req, res;
+  
+    beforeEach(() => {
+      req = {
+        query: {
+          email: "test@example.com"
+        }
+      };
+      res = {
+        json: jest.fn(),
+        status: jest.fn().mockReturnThis()
+      };
+    });
+  
+    afterEach(() => {
+      jest.resetAllMocks();
+    });
+  
+    it("should return a user's data if found", async () => {
+      const user = {
+        email: "test@example.com",
+        name: "Test User",
+        age: 30
+      };
+      User.findOne = jest.fn().mockResolvedValue(user);
+  
+      await UsersController.GetUserData(req, res);
+  
+      expect(User.findOne).toHaveBeenCalledWith({ email: "test@example.com" });
+      expect(res.status).not.toHaveBeenCalled();
+      expect(res.json).toHaveBeenCalledWith(user);
+    });
+  
+    it("should return an error if the user is not found", async () => {
+      User.findOne = jest.fn().mockResolvedValue(null);
+  
+      await UsersController.GetUserData(req, res);
+  
+      expect(User.findOne).toHaveBeenCalledWith({ email: "test@example.com" });
+      expect(res.status).toHaveBeenCalledWith(404);
+      expect(res.json).toHaveBeenCalledWith({ error: "User not found" });
+    });
+  
+    it("should return a server error if an exception is thrown", async () => {
+      User.findOne = jest.fn().mockRejectedValue(new Error("Database error"));
+  
+      await UsersController.GetUserData(req, res);
+  
+      expect(User.findOne).toHaveBeenCalledWith({ email: "test@example.com" });
+      expect(res.status).toHaveBeenCalledWith(500);
+      expect(res.json).toHaveBeenCalledWith({ error: "Server error" });
     });
   });
 });
