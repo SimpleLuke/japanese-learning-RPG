@@ -25,7 +25,7 @@ describe("/users", () => {
       await request(app)
         .post("/users")
         .send({
-          email: "tester@email.com",
+          email: "test@test.com",
           password: "1234",
           wordsLearnt: [],
           character: {
@@ -48,7 +48,7 @@ describe("/users", () => {
         });
       let users = await User.find();
       let newUser = users[users.length - 1];
-      expect(newUser.email).toEqual("tester@email.com");
+      expect(newUser.email).toEqual("test@test.com");
       expect(newUser.wordsLearnt).toEqual([]);
       expect(newUser.character.attributes.xp).toEqual(0);
       expect(newUser.character.attributes.level).toEqual(0);
@@ -68,12 +68,12 @@ describe("/users", () => {
     test("response code is 400", async () => {
       let response = await request(app)
         .post("/users")
-        .send({ email: "test@email.com" });
+        .send({ email: "test@test.com" });
       expect(response.statusCode).toBe(400);
     });
 
     test("does not create a user", async () => {
-      await request(app).post("/users").send({ email: "tester@email.com" });
+      await request(app).post("/users").send({ email: "test@test.com" });
       let users = await User.find();
       expect(users.length).toEqual(0);
     });
