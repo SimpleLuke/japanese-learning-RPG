@@ -1,6 +1,5 @@
 const User = require("../../models/users.model");
 
-
 const UsersController = {
   Create: async (req, res) => {
     const user = new User(req.body);
