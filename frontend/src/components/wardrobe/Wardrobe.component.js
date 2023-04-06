@@ -67,11 +67,8 @@ const Wardrobe = () => {
         outfit: outfit,
       }),
     });
-    if (response.status === 201) {
-      const data = await response.json();
-      console.log("outfit update", data.message);
-    } else {
-      console.log("OPPS");
+    if (response.status === 404) {
+      console.log('404: error')
     }
   };
 
