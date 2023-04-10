@@ -1,5 +1,6 @@
 const User = require("../../models/users.model");
 
+
 const GameController = {
   Update: async (req, res) => {
     const { email, wordsLearnt, character } = req.body;

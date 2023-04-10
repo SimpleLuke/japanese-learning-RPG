@@ -44,6 +44,7 @@ describe("/shop", () => {
       expect(user.character.inventory.length).toEqual(1);
       expect(user.character.attributes.coins).toEqual(0);
     });
+    
     it("sends a bad request and error is thrown", async () => {
       const response = await request(app)
         .post("/shop/purchase")
