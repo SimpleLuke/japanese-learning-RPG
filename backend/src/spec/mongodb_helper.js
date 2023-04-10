@@ -17,5 +17,6 @@ afterAll(async () => {
   try {
     await mongoose.connection.close(true);
   } catch (err) {
+    console.log(err)
   }
 });
