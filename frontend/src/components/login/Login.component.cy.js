@@ -3,7 +3,6 @@ import Login from "./Login.component";
 import { Provider } from "react-redux";
 import { configureStore } from "@reduxjs/toolkit";
 import sceneReducer from "../../redux-store/scene/sceneSlice";
-import userReducer from "../../redux-store/user/userSlice";
 
 describe("Login component", () => {
   let store;

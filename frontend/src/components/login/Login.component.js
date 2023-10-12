@@ -1,4 +1,3 @@
-import { LockClosedIcon } from "@heroicons/react/20/solid";
 import { useDispatch } from "react-redux";
 import { setCurrentScene } from "../../redux-store/scene/sceneSlice";
 import { useState } from "react";
@@ -25,10 +24,9 @@ const Login = () => {
       let data = await response.json();
       dispatch(setCurrentScene("BEDROOM"));
       window.localStorage.setItem("token", data.token);
-      console.log(data.userData);
       dispatch(setCurrentUser(data.userData.email));
     } else {
-      console.log("response was: ", response);
+      console.log('404: error with token')
     }
   };
 
