@@ -32,4 +32,14 @@ describe("/tokens", () => {
     expect(response.body.token).toEqual(undefined);
     expect(response.body.message).toEqual("auth error");
   });
+
+  test("a token is not returned when user doesn't exist", async () => {
+    let response = await request(app).post("/tokens").send({
+      email: "t@test.com",
+      password: "123",
+    });
+    expect(response.status).toEqual(401);
+    expect(response.body.token).toEqual(undefined);
+    expect(response.body.message).toEqual("auth error");
+  });
 });
